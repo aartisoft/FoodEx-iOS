@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class NameVC: UIViewControllerKeyboard {
+class SetNameVC: UIViewControllerKeyboard {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var firstNameText: DesignableUITextField!
@@ -61,11 +61,11 @@ class NameVC: UIViewControllerKeyboard {
         
         MyUserData.setNewName(newName: name)
                 
-        UI.ShowPage(source: self, page: UI.Page.Gender)
+        UI.ShowPage(source: self, page: UI.Page.SetGender)
     }
 }
 
-extension NameVC: UITextFieldDelegate {
+extension SetNameVC: UITextFieldDelegate {
     
     func  textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {

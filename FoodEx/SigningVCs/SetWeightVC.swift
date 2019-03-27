@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class WeightVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SetWeightVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     
     
@@ -58,7 +58,7 @@ class WeightVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBAction func onContinueClicked(_ sender: Any) {
         MyUserData.setNewWeight(newWeight: Weight(value: currentWeight, type: currentWeightType))
         
-        UI.ShowPage(source: self, page: UI.Page.Growth)
+        UI.ShowPage(source: self, page: UI.Page.SetGrowth)
     }
     
     

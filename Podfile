@@ -11,6 +11,7 @@ target 'FoodEx' do
   pod 'Firebase/Storage'
   pod 'Firebase/Functions'
   pod 'InputMask'
+  pod 'XLPagerTabStrip', '~> 8.1'
   # Pods for FoodEx
 
 end

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class BirthdayView : ViewController {
+class SetBirthdayVC : UIViewController {
     
     @IBOutlet weak var birthdayPicker: UIDatePicker!
     

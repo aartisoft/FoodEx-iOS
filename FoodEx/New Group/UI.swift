@@ -11,14 +11,28 @@ import UIKit
 
 class UI {
     
-    enum Page : String {
-        case Phone
+    enum Page : Int {
+        case Login
         case Verification
-        case Name
-        case Gender
+        case SetName
+        case SetGender
+        case SetWeight
+        case SetGrowth
+        case SetBirthday
+        
+        case Home
         case Weight
-        case Growth
-        case Birthday
+        case Manager
+        case Payment
+        case Profile
+        
+        var str: String {
+            return "\(self)"
+        }
+        
+        var storyboardId: String {
+            return "\(self)VC"
+        }
     }
     
     
@@ -33,9 +47,15 @@ class UI {
     
     
     static func ShowPage(source: UIViewController, page: Page) {
-        let storyboard = Storyboard.Main.instance
+        var storyboard: UIStoryboard
         
-        let viewControllerMainMenu = storyboard.instantiateViewController(withIdentifier : page.rawValue + "VC")
+        if page.rawValue <= Page.SetBirthday.rawValue {
+            storyboard = Storyboard.Signing.instance
+        } else {
+            storyboard = Storyboard.Main.instance
+        }
+        
+        let viewControllerMainMenu = storyboard.instantiateViewController(withIdentifier : page.storyboardId)
         
         source.present(viewControllerMainMenu, animated: true)
     }

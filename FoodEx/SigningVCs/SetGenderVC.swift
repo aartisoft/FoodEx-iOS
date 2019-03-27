@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class GenderVC : UIViewController {
+class SetGenderVC : UIViewController {
     
     @IBOutlet weak var maleImage: UIImageView!
     @IBOutlet weak var femaleImage: UIImageView!
@@ -51,6 +51,6 @@ class GenderVC : UIViewController {
     @IBAction func onContinueClicked(_ sender: Any) {
         MyUserData.setNewGender(newGender: currentGender)
         
-        UI.ShowPage(source: self, page: UI.Page.Weight)
+        UI.ShowPage(source: self, page: UI.Page.SetWeight)
     }
 }

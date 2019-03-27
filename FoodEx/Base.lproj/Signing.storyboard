@@ -18,7 +18,7 @@
         <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LoginVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,14 +45,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please, Sign in or Sign up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAe-17-5HK">
-                                <rect key="frame" x="107" y="273" width="167" height="21"/>
+                                <rect key="frame" x="107" y="272" width="167" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+38" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVx-3O-jF3">
-                                <rect key="frame" x="99" y="355" width="45" height="30"/>
+                                <rect key="frame" x="99" y="354" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -161,7 +161,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCL-Yq-uOp">
-                                <rect key="frame" x="195" y="276" width="40" height="40"/>
+                                <rect key="frame" x="194" y="276" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="symbol3"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
@@ -177,7 +177,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0e-QZ-Azy">
-                                <rect key="frame" x="308" y="276" width="40" height="40"/>
+                                <rect key="frame" x="307" y="276" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="symbol5"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
@@ -185,7 +185,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byC-qC-LEz">
-                                <rect key="frame" x="75" y="360" width="50" height="50"/>
+                                <rect key="frame" x="74" y="359" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
                                 <state key="normal" title="1"/>
@@ -194,7 +194,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flz-pT-bpa">
-                                <rect key="frame" x="250" y="360" width="50" height="50"/>
+                                <rect key="frame" x="250" y="359" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
                                 <state key="normal" title="3"/>
@@ -203,7 +203,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyf-dr-0Cp">
-                                <rect key="frame" x="163" y="360" width="50" height="50"/>
+                                <rect key="frame" x="163" y="359" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
                                 <state key="normal" title="2"/>
@@ -212,7 +212,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Fq-90-Oun">
-                                <rect key="frame" x="75" y="435" width="50" height="50"/>
+                                <rect key="frame" x="74" y="434" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
                                 <state key="normal" title="4"/>
@@ -221,7 +221,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5X3-Fi-1ze">
-                                <rect key="frame" x="250" y="435" width="50" height="50"/>
+                                <rect key="frame" x="250" y="434" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
                                 <state key="normal" title="6"/>
@@ -230,7 +230,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0z-xJ-qHx">
-                                <rect key="frame" x="163" y="435" width="50" height="50"/>
+                                <rect key="frame" x="163" y="434" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
                                 <state key="normal" title="5"/>
@@ -239,7 +239,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWB-zP-efQ">
-                                <rect key="frame" x="76" y="510" width="50" height="50"/>
+                                <rect key="frame" x="76" y="509" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
                                 <state key="normal" title="7"/>
@@ -248,7 +248,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXJ-3e-hYj">
-                                <rect key="frame" x="251" y="510" width="50" height="50"/>
+                                <rect key="frame" x="251" y="509" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
                                 <state key="normal" title="9"/>
@@ -257,7 +257,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzr-GI-FnY">
-                                <rect key="frame" x="164" y="510" width="50" height="50"/>
+                                <rect key="frame" x="164" y="509" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
                                 <state key="normal" title="8"/>
@@ -266,7 +266,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vg8-YX-hQU">
-                                <rect key="frame" x="75" y="585" width="50" height="50"/>
+                                <rect key="frame" x="74" y="584" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
                                 <state key="normal" title="C"/>
@@ -275,7 +275,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udd-Ab-JgN">
-                                <rect key="frame" x="250" y="585" width="50" height="50"/>
+                                <rect key="frame" x="250" y="584" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
                                 <state key="normal" title="&lt;"/>
@@ -284,7 +284,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSK-eX-xtx">
-                                <rect key="frame" x="163" y="585" width="50" height="50"/>
+                                <rect key="frame" x="163" y="584" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
                                 <state key="normal" title="0"/>
@@ -319,10 +319,10 @@
             </objects>
             <point key="canvasLocation" x="2340" y="151.57421289355324"/>
         </scene>
-        <!--NameVC-->
+        <!--Set NameVC-->
         <scene sceneID="NjL-la-AtH">
             <objects>
-                <viewController storyboardIdentifier="NameView" id="Wek-ax-5TC" customClass="NameVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NameView" id="Wek-ax-5TC" customClass="SetNameVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xdr-Qq-yiA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -385,7 +385,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Who are you?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfc-jR-AYq">
-                                <rect key="frame" x="122" y="70" width="139" height="32"/>
+                                <rect key="frame" x="122" y="69" width="139" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -416,10 +416,10 @@
             </objects>
             <point key="canvasLocation" x="3020" y="152"/>
         </scene>
-        <!--WeightVC-->
+        <!--Set WeightVC-->
         <scene sceneID="yOv-fa-BU7">
             <objects>
-                <viewController storyboardIdentifier="WeightView" id="fBq-YC-e9n" customClass="WeightVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeightView" id="fBq-YC-e9n" customClass="SetWeightVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mED-cV-BDV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -433,7 +433,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFT-Rh-lrJ">
-                                <rect key="frame" x="131" y="70" width="124" height="32"/>
+                                <rect key="frame" x="131" y="69" width="124" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -462,10 +462,10 @@
             </objects>
             <point key="canvasLocation" x="1592.8" y="842.42878560719646"/>
         </scene>
-        <!--GenderVC-->
+        <!--Set GenderVC-->
         <scene sceneID="H6r-Ik-TKd">
             <objects>
-                <viewController storyboardIdentifier="GenderView" id="maB-6G-UXv" customClass="GenderVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GenderView" id="maB-6G-UXv" customClass="SetGenderVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ckp-Vq-2PW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -479,7 +479,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Gender" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WN2-kP-C1g">
-                                <rect key="frame" x="129" y="70" width="131" height="32"/>
+                                <rect key="frame" x="129" y="69" width="131" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -512,10 +512,10 @@
             </objects>
             <point key="canvasLocation" x="852" y="842"/>
         </scene>
-        <!--GrowthVC-->
+        <!--Set GrowthVC-->
         <scene sceneID="znk-Hg-htz">
             <objects>
-                <viewController storyboardIdentifier="GrowthView" id="loS-T8-Lhi" customClass="GrowthVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GrowthView" id="loS-T8-Lhi" customClass="SetGrowthVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YM2-0w-Bc6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -529,7 +529,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Growth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvE-lW-7IS">
-                                <rect key="frame" x="117" y="70" width="140" height="32"/>
+                                <rect key="frame" x="117" y="69" width="140" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -558,24 +558,16 @@
             </objects>
             <point key="canvasLocation" x="2340" y="841.52923538230891"/>
         </scene>
-        <!--Birthday View-->
+        <!--Set BirthdayVC-->
         <scene sceneID="lnf-hc-tbh">
             <objects>
-                <viewController storyboardIdentifier="BirthdayView" id="I6n-au-H1I" customClass="BirthdayView" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BirthdayView" id="I6n-au-H1I" customClass="SetBirthdayVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Nb-Kb-DGF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcY-XL-dXu">
-                                <rect key="frame" x="125" y="550" width="125" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Continue"/>
-                                <connections>
-                                    <action selector="onContinueClicked:" destination="I6n-au-H1I" eventType="touchUpInside" id="5EO-93-QBL"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Birthday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACk-uE-zgF">
-                                <rect key="frame" x="124" y="70" width="138" height="32"/>
+                                <rect key="frame" x="124" y="69" width="138" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -600,6 +592,15 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcY-XL-dXu">
+                                <rect key="frame" x="125" y="550" width="125" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <action selector="onContinueClicked:" destination="I6n-au-H1I" eventType="touchUpInside" id="5EO-93-QBL"/>
+                                    <segue destination="WmN-xM-muR" kind="show" id="bKS-I7-hrh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="FX3-et-3me"/>
@@ -612,6 +613,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uh0-jc-AwL" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3020" y="842"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="piq-jf-pd4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="WmN-xM-muR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GDz-En-p8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3722" y="842"/>
         </scene>
     </scenes>
     <resources>

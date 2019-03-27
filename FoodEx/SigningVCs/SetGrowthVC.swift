@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class GrowthVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SetGrowthVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var weightPicker: UIPickerView!
     var growthValues0: [Int] = []
@@ -147,6 +147,6 @@ class GrowthVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBAction func onContinueClicked(_ sender: Any) {
         MyUserData.setNewGrowth(newGrowth: Growth(value: currentGrowth, type: currentGrowthType))
         
-        UI.ShowPage(source: self, page: UI.Page.Birthday)
+        UI.ShowPage(source: self, page: UI.Page.SetBirthday)
     }
 }
