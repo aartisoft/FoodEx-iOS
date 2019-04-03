@@ -12,6 +12,7 @@ import UIKit
 class SetGrowthVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var weightPicker: UIPickerView!
+    @IBOutlet var growthImage: UIImageView!
     var growthValues0: [Int] = []
     var growthValues1: [Int] = []
     var growthTypes: [String] = ["cm", "inch"]
@@ -24,11 +25,12 @@ class SetGrowthVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     let maxCm = 250
     var minInch: Int
     var maxInch: Int
-    let defaultCm = 180
+    var defaultCm: Int
     
     required init?(coder aDecoder: NSCoder) {
         self.minInch = Int(Double(minCm) * cmInch_factor)
         self.maxInch = Int(Double(maxCm) * cmInch_factor)
+        defaultCm = 180 - UserData.my.getGenderId() * 10
         super.init(coder: aDecoder)
     }
     
@@ -44,6 +46,7 @@ class SetGrowthVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             growthValues1.append(i)
         }
         
+        
         weightPicker.reloadAllComponents()
         self.weightPicker.delegate = self
         self.weightPicker.dataSource = self
@@ -51,6 +54,8 @@ class SetGrowthVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
 //        pickerView(weightPicker, didSelectRow: 19, inComponent: 0)
 //        pickerView(weightPicker, didSelectRow: 0, inComponent: 1)
         weightPicker.selectRow(defaultCm - minCm, inComponent: 0, animated: false)
+        
+        growthImage.image = UIImage(named: UserData.my.getGenderName() + "_growth")
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -145,7 +150,7 @@ class SetGrowthVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     
     
     @IBAction func onContinueClicked(_ sender: Any) {
-        MyUserData.setNewGrowth(newGrowth: Growth(value: currentGrowth, type: currentGrowthType))
+        UserData.setMyNewGrowth(newGrowth: Growth(value: currentGrowth, type: currentGrowthType))
         
         UI.ShowPage(source: self, page: UI.Page.SetBirthday)
     }

@@ -59,7 +59,7 @@ class SetNameVC: UIViewControllerKeyboard {
         
         let name = Name(first: firstNameText.text!, middle: middleNameText.text!, last: lastNameText.text!)
         
-        MyUserData.setNewName(newName: name)
+        UserData.setMyNewName(newName: name)
                 
         UI.ShowPage(source: self, page: UI.Page.SetGender)
     }

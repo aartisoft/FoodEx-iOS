@@ -28,7 +28,7 @@ class LoginVC: UIViewControllerKeyboard {
             "0[00] [000]-[00]-[00]"
         ]
         
-        viewsToMove[continueButton] = 0.3
+        viewsToMove[continueButton] = 0.65
         viewsToDismissKeyboard.append(phoneText)
         
         phoneNote.isHidden = true
@@ -82,19 +82,18 @@ class LoginVC: UIViewControllerKeyboard {
         
         let phone = Converter.convertPhoneToStandard(phone: self.phonePrefixLabel.text! + self.phoneText.text!)
         
-        MyUserData.setNewPhoneNumber(newPhoneNumber: phone)
+        UserData.setMyNewPhoneNumber(newPhoneNumber: phone)
         
-        UI.ShowPage(source: self, page: UI.Page.Verification)
+        PhoneAuthProvider.provider().verifyPhoneNumber(UserData.my.getPhoneNumber(), uiDelegate: nil) { (verificationID, error) in
+            if error != nil {
+                let a = error
+//                self.showMessagePrompt(error.localizedDescription)
+                return
+            }
 
-        
-//        PhoneAuthProvider.provider().verifyPhoneNumber(self.phone, uiDelegate: nil) { (verificationID, error) in
-//            if error != nil {
-//                //self.showMessagePrompt(error.localizedDescription)
-//                return
-//            }
-//
-//            UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
-//        }
+            UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+            UI.ShowPage(source: self, page: UI.Page.Verification)
+        }
     }
     
 

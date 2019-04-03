@@ -41,7 +41,7 @@ class UI {
         case Main
         
         var instance : UIStoryboard {
-            return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
+            return UIStoryboard(name: self.rawValue, bundle: nil)
         }
     }
     
@@ -58,10 +58,5 @@ class UI {
         let viewControllerMainMenu = storyboard.instantiateViewController(withIdentifier : page.storyboardId)
         
         source.present(viewControllerMainMenu, animated: true)
-    }
-    
-    
-    static func ShowStoryboard(_ storyboard: Storyboard) {
-        
     }
 }

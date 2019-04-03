@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.5.1)
   - BoringSSL-GRPC (0.0.2):
     - BoringSSL-GRPC/Implementation (= 0.0.2)
     - BoringSSL-GRPC/Interface (= 0.0.2)
@@ -112,12 +113,25 @@ PODS:
   - GTMSessionFetcher/Core (1.2.1)
   - InputMask (4.1.0)
   - leveldb-library (1.20)
+  - MessageInputBar/Core (0.4.1)
+  - MessageKit (2.0.0):
+    - MessageInputBar/Core
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - NVActivityIndicatorView (4.6.1):
+    - NVActivityIndicatorView/Presenter (= 4.6.1)
+  - NVActivityIndicatorView/Presenter (4.6.1)
+  - PlatonSDK (1.0.8):
+    - Alamofire (~> 4.5.1)
+    - SwiftHash (~> 2.0.1)
   - Protobuf (3.7.0)
+  - SwiftHash (2.0.2)
+  - SwiftMessages (6.0.2):
+    - SwiftMessages/App (= 6.0.2)
+  - SwiftMessages/App (6.0.2)
   - XLPagerTabStrip (8.1.1)
 
 DEPENDENCIES:
@@ -128,10 +142,15 @@ DEPENDENCIES:
   - Firebase/Functions
   - Firebase/Storage
   - InputMask
+  - MessageKit
+  - NVActivityIndicatorView
+  - PlatonSDK
+  - SwiftMessages
   - XLPagerTabStrip (~> 8.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - BoringSSL-GRPC
     - Firebase
     - FirebaseAnalytics
@@ -149,11 +168,18 @@ SPEC REPOS:
     - GTMSessionFetcher
     - InputMask
     - leveldb-library
+    - MessageInputBar
+    - MessageKit
     - nanopb
+    - NVActivityIndicatorView
+    - PlatonSDK
     - Protobuf
+    - SwiftHash
+    - SwiftMessages
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   BoringSSL-GRPC: 2a230d9cd93e7ce39916044f645cebb31f37dde6
   Firebase: c60d49e9c2630875a96207d15e2affb8364996d1
   FirebaseAnalytics: fd72a26bf8dac84cefba2f0864366f718555a5b0
@@ -171,10 +197,16 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   InputMask: 603cef8ae05f28e903b852c704350c9d73baf47f
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
+  MessageKit: 29c1c87e5a396d2ca7a3f712e5171dc9aba42a1e
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  NVActivityIndicatorView: 4ca19fccc84595a78957336a086d00a49be6ce61
+  PlatonSDK: 50721299a89bfe3c98bce5ac67b7663fe7a6e66d
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
+  SwiftHash: 6d312abe61c8359bdef8d0093642f3a70b1c17ba
+  SwiftMessages: 8b3cc68dba2f1c91aac1a74c90b10287aac35371
   XLPagerTabStrip: 63166e21c9844fa30f2d95d30f335e73be5caf22
 
-PODFILE CHECKSUM: 5702ca251d078a661fa2b69e8861060c122f4ac5
+PODFILE CHECKSUM: bef5095d4b8b05aed60cfc25e25f7584aabc80b3
 
 COCOAPODS: 1.5.3

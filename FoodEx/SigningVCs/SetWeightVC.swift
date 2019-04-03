@@ -12,7 +12,7 @@ import UIKit
 class SetWeightVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     
-    
+    @IBOutlet var weightImage: UIImageView!
     @IBOutlet weak var weightPicker: UIPickerView!
     var weightValues0: [Int] = []
     var weightValues1: [Int] = []
@@ -26,11 +26,12 @@ class SetWeightVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     let maxKg = 130
     var minLb: Int
     var maxLb: Int
-    let defaultKg = 60
+    var defaultKg: Int
     
     required init?(coder aDecoder: NSCoder) {
         self.minLb = Int(Double(minKg) * kgLb_factor)
         self.maxLb = Int(Double(maxKg) * kgLb_factor)
+        defaultKg = 75 - UserData.my.getGenderId() * 10
         super.init(coder: aDecoder)
     }
     
@@ -46,6 +47,7 @@ class SetWeightVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             weightValues1.append(i)
         }
         
+        
         weightPicker.reloadAllComponents()
         self.weightPicker.delegate = self
         self.weightPicker.dataSource = self
@@ -53,10 +55,12 @@ class SetWeightVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
 //        pickerView(weightPicker, didSelectRow: 19, inComponent: 0)
 //        pickerView(weightPicker, didSelectRow: 0, inComponent: 1)
         weightPicker.selectRow(defaultKg - minKg, inComponent: 0, animated: false)
+        
+        weightImage.image = UIImage(named: UserData.my.getGenderName() + "_weight")
     }
 
     @IBAction func onContinueClicked(_ sender: Any) {
-        MyUserData.setNewWeight(newWeight: Weight(value: currentWeight, type: currentWeightType))
+        UserData.setMyNewWeight(newWeight: Weight(value: currentWeight, type: currentWeightType))
         
         UI.ShowPage(source: self, page: UI.Page.SetGrowth)
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Growth {
+struct Growth : Encodable {
     var value: Int
     var type: Int
     

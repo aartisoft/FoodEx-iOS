@@ -14,8 +14,14 @@ class SetBirthdayVC : UIViewController {
     @IBOutlet weak var birthdayPicker: UIDatePicker!
     
     @IBAction func onContinueClicked(_ sender: Any) {
-        MyUserData.setNewBirthday(newBirthday: birthdayPicker.date)
+        UserData.seMyNewBirthday(newBirthday: birthdayPicker.date)
         
-        UI.ShowStoryboard(UI.Storyboard.Main)
+//            let jsonEncoder = JSONEncoder()
+//            let jsonData = try jsonEncoder.encode(UserData.my)
+//            let json = String(data: jsonData, encoding: String.Encoding.utf8)
+        FireFunctions.callFunction(.createNewCustomer, UserData.my.dict)
+
+        
+        UI.ShowPage(source: self, page: .Home)
     }
 }

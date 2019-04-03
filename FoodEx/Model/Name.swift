@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Name {
+struct Name : Encodable {
     var first: String
     var middle: String
     var last: String

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AudioToolbox
+import Firebase
 
 class VerificationVC: UIViewController {
     
@@ -36,8 +37,13 @@ class VerificationVC: UIViewController {
                 
                 currentPosition += 1
                 
+                var code: String = ""
+                for i in 0...5 {
+                    code += symbolsInputs[i].text!
+                }
+                
                 if currentPosition == 6 {
-                    onCodeVerified()
+                    CheckCode(code)
                 }
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             }
@@ -47,12 +53,27 @@ class VerificationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        MyUserData.onPhoneNumberChanged.addHandler(uniqueName: "phoneNumber-VerificationPage", handler: { (newPhoneNumber: String) in
+        UserData.onMyPhoneNumberChanged.addHandler(uniqueName: "phoneNumber-VerificationPage", handler: { (newPhoneNumber: String) in
             self.phoneLabel.text = newPhoneNumber
         })
     }
     
+    
+    func CheckCode(_ verificationCode: String) {
+        
+        let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")
+        let credential = PhoneAuthProvider.provider().credential(
+            withVerificationID: verificationID!,
+            verificationCode: verificationCode)
+        
+        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+            if let error = error {
+                // ...
+                return
+            }
+            self.onCodeVerified()
+        }
+    }
     
     func onCodeVerified() {
         UI.ShowPage(source: self, page: UI.Page.SetName)

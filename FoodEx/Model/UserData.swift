@@ -8,48 +8,79 @@
 
 import Foundation
 
-struct MyUserData {
-    private static var phoneNumber: String = ""
-    private static var name: Name? = nil
-    private static var weight: Weight? = nil
-    private static var growth: Growth? = nil
-    private static var gender: Int = -1
-    private static var birthday: Date? = nil
+class UserData {
+    private var phoneNumber: String = ""
+    private var name: Name? = nil
+    private var weight: Weight? = nil
+    private var growth: Growth? = nil
+    private var gender: Int = -1
+    private var birthday: NSDate? = nil
     
-    static var onPhoneNumberChanged = Event<String>()
-    static var onNameChanged = Event<Name>()
-    static var onWeightChanged = Event<Weight>()
-    static var onGrowthChanged = Event<Growth>()
-    static var onGenderChanged = Event<Int>()
-    static var onBirthdayChanged = Event<Date>()
+    static var onMyPhoneNumberChanged = Event<String>()
+    static var onMyNameChanged = Event<Name>()
+    static var onMyWeightChanged = Event<Weight>()
+    static var onMyGrowthChanged = Event<Growth>()
+    static var onMyGenderChanged = Event<Int>()
+    static var onMyBirthdayChanged = Event<Date>()
     
-    static func setNewPhoneNumber(newPhoneNumber: String) {
-        phoneNumber = newPhoneNumber
-        onPhoneNumberChanged.raise(data: newPhoneNumber)
+    var dict: [String: Any] {
+        return
+            ["name": name.dictionary,
+             "phoneNumber": phoneNumber,
+             "weight": weight.dictionary,
+             "growth": growth.dictionary,
+             "gender": gender,
+             //"birthday": birthday
+        ]
+    }
+
+    static var my = UserData()
+    
+    static func setMyNewPhoneNumber(newPhoneNumber: String) {
+        my.phoneNumber = newPhoneNumber
+        onMyPhoneNumberChanged.raise(data: newPhoneNumber)
     }
     
-    static func setNewName(newName: Name) {
-        name = newName
-        onNameChanged.raise(data: newName)
+    static func setMyNewName(newName: Name) {
+        my.name = newName
+        onMyNameChanged.raise(data: newName)
     }
     
-    static func setNewWeight(newWeight: Weight) {
-        weight = newWeight
-        onWeightChanged.raise(data: newWeight)
+    static func setMyNewWeight(newWeight: Weight) {
+        my.weight = newWeight
+        onMyWeightChanged.raise(data: newWeight)
     }
     
-    static func setNewGrowth(newGrowth: Growth) {
-        growth = newGrowth
-        onGrowthChanged.raise(data: newGrowth)
+    static func setMyNewGrowth(newGrowth: Growth) {
+        my.growth = newGrowth
+        onMyGrowthChanged.raise(data: newGrowth)
     }
     
-    static func setNewGender(newGender: Int) {
-        gender = newGender
-        onGenderChanged.raise(data: newGender)
+    static func setMyNewGender(newGender: Int) {
+        my.gender = newGender
+        onMyGenderChanged.raise(data: newGender)
     }
     
-    static func setNewBirthday(newBirthday: Date) {
-        birthday = newBirthday
-        onBirthdayChanged.raise(data: newBirthday)
+    static func seMyNewBirthday(newBirthday: Date) {
+        my.birthday = newBirthday as NSDate
+        onMyBirthdayChanged.raise(data: newBirthday)
+    }
+    
+    func getGenderName() -> String {
+        if gender == 0 {
+            return "man"
+        } else if gender == 1 {
+            return "woman"
+        } else {
+            return "Error"
+        }
+    }
+    
+    func getGenderId() -> Int {
+        return gender
+    }
+    
+    func getPhoneNumber() -> String {
+        return phoneNumber
     }
 }

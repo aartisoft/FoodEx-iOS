@@ -12,6 +12,10 @@ target 'FoodEx' do
   pod 'Firebase/Functions'
   pod 'InputMask'
   pod 'XLPagerTabStrip', '~> 8.1'
+  pod 'SwiftMessages'
+  pod 'NVActivityIndicatorView'
+  pod 'MessageKit'
+  pod 'PlatonSDK'
   # Pods for FoodEx
 
 end

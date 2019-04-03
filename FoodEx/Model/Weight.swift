@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Weight {
+struct Weight : Encodable {
     var value: Int
     var type: Int
     
