@@ -34,7 +34,9 @@ extension String {
 extension String {
     
     var localized: String {
-        return Bundle.localizedBundle.localizedString(forKey: self, value: nil, table: nil)
+        //let a = Bundle.localizedBundle.localizedString(forKey: self, value: nil, table: nil)
+        let a = NSLocalizedString(self, tableName: nil, bundle: Bundle.main, comment: "")
+        return a
     }
 }
 

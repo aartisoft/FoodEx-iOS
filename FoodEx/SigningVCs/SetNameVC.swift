@@ -111,11 +111,11 @@ extension SetNameVC: UITextFieldDelegate {
         
         switch textField {
         case firstNameText:
-            return (text.count > 3, "Your first name is too short")
+            return (text.count > 3, "signing.name.first.short".localized)
         case middleNameText:
-            return (text.count > 3, "Your middle name is too short")
+            return (text.count > 3, "signing.name.middle.short".localized)
         case lastNameText:
-            return (text.count > 3, "Your last name is too short")
+            return (text.count > 3, "signing.name.last.short".localized)
         default:
             return (false, nil)
         }

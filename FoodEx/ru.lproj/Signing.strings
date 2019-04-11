@@ -1,0 +1,117 @@
+
+/* Class = "UILabel"; text = "+380677284513"; ObjectID = "2Ke-Lz-rfT"; */
+"2Ke-Lz-rfT.text" = "+380677284513";
+
+/* Class = "UIButton"; normalTitle = "4"; ObjectID = "5Fq-90-Oun"; */
+"5Fq-90-Oun.normalTitle" = "4";
+
+/* Class = "UIButton"; normalTitle = "6"; ObjectID = "5X3-Fi-1ze"; */
+"5X3-Fi-1ze.normalTitle" = "6";
+
+/* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "5yV-v1-GtK"; */
+"5yV-v1-GtK.normalTitle" = "Continue";
+
+/* Class = "UILabel"; text = "Your Birthday"; ObjectID = "ACk-uE-zgF"; */
+"ACk-uE-zgF.text" = "Your Birthday";
+
+/* Class = "UILabel"; text = "Code could be detected automatically"; ObjectID = "C78-Gv-xYJ"; */
+"C78-Gv-xYJ.text" = "Code could be detected automatically";
+
+/* Class = "UILabel"; text = "Your Growth"; ObjectID = "CvE-lW-7IS"; */
+"CvE-lW-7IS.text" = "Your Growth";
+
+/* Class = "UITextField"; placeholder = "Middle Name"; ObjectID = "ELV-2O-PXt"; */
+"ELV-2O-PXt.placeholder" = "Middle Name";
+
+/* Class = "UITextField"; text = "Иван"; ObjectID = "ELV-2O-PXt"; */
+"ELV-2O-PXt.text" = "Иван";
+
+/* Class = "UILabel"; text = "Your Weight"; ObjectID = "GFT-Rh-lrJ"; */
+"GFT-Rh-lrJ.text" = "Your Weight";
+
+/* Class = "UILabel"; text = "Wait for SMS"; ObjectID = "Gbh-Lb-MCH"; */
+"Gbh-Lb-MCH.text" = "Wait for SMS";
+
+/* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "J1X-n4-RbB"; */
+"J1X-n4-RbB.normalTitle" = "Continue";
+
+/* Class = "UIButton"; normalTitle = "9"; ObjectID = "NXJ-3e-hYj"; */
+"NXJ-3e-hYj.normalTitle" = "9";
+
+/* Class = "UILabel"; text = "Please, Sign in or Sign up"; ObjectID = "QAe-17-5HK"; */
+"QAe-17-5HK.text" = "Please, Sign in or Sign up";
+
+/* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "QTg-ba-9WE"; */
+"QTg-ba-9WE.normalTitle" = "Continue";
+
+/* Class = "UILabel"; text = "Who are you?"; ObjectID = "Tfc-jR-AYq"; */
+"Tfc-jR-AYq.text" = "Who are you?";
+
+/* Class = "UIButton"; normalTitle = "<"; ObjectID = "Udd-Ab-JgN"; */
+"Udd-Ab-JgN.normalTitle" = "<";
+
+/* Class = "UIButton"; normalTitle = "2"; ObjectID = "Vyf-dr-0Cp"; */
+"Vyf-dr-0Cp.normalTitle" = "2";
+
+/* Class = "UILabel"; text = "Your Gender"; ObjectID = "WN2-kP-C1g"; Note = "yourGender"; */
+"WN2-kP-C1g.text" = "Your Gender";
+
+/* Class = "UIButton"; normalTitle = "1"; ObjectID = "byC-qC-LEz"; */
+"byC-qC-LEz.normalTitle" = "1";
+
+/* Class = "UIButton"; normalTitle = "Wrong number?"; ObjectID = "e0n-G4-3ew"; */
+"e0n-G4-3ew.normalTitle" = "Wrong number?";
+
+/* Class = "UILabel"; text = "+38"; ObjectID = "eVx-3O-jF3"; */
+"eVx-3O-jF3.text" = "+38";
+
+/* Class = "UIButton"; normalTitle = "3"; ObjectID = "flz-pT-bpa"; */
+"flz-pT-bpa.normalTitle" = "3";
+
+/* Class = "UIButton"; normalTitle = "5"; ObjectID = "h0z-xJ-qHx"; */
+"h0z-xJ-qHx.normalTitle" = "5";
+
+/* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "h1a-0T-mjt"; */
+"h1a-0T-mjt.normalTitle" = "Continue";
+
+/* Class = "UIButton"; normalTitle = "0"; ObjectID = "kSK-eX-xtx"; */
+"kSK-eX-xtx.normalTitle" = "0";
+
+/* Class = "UIButton"; normalTitle = "8"; ObjectID = "kzr-GI-FnY"; */
+"kzr-GI-FnY.normalTitle" = "8";
+
+/* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "mcY-XL-dXu"; */
+"mcY-XL-dXu.normalTitle" = "Continue";
+
+/* Class = "UIButton"; normalTitle = "7"; ObjectID = "nWB-zP-efQ"; */
+"nWB-zP-efQ.normalTitle" = "7";
+
+/* Class = "UITextField"; text = "067-728-45-13"; ObjectID = "pB5-JC-uf7"; */
+"pB5-JC-uf7.text" = "067-728-45-13";
+
+/* Class = "UILabel"; text = "Advice"; ObjectID = "uyQ-cA-l5L"; */
+"uyQ-cA-l5L.text" = "Advice";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "vVu-Wo-eI1"; */
+"vVu-Wo-eI1.placeholder" = "Last Name";
+
+/* Class = "UITextField"; text = "Романович"; ObjectID = "vVu-Wo-eI1"; */
+"vVu-Wo-eI1.text" = "Романович";
+
+/* Class = "UITextField"; placeholder = "First Name"; ObjectID = "vYG-s6-b5A"; */
+"vYG-s6-b5A.placeholder" = "First Name";
+
+/* Class = "UITextField"; text = "Таранов"; ObjectID = "vYG-s6-b5A"; */
+"vYG-s6-b5A.text" = "Таранов";
+
+/* Class = "UIButton"; normalTitle = "C"; ObjectID = "vg8-YX-hQU"; */
+"vg8-YX-hQU.normalTitle" = "C";
+
+/* Class = "UILabel"; text = "Advice"; ObjectID = "w6Y-WN-Az3"; */
+"w6Y-WN-Az3.text" = "Advice";
+
+/* Class = "UILabel"; text = "We're sending an SMS to phone number"; ObjectID = "wYl-TS-BYy"; */
+"wYl-TS-BYy.text" = "We're sending an SMS to phone number";
+
+/* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "xdu-Is-YvU"; */
+"xdu-Is-YvU.normalTitle" = "Continue";

@@ -56,7 +56,7 @@ class LoginVC: UIViewControllerKeyboard {
         }
         
         if textField == phoneText {
-            return (text.count == 13, "Your number is too short")
+            return (text.count == 13, "signing.phone.error.short".localized)
         }
         
         return (false, nil)

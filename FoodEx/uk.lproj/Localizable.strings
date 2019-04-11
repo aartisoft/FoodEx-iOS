@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  FoodEx
+
+  Created by korsour on 4/10/19.
+  Copyright © 2019 KorLab. All rights reserved.
+*/
+
+"signing.yourGender" = "Ваш пол";

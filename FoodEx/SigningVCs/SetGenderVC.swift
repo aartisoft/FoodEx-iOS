@@ -37,12 +37,12 @@ class SetGenderVC : UIViewController {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         
         if tappedImage == maleImage {
-            maleImage.image = UIImage(named: "man-enable")
-            femaleImage.image = UIImage(named: "woman-disable")
+            maleImage.image = UIImage(named: "man_enable")
+            femaleImage.image = UIImage(named: "woman_disable")
             currentGender = 0
         } else {
-            maleImage.image = UIImage(named: "man-disable")
-            femaleImage.image = UIImage(named: "woman-enable")
+            maleImage.image = UIImage(named: "man_disable")
+            femaleImage.image = UIImage(named: "woman_enable")
             currentGender = 1
         }
     }

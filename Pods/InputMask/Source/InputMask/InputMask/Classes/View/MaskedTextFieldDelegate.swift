@@ -67,6 +67,31 @@ open class MaskedTextFieldDelegate: NSObject, UITextFieldDelegate {
         return try! maskGetOrCreate(withFormat: primaryMaskFormat, customNotations: customNotations)
     }
     
+    required public init?(coder aDecoder: NSCoder) {
+        // Interface Builder support
+        self.primaryMaskFormat = ""
+        self.autocomplete = true
+        self.autocompleteOnFocus = true
+        self.rightToLeft = false
+        self.affineFormats = []
+        self.affinityCalculationStrategy = .wholeString
+        self.customNotations = []
+        self.onMaskedTextChangedCallback = nil
+        super.init()
+    }
+    public override init() {
+        // Interface Builder support
+        self.primaryMaskFormat = ""
+        self.autocomplete = true
+        self.autocompleteOnFocus = true
+        self.rightToLeft = false
+        self.affineFormats = []
+        self.affinityCalculationStrategy = .wholeString
+        self.customNotations = []
+        self.onMaskedTextChangedCallback = nil
+        super.init()
+    }
+    
     public init(
         primaryFormat: String = "",
         autocomplete: Bool = true,
@@ -88,10 +113,10 @@ open class MaskedTextFieldDelegate: NSObject, UITextFieldDelegate {
         super.init()
     }
     
-    public override convenience init() {
-        // Interface Builder support
-        self.init(primaryFormat: "")
-    }
+//    public override convenience init() {
+//        // Interface Builder support
+//        self.init(primaryFormat: "")
+//    }
     
     /**
      Maximal length of the text inside the field.

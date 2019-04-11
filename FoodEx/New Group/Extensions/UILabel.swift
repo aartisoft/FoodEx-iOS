@@ -17,4 +17,13 @@ extension UILabel {
         
         self.fadeIn(duration, onCompletion: onCompletion)
     }
+    
+    @IBInspectable var stringId: String {
+        set(value) {
+            self.text = value.localized
+        }
+        get {
+            return ""
+        }
+    }
 }

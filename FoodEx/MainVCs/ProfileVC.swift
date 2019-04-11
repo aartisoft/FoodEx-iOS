@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-class ProfileVC : UITableViewController {
+class ProfileVC : UIViewController {
     
 }

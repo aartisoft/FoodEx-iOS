@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  FoodEx
+
+  Created by korsour on 4/10/19.
+  Copyright © 2019 KorLab. All rights reserved.
+*/
+
+"continue" = "Continue";
+"home" = "Home";
+"weight" = "Weight";
+"manager" = "Manager";
+"purchases" = "Purchases";
+"profile" = "Profile";
+
+"signing.phone.description" = "Please, Sign In or Sign Up";
+"signing.phone.error.short" = "Phone number is too short";
+
+"signing.verification.title" = "Please, wait for SMS";
+"signing.verification.sendingSMS" = "We're sending an SMS to phone number";
+"signing.verification.wrongNumber" = "Wrong number?";
+"signing.verification.automatically" = "The code could be detected automatically";
+
+"signing.name.title" = "Your first name is too short";
+"signing.name.first" = "First name";
+"signing.name.middle" = "Middle name";
+"signing.name.last" = "Last name";
+"signing.name.error.first.short" = "Your first name is too short";
+"signing.name.error.middle.short" = "Your middle name is too short";
+"signing.name.error.last.short" = "Your last name is too short";
+
+"signing.gender.title" = "Your Gender";
+
+"signing.weight.title" = "Your Weight";
+
+"signing.growth.title" = "Your Growth";
+
+"signing.birthday.title" = "Your Birthday";
+
+
+
