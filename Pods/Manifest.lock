@@ -112,6 +112,7 @@ PODS:
   - gRPC-Core/Interface (1.17.0)
   - GTMSessionFetcher/Core (1.2.1)
   - InputMask (4.1.0)
+  - JTAppleCalendar (7.1.7)
   - leveldb-library (1.20)
   - MessageInputBar/Core (0.4.1)
   - MessageKit (2.0.0):
@@ -142,6 +143,7 @@ DEPENDENCIES:
   - Firebase/Functions
   - Firebase/Storage
   - InputMask
+  - JTAppleCalendar (~> 7.1)
   - MessageKit
   - NVActivityIndicatorView
   - PlatonSDK
@@ -167,6 +169,7 @@ SPEC REPOS:
     - gRPC-Core
     - GTMSessionFetcher
     - InputMask
+    - JTAppleCalendar
     - leveldb-library
     - MessageInputBar
     - MessageKit
@@ -196,6 +199,7 @@ SPEC CHECKSUMS:
   gRPC-Core: 4028031ed2c5267cca0d846c876d8046b1ecb9b6
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   InputMask: 603cef8ae05f28e903b852c704350c9d73baf47f
+  JTAppleCalendar: 96da4d8388fa6dc82d6a60d41ef36a015e167e2f
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
   MessageKit: 29c1c87e5a396d2ca7a3f712e5171dc9aba42a1e
@@ -207,6 +211,6 @@ SPEC CHECKSUMS:
   SwiftMessages: 8b3cc68dba2f1c91aac1a74c90b10287aac35371
   XLPagerTabStrip: 63166e21c9844fa30f2d95d30f335e73be5caf22
 
-PODFILE CHECKSUM: bef5095d4b8b05aed60cfc25e25f7584aabc80b3
+PODFILE CHECKSUM: c83cc33a8c48fd63b915a31833fff21b1916814e
 
 COCOAPODS: 1.6.1

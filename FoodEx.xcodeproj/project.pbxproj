@@ -64,6 +64,7 @@
 		0AEAD3AB224965AA000F3F81 /* HomeTabsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEAD3AA224965AA000F3F81 /* HomeTabsVC.swift */; };
 		5CB2F9E8B4E2FF4A123D4751 /* Pods_FoodEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB22A149C2C0BB963E649781 /* Pods_FoodEx.framework */; };
 		CE1113A7225897D3007027A6 /* UITableViewCellKor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1113A6225897D3007027A6 /* UITableViewCellKor.swift */; };
+		CE1989EF2261D76200F496B9 /* CalendarDietCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1989EE2261D76200F496B9 /* CalendarDietCell.swift */; };
 		CE1C4C00225FAD6C00F7BF9E /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C4BFF225FAD6C00F7BF9E /* UIButton.swift */; };
 		CE1C4C02225FB0A600F7BF9E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C4C01225FB0A600F7BF9E /* UITextField.swift */; };
 		CE1C4C04225FB5BB00F7BF9E /* UITabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C4C03225FB5BB00F7BF9E /* UITabBarItem.swift */; };
@@ -133,6 +134,7 @@
 		199D5C7C833CEFCEA831283A /* Pods-FoodEx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodEx.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodEx/Pods-FoodEx.release.xcconfig"; sourceTree = "<group>"; };
 		BB22A149C2C0BB963E649781 /* Pods_FoodEx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodEx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1113A6225897D3007027A6 /* UITableViewCellKor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellKor.swift; sourceTree = "<group>"; };
+		CE1989EE2261D76200F496B9 /* CalendarDietCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDietCell.swift; sourceTree = "<group>"; };
 		CE1C4BFB225FA6D500F7BF9E /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CE1C4BFC225FA6D700F7BF9E /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
 		CE1C4BFD225FA6D800F7BF9E /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Signing.strings; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				CE1C4BFF225FAD6C00F7BF9E /* UIButton.swift */,
 				CE1C4C01225FB0A600F7BF9E /* UITextField.swift */,
 				CE1C4C03225FB5BB00F7BF9E /* UITabBarItem.swift */,
+				CE1989EE2261D76200F496B9 /* CalendarDietCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/InputMask/InputMask.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
 				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
@@ -502,6 +506,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InputMask.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
@@ -573,6 +578,7 @@
 				0A2490142250D5E400287773 /* ChatBaseVC.swift in Sources */,
 				0A20EF002242BC5000CCDCDF /* FilesManager.swift in Sources */,
 				0AD251F4224AB849001E83BC /* WeightVC.swift in Sources */,
+				CE1989EF2261D76200F496B9 /* CalendarDietCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
