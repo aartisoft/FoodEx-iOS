@@ -90,8 +90,8 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
     
     func configureMessageInputBar() {
         messageInputBar.delegate = self
-        messageInputBar.inputTextView.tintColor = .primaryColor
-        messageInputBar.sendButton.tintColor = .primaryColor
+        messageInputBar.inputTextView.tintColor = UIColor.primary
+        messageInputBar.sendButton.tintColor = UIColor.primary
     }
     
     // MARK: - Helpers

@@ -69,6 +69,7 @@
 		CE1C4C02225FB0A600F7BF9E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C4C01225FB0A600F7BF9E /* UITextField.swift */; };
 		CE1C4C04225FB5BB00F7BF9E /* UITabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C4C03225FB5BB00F7BF9E /* UITabBarItem.swift */; };
 		CE24D4902257DA14002F423C /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24D48F2257DA14002F423C /* Encodable.swift */; };
+		CE2652FE2263652B00E407D4 /* CalendarDayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2652FD2263652B00E407D4 /* CalendarDayHeader.swift */; };
 		CEBFF32D225E7AC400C2E5DD /* Signing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBFF32B225E7AC300C2E5DD /* Signing.storyboard */; };
 		CEBFF33E225E7CB200C2E5DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEBFF340225E7CB200C2E5DD /* Localizable.strings */; };
 		CEDC69C3225E5AC80034FA63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDC69C1225E5AC80034FA63 /* Main.storyboard */; };
@@ -143,6 +144,7 @@
 		CE1C4C01225FB0A600F7BF9E /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		CE1C4C03225FB5BB00F7BF9E /* UITabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarItem.swift; sourceTree = "<group>"; };
 		CE24D48F2257DA14002F423C /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		CE2652FD2263652B00E407D4 /* CalendarDayHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayHeader.swift; sourceTree = "<group>"; };
 		CEBFF333225E7B4D00C2E5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEBFF334225E7B4E00C2E5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEBFF335225E7B4F00C2E5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Signing.storyboard; sourceTree = "<group>"; };
@@ -245,7 +247,6 @@
 				CE1C4BFF225FAD6C00F7BF9E /* UIButton.swift */,
 				CE1C4C01225FB0A600F7BF9E /* UITextField.swift */,
 				CE1C4C03225FB5BB00F7BF9E /* UITabBarItem.swift */,
-				CE1989EE2261D76200F496B9 /* CalendarDietCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -327,9 +328,9 @@
 		0AEAD3A922496593000F3F81 /* MainVCs */ = {
 			isa = PBXGroup;
 			children = (
+				CE2652FC2263327D00E407D4 /* Weight */,
 				0A248FFF2250CE5700287773 /* Manager */,
 				0A829511224BFD3200A44ECE /* Home */,
-				0AD251F3224AB849001E83BC /* WeightVC.swift */,
 				0AD251F5224AB886001E83BC /* ManagerVC.swift */,
 				0AD251F7224AB8AB001E83BC /* Payment.swift */,
 				0AD251F9224AB8D5001E83BC /* ProfileVC.swift */,
@@ -360,6 +361,16 @@
 				CE1113A6225897D3007027A6 /* UITableViewCellKor.swift */,
 			);
 			path = Overrides;
+			sourceTree = "<group>";
+		};
+		CE2652FC2263327D00E407D4 /* Weight */ = {
+			isa = PBXGroup;
+			children = (
+				CE1989EE2261D76200F496B9 /* CalendarDietCell.swift */,
+				0AD251F3224AB849001E83BC /* WeightVC.swift */,
+				CE2652FD2263652B00E407D4 /* CalendarDayHeader.swift */,
+			);
+			path = Weight;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -567,6 +578,7 @@
 				0A18E31D22435DA500BDE385 /* VerificationView.swift in Sources */,
 				0A829515224BFD6800A44ECE /* HomeVC.swift in Sources */,
 				0A2490012250CE6300287773 /* ChatVC.swift in Sources */,
+				CE2652FE2263652B00E407D4 /* CalendarDayHeader.swift in Sources */,
 				0A64E1D72240CA0B008301AD /* AppDelegate.swift in Sources */,
 				0A2490082250D11700287773 /* SampleData.swift in Sources */,
 				0AD251FA224AB8D5001E83BC /* ProfileVC.swift in Sources */,
