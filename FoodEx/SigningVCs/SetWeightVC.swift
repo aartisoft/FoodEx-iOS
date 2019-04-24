@@ -62,7 +62,7 @@ class SetWeightVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     @IBAction func onContinueClicked(_ sender: Any) {
         UserData.setMyNewWeight(newWeight: Weight(value: currentWeight, type: currentWeightType))
         
-        UI.ShowPage(source: self, page: UI.Page.SetGrowth)
+        UI.showPage(source: self, page: UI.Page.SetGrowth)
     }
     
     

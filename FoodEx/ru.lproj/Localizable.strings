@@ -6,4 +6,40 @@
   Copyright © 2019 KorLab. All rights reserved.
 */
 
-"signing.yourGender" = "Ваш пол";
+"continue" = "Продолжить";
+"home" = "Главная";
+"weight" = "Масса";
+"manager" = "Менеджер";
+"purchases" = "Покупки";
+"profile" = "Профиль";
+"discount" = "Скидки";
+"friends" = "Друзья";
+"feedback" = "Отзыв о приложении";
+"blog" = "Блог";
+"settings" = "Настройки";
+"exit" = "Выход";
+"chat" = "Чат";
+
+"signing.phone.description" = "Зарегистрируйтесь или авторизуйтесь";
+"signing.phone.error.short" = "Номер телефона слишком короткий";
+
+"signing.verification.title" = "Пожалуйста, ожидайте получения СМС";
+"signing.verification.sendingSMS" = "Мы отправили Вам СМС";
+"signing.verification.wrongNumber" = "Неверный номер?";
+"signing.verification.automatically" = "Код может быть получен автоматически";
+
+"signing.name.title" = "Ваш профиль";
+"signing.name.first" = "Имя";
+"signing.name.middle" = "Отчество";
+"signing.name.last" = "Фамилия";
+"signing.name.error.first.short" = "Ваше имя слишком короткое";
+"signing.name.error.middle.short" = "Ваше отчество слишком короткое";
+"signing.name.error.last.short" = "Ваша фамилия слишком короткая";
+
+"signing.gender.title" = "Ваш пол";
+
+"signing.weight.title" = "Ваша масса";
+
+"signing.growth.title" = "Ваш рост";
+
+"signing.birthday.title" = "День рождения";

@@ -16,7 +16,9 @@ target 'FoodEx' do
   pod 'NVActivityIndicatorView'
   pod 'MessageKit'
   pod 'PlatonSDK'
-  pod 'JTAppleCalendar', '~> 7.1'
+  pod 'JTAppleCalendar'
+  pod 'Cosmos', '~> 18.0'
+  pod 'Charts', '~> 3.2.2'
   # Pods for FoodEx
 
 end

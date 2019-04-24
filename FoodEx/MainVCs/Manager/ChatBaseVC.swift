@@ -33,7 +33,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
         configureMessageCollectionView()
         configureMessageInputBar()
         loadFirstMessages()
-        title = "MessageKit"
+        title = "Chat with Manager"
     }
     
     override func viewDidAppear(_ animated: Bool) {

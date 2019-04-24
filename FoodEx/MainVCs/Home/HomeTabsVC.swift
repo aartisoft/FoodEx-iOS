@@ -25,11 +25,6 @@ class HomeTabsVC: SegmentedPagerTabStripViewController {
         super.viewDidLoad()
         settings.style.segmentedControlColor = UIColor.red
         
-        if true {
-            UI.ShowPage(source: self, page: .Login)
-        }
-        
-        
     navigationController?.pushViewController(ChatVC(), animated: true)
     }
     
@@ -37,9 +32,9 @@ class HomeTabsVC: SegmentedPagerTabStripViewController {
         
         let stb = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-   presentedViewControllers.append(stb.instantiateViewController(withIdentifier : "HomeVC"))
- presentedViewControllers.append(stb.instantiateViewController(withIdentifier : "DailyPlanVC"))
-    presentedViewControllers.append(stb.instantiateViewController(withIdentifier : "PausePlanVC"))
+        presentedViewControllers.append(stb.instantiateViewController(withIdentifier : "DashboardVC"))
+        presentedViewControllers.append(stb.instantiateViewController(withIdentifier : "HistoryVC"))
+        presentedViewControllers.append(stb.instantiateViewController(withIdentifier : "CalendarVC"))
         
         return presentedViewControllers
     }

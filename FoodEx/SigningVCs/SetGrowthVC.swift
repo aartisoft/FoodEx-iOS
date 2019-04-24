@@ -152,6 +152,6 @@ class SetGrowthVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     @IBAction func onContinueClicked(_ sender: Any) {
         UserData.setMyNewGrowth(newGrowth: Growth(value: currentGrowth, type: currentGrowthType))
         
-        UI.ShowPage(source: self, page: UI.Page.SetBirthday)
+        UI.showPage(source: self, page: UI.Page.SetBirthday)
     }
 }

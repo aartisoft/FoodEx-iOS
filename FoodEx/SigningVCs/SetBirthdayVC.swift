@@ -22,6 +22,6 @@ class SetBirthdayVC : UIViewController {
         FireFunctions.callFunction(.createNewCustomer, UserData.my.dict)
 
         
-        UI.ShowPage(source: self, page: .Home)
+        UI.showPage(source: self, page: .Dashboard)
     }
 }

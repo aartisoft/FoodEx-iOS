@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import XLPagerTabStrip
 
-class DailyPlanVC: UIViewController, IndicatorInfoProvider {
+class HistoryVC: UIViewController, IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "Daily Plan")
+        return IndicatorInfo(title: "History")
     }
 }

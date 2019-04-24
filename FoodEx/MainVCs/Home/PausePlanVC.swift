@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import XLPagerTabStrip
 
-class PausePlanVC: UIViewController, IndicatorInfoProvider {
+class WeightVC: UIViewController, IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "Pause Plan")
     }

@@ -20,6 +20,16 @@ final class ChatVC: ChatViewController {
         messagesCollectionView.messagesDisplayDelegate = self
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        messageInputBar.resignFirstResponder()
+    }
 }
 
 // MARK: - MessagesDisplayDelegate

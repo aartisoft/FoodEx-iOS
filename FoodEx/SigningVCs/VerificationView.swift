@@ -76,6 +76,6 @@ class VerificationVC: UIViewController {
     }
     
     func onCodeVerified() {
-        UI.ShowPage(source: self, page: UI.Page.SetName)
+        UI.showPage(source: self, page: UI.Page.SetName)
     }
 }

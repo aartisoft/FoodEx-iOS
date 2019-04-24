@@ -18,179 +18,250 @@
         <!--Ib Calendar Data Source-->
         <scene sceneID="Pu5-gJ-Ndi">
             <objects>
-                <viewController storyboardIdentifier="WeightVC" id="RKO-kr-1nK" customClass="WeightVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarVC" title="CalendarVC" id="RKO-kr-1nK" customClass="CalendarVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="COI-82-MTj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="8FM-Ji-tpE">
-                                <rect key="frame" x="0.0" y="20" width="375" height="352.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJF-Os-bUl">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wyI-rz-ZOy">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="61.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="8FM-Ji-tpE">
+                                        <rect key="frame" x="10" y="0.0" width="355" height="340"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WC-6z-TX2">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="22"/>
-                                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
-                                                <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9V-Yc-HFL">
-                                                <rect key="frame" x="0.0" y="30" width="375" height="31.5"/>
-                                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="26"/>
-                                                <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="260" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kqI-mO-Ceq" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
-                                        <rect key="frame" x="0.0" y="72.5" width="375" height="280"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="280" id="RR0-Bj-tdR"/>
-                                        </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="10" id="Qqz-Oa-ueG">
-                                            <size key="itemSize" width="50" height="50"/>
-                                            <size key="headerReferenceSize" width="377" height="10"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CalendarDietCell" id="JjP-YY-prp" customClass="CalendarDietCell" customModule="FoodEx" customModuleProvider="target">
-                                                <rect key="frame" x="377" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="vC4-Xl-1hg">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="60"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wyI-rz-ZOy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="130" height="60"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WC-6z-TX2">
+                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="22"/>
+                                                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                                                <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9V-Yc-HFL">
+                                                                <rect key="frame" x="0.0" y="30" width="130" height="30"/>
+                                                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="26"/>
+                                                                <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="130" id="xbj-XJ-OUl"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nH9-8v-2VH">
+                                                        <rect key="frame" x="141" y="0.0" width="214" height="60"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Delivering:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lg-QF-BV2">
+                                                                <rect key="frame" x="0.0" y="0.0" width="79" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7:00-8:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdA-AD-9GP">
+                                                                <rect key="frame" x="87" y="0.0" width="80" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OU3-Ux-w00">
+                                                                <rect key="frame" x="0.0" y="30" width="79" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="st. Stroiteley, 37, flat 8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGJ-at-pjR">
+                                                                <rect key="frame" x="87" y="30" width="139" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="14"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="wyI-rz-ZOy" firstAttribute="leading" secondItem="vC4-Xl-1hg" secondAttribute="leading" constant="10" id="Rwl-q4-Dok"/>
+                                                    <constraint firstAttribute="height" constant="60" id="sQt-1d-qdb"/>
+                                                </constraints>
+                                            </stackView>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="260" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kqI-mO-Ceq" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
+                                                <rect key="frame" x="0.0" y="66" width="355" height="218"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="270" id="RR0-Bj-tdR"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="10" id="Qqz-Oa-ueG">
+                                                    <size key="itemSize" width="50" height="50"/>
+                                                    <size key="headerReferenceSize" width="50" height="90"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="CalendarDietCell" id="JjP-YY-prp" customClass="CalendarDietCell" customModule="FoodEx" customModuleProvider="target">
+                                                        <rect key="frame" x="50" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONJ-Ri-TWv">
+                                                                    <rect key="frame" x="5" y="29.5" width="40" height="40"/>
+                                                                    <color key="backgroundColor" red="0.24313725489999999" green="0.80392156859999997" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="40" id="bJB-5A-sSb"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="oe4-CA-spO"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="20"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cya-Cl-xsD">
+                                                                    <rect key="frame" x="4" y="39" width="42" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstItem="Cya-Cl-xsD" firstAttribute="centerX" secondItem="JjP-YY-prp" secondAttribute="centerX" id="0IW-lf-nfO"/>
+                                                            <constraint firstItem="Cya-Cl-xsD" firstAttribute="centerY" secondItem="JjP-YY-prp" secondAttribute="centerY" id="6Aa-c6-CTn"/>
+                                                            <constraint firstItem="ONJ-Ri-TWv" firstAttribute="centerX" secondItem="JjP-YY-prp" secondAttribute="centerX" id="Fbt-0Y-6lY"/>
+                                                            <constraint firstItem="ONJ-Ri-TWv" firstAttribute="centerY" secondItem="JjP-YY-prp" secondAttribute="centerY" id="RDJ-Mh-cFN"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="dateLabel" destination="Cya-Cl-xsD" id="VhD-XG-eZL"/>
+                                                            <outlet property="selectedCircle" destination="ONJ-Ri-TWv" id="Acq-Oc-94p"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="oQD-iV-cMQ" customClass="CalendarDayHeader" customModule="FoodEx" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="218"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONJ-Ri-TWv">
-                                                            <rect key="frame" x="5" y="5" width="40" height="40"/>
-                                                            <color key="backgroundColor" red="0.24313725489999999" green="0.80392156859999997" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="40" id="bJB-5A-sSb"/>
-                                                                <constraint firstAttribute="height" constant="40" id="oe4-CA-spO"/>
-                                                            </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="20"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cya-Cl-xsD">
-                                                            <rect key="frame" x="4" y="15" width="42" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Esk-ub-gu6">
+                                                            <rect key="frame" x="0.0" y="20" width="50" height="20.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txG-W4-My9">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="7" height="20.5"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agl-pI-zNs">
+                                                                    <rect key="frame" x="7" y="0.0" width="7.5" height="20.5"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNV-9I-aMl">
+                                                                    <rect key="frame" x="14.5" y="0.0" width="7" height="20.5"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMl-ie-COG">
+                                                                    <rect key="frame" x="21.5" y="0.0" width="7" height="20.5"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fri" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pK-1m-SOW">
+                                                                    <rect key="frame" x="28.5" y="0.0" width="7" height="20.5"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjn-gw-zaC">
+                                                                    <rect key="frame" x="35.5" y="0.0" width="7.5" height="20.5"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="36" translatesAutoresizingMaskIntoConstraints="NO" id="i8u-AY-qZD">
+                                                                    <rect key="frame" x="43" y="0.0" width="7" height="20.5"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
-                                                </view>
-                                                <constraints>
-                                                    <constraint firstItem="Cya-Cl-xsD" firstAttribute="centerX" secondItem="JjP-YY-prp" secondAttribute="centerX" id="0IW-lf-nfO"/>
-                                                    <constraint firstItem="Cya-Cl-xsD" firstAttribute="centerY" secondItem="JjP-YY-prp" secondAttribute="centerY" id="6Aa-c6-CTn"/>
-                                                    <constraint firstItem="ONJ-Ri-TWv" firstAttribute="centerX" secondItem="JjP-YY-prp" secondAttribute="centerX" id="Fbt-0Y-6lY"/>
-                                                    <constraint firstItem="ONJ-Ri-TWv" firstAttribute="centerY" secondItem="JjP-YY-prp" secondAttribute="centerY" id="RDJ-Mh-cFN"/>
-                                                </constraints>
+                                                    <constraints>
+                                                        <constraint firstItem="Esk-ub-gu6" firstAttribute="leading" secondItem="oQD-iV-cMQ" secondAttribute="leading" id="h3N-cD-Wvm"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Esk-ub-gu6" secondAttribute="trailing" id="ynh-3b-ZEY"/>
+                                                    </constraints>
+                                                </collectionReusableView>
                                                 <connections>
-                                                    <outlet property="dateLabel" destination="Cya-Cl-xsD" id="VhD-XG-eZL"/>
-                                                    <outlet property="selectedCircle" destination="ONJ-Ri-TWv" id="Acq-Oc-94p"/>
+                                                    <outlet property="ibCalendarDataSource" destination="RKO-kr-1nK" id="xPe-Nk-kRb"/>
+                                                    <outlet property="ibCalendarDelegate" destination="RKO-kr-1nK" id="PHg-kV-piG"/>
                                                 </connections>
-                                            </collectionViewCell>
-                                        </cells>
-                                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="oQD-iV-cMQ" customClass="CalendarDayHeader" customModule="FoodEx" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="377" height="280"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Esk-ub-gu6">
-                                                    <rect key="frame" x="8" y="8" width="361" height="20.5"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txG-W4-My9">
-                                                            <rect key="frame" x="0.0" y="0.0" width="51.5" height="20.5"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agl-pI-zNs">
-                                                            <rect key="frame" x="51.5" y="0.0" width="51.5" height="20.5"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNV-9I-aMl">
-                                                            <rect key="frame" x="103" y="0.0" width="51.5" height="20.5"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMl-ie-COG">
-                                                            <rect key="frame" x="154.5" y="0.0" width="52" height="20.5"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fri" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pK-1m-SOW">
-                                                            <rect key="frame" x="206.5" y="0.0" width="51.5" height="20.5"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjn-gw-zaC">
-                                                            <rect key="frame" x="258" y="0.0" width="51.5" height="20.5"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="36" translatesAutoresizingMaskIntoConstraints="NO" id="i8u-AY-qZD">
-                                                            <rect key="frame" x="309.5" y="0.0" width="51.5" height="20.5"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Esk-ub-gu6" secondAttribute="trailing" id="QP2-R6-ZT7"/>
-                                                <constraint firstItem="Esk-ub-gu6" firstAttribute="leading" secondItem="oQD-iV-cMQ" secondAttribute="leadingMargin" id="eFy-wX-a1W"/>
-                                            </constraints>
-                                        </collectionReusableView>
-                                        <connections>
-                                            <outlet property="ibCalendarDataSource" destination="RKO-kr-1nK" id="xPe-Nk-kRb"/>
-                                            <outlet property="ibCalendarDelegate" destination="RKO-kr-1nK" id="PHg-kV-piG"/>
-                                        </connections>
-                                    </collectionView>
+                                            </collectionView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="NWU-As-z1D" userLabel="MealsCardsParent">
+                                                <rect key="frame" x="0.0" y="290" width="355" height="50"/>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="NWU-As-z1D" secondAttribute="trailing" constant="5" id="Ol7-YW-Pwp"/>
+                                            <constraint firstItem="NWU-As-z1D" firstAttribute="leading" secondItem="8FM-Ji-tpE" secondAttribute="leading" constant="5" id="YLF-2l-GNl"/>
+                                            <constraint firstAttribute="bottom" secondItem="NWU-As-z1D" secondAttribute="bottom" id="aSp-XA-eBD"/>
+                                            <constraint firstAttribute="height" constant="340" id="asK-Qo-q9R"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="6Ml-ya-dgi">
-                                <rect key="frame" x="298" y="30" width="49" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <constraints>
+                                    <constraint firstItem="8FM-Ji-tpE" firstAttribute="centerX" secondItem="CJF-Os-bUl" secondAttribute="centerX" id="HTq-S3-zhC"/>
+                                    <constraint firstAttribute="bottom" secondItem="8FM-Ji-tpE" secondAttribute="bottom" id="Kph-PZ-haJ"/>
+                                    <constraint firstItem="8FM-Ji-tpE" firstAttribute="leading" secondItem="CJF-Os-bUl" secondAttribute="leading" constant="10" id="sxJ-ZX-MOs"/>
+                                    <constraint firstAttribute="trailing" secondItem="8FM-Ji-tpE" secondAttribute="trailing" constant="10" id="xzN-Oe-c1l"/>
+                                    <constraint firstItem="8FM-Ji-tpE" firstAttribute="top" secondItem="CJF-Os-bUl" secondAttribute="top" id="yov-AS-yHh"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="CJF-Os-bUl" secondAttribute="trailing" id="A4y-s2-xqN"/>
+                            <constraint firstItem="CJF-Os-bUl" firstAttribute="leading" secondItem="COI-82-MTj" secondAttribute="leading" id="EfF-mk-foY"/>
+                            <constraint firstAttribute="bottom" secondItem="CJF-Os-bUl" secondAttribute="bottom" id="RIm-tv-LNL"/>
+                            <constraint firstItem="CJF-Os-bUl" firstAttribute="top" secondItem="b2S-8n-w41" secondAttribute="top" id="chm-Db-85K"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="b2S-8n-w41"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Weight" image="menu_weight" id="xtA-Pa-F3t">
+                    <tabBarItem key="tabBarItem" title="Weight" image="menu_weight" id="QPr-OE-8gK">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="stringId" value="weight"/>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <nil key="simulatedTopBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendarView" destination="kqI-mO-Ceq" id="QDo-FI-S3H"/>
+                        <outlet property="mealsCardsParent" destination="NWU-As-z1D" id="Mqt-Xi-yBR"/>
                         <outlet property="monthLabel" destination="E9V-Yc-HFL" id="1lY-9s-SyO"/>
+                        <outlet property="stackHeightConstraint" destination="asK-Qo-q9R" id="nRf-Ae-o0z"/>
                         <outlet property="yearLabel" destination="9WC-6z-TX2" id="8bt-sa-GfK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSp-Si-uZ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-786.39999999999998" y="-1710.4947526236883"/>
+            <point key="canvasLocation" x="-1458.4000000000001" y="343.17841079460271"/>
         </scene>
         <!--ChatVC-->
         <scene sceneID="tzc-Vk-6QT">
@@ -201,10 +272,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W5e-sj-9BH">
-                                <rect key="frame" x="-16" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="DPN-Gd-Xr1"/>
+                                    <navigationItem title="Chat" id="DPN-Gd-Xr1"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -214,30 +285,113 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1N-hd-vui" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-135" y="-1026"/>
+            <point key="canvasLocation" x="-135" y="-348"/>
         </scene>
-        <!--Home-->
+        <!--RatingVC-->
+        <scene sceneID="yS3-b8-ATG">
+            <objects>
+                <viewController storyboardIdentifier="RatingVC" id="ZX6-bn-dkZ" customClass="RatingVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FGW-Dv-30y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JCJ-ca-fcW">
+                                <rect key="frame" x="67" y="234" width="240" height="232"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Gf-KG-Myn" customClass="CosmosView" customModule="Cosmos">
+                                        <rect key="frame" x="60" y="172" width="120" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What do you think about this manager's work?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLR-Io-5zC">
+                                        <rect key="frame" x="14" y="8" width="213" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3C8-cP-87O">
+                                        <rect key="frame" x="37" y="202" width="39" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Close"/>
+                                        <connections>
+                                            <action selector="cancelRating:" destination="ZX6-bn-dkZ" eventType="touchUpInside" id="3P3-4s-aww"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dek-Jv-Cla">
+                                        <rect key="frame" x="162" y="202" width="49" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Submit"/>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3p2-kN-qWf">
+                                        <rect key="frame" x="14" y="70" width="213" height="93"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="P9E-OF-6KF"/>
+                    </view>
+                    <connections>
+                        <outlet property="feedbackText" destination="3p2-kN-qWf" id="Jxr-WB-MWV"/>
+                        <outlet property="popUpView" destination="JCJ-ca-fcW" id="8GV-7h-ZW3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FZL-ib-d6L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135.19999999999999" y="337.78110944527737"/>
+        </scene>
+        <!--HomeTabsVC-->
         <scene sceneID="POd-tb-q4N">
             <objects>
-                <viewController title="Home" id="HoZ-JX-Ic8" customClass="HomeTabsVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeTabsVC" title="HomeTabsVC" id="HoZ-JX-Ic8" customClass="HomeTabsVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IWI-GH-Mfu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JRB-a0-PX7">
-                                <rect key="frame" x="0.0" y="55" width="375" height="563"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </scrollView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rnl-3V-SVu">
-                                <rect key="frame" x="71" y="20" width="232" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rnl-3V-SVu">
+                                <rect key="frame" x="70" y="20" width="235" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="775-Xf-IiB"/>
+                                </constraints>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
                             </segmentedControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRB-a0-PX7">
+                                <rect key="frame" x="0.0" y="58" width="375" height="560"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LY9-3E-als" firstAttribute="trailing" secondItem="Rnl-3V-SVu" secondAttribute="trailing" constant="70" id="8Og-rJ-6fM"/>
+                            <constraint firstItem="JRB-a0-PX7" firstAttribute="trailing" secondItem="LY9-3E-als" secondAttribute="trailing" id="D6S-nx-F55"/>
+                            <constraint firstItem="JRB-a0-PX7" firstAttribute="bottom" secondItem="LY9-3E-als" secondAttribute="bottom" id="D6t-gn-d86"/>
+                            <constraint firstItem="JRB-a0-PX7" firstAttribute="top" secondItem="Rnl-3V-SVu" secondAttribute="bottom" constant="10" id="Vpq-DA-d59"/>
+                            <constraint firstItem="Rnl-3V-SVu" firstAttribute="top" secondItem="LY9-3E-als" secondAttribute="top" id="X8L-KF-8eA"/>
+                            <constraint firstItem="JRB-a0-PX7" firstAttribute="leading" secondItem="LY9-3E-als" secondAttribute="leading" id="eS2-rN-2jP"/>
+                            <constraint firstItem="Rnl-3V-SVu" firstAttribute="leading" secondItem="LY9-3E-als" secondAttribute="leading" constant="70" id="h0u-zj-L4t"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="LY9-3E-als"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="menu_home" id="D1F-Bd-wNz">
@@ -255,10 +409,10 @@
             </objects>
             <point key="canvasLocation" x="-1458.4000000000001" y="-1710.4947526236883"/>
         </scene>
-        <!--MainMenu-->
+        <!--RootMainVC-->
         <scene sceneID="Bnj-ZI-w59">
             <objects>
-                <tabBarController storyboardIdentifier="MainMenu" title="MainMenu" id="5aT-RQ-zIM" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="RootMainVC" title="RootMainVC" id="5aT-RQ-zIM" customClass="RootMainVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VVE-Xk-Mkd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -267,30 +421,98 @@
                     </tabBar>
                     <connections>
                         <segue destination="HoZ-JX-Ic8" kind="relationship" relationship="viewControllers" id="7Gy-9Y-RbR"/>
-                        <segue destination="RKO-kr-1nK" kind="relationship" relationship="viewControllers" id="AZg-Ie-oD6"/>
-                        <segue destination="A9B-Tf-fnN" kind="relationship" relationship="viewControllers" id="mFg-kj-B9D"/>
-                        <segue destination="ljS-PP-DEs" kind="relationship" relationship="viewControllers" id="yyX-jz-JmI"/>
-                        <segue destination="lAM-dS-M0z" kind="relationship" relationship="viewControllers" id="e7f-hb-6xd"/>
+                        <segue destination="2E6-6O-2dN" kind="relationship" relationship="viewControllers" id="Z3D-tm-7jg"/>
+                        <segue destination="o8g-cG-SzF" kind="relationship" relationship="viewControllers" id="W9a-eA-di4"/>
+                        <segue destination="ljS-PP-DEs" kind="relationship" relationship="viewControllers" id="gTP-rx-Q4X"/>
+                        <segue destination="lAM-dS-M0z" kind="relationship" relationship="viewControllers" id="oSh-l4-kTk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uiu-Df-yYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1458" y="-2479"/>
         </scene>
-        <!--Settings-->
+        <!--Manager-->
         <scene sceneID="2z6-49-HfK">
             <objects>
-                <viewController storyboardIdentifier="ManagerVC" title="Settings" id="A9B-Tf-fnN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ManagerVC" title="Manager" id="A9B-Tf-fnN" customClass="ManagerVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d5b-2C-Ibj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPp-MI-CN7">
-                                <rect key="frame" x="140" y="416" width="46" height="30"/>
+                                <rect key="frame" x="154" y="115" width="104" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                                <state key="normal" title="Chat"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="stringId" value="chat"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="FjQ-au-Pyv" kind="show" id="4WQ-ag-j8I"/>
+                                    <segue destination="FjQ-au-Pyv" kind="show" id="JUJ-Ix-9It"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="vOC-OT-3WD">
+                                <rect key="frame" x="46" y="46" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdl-3b-PFV">
+                                <rect key="frame" x="154" y="46" width="104" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kate Stevenson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJZ-OL-GCM">
+                                <rect key="frame" x="154" y="75" width="149" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Actions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qF0-ne-dJc">
+                                <rect key="frame" x="16" y="347" width="72" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H16-Ef-5my">
+                                <rect key="frame" x="16" y="424" width="104" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                                <state key="normal" title="Rate Manager"/>
+                                <connections>
+                                    <action selector="showRatingWindow:" destination="A9B-Tf-fnN" eventType="touchUpInside" id="oEJ-Of-1fb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2c2-QR-ycA">
+                                <rect key="frame" x="16" y="384" width="104" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                                <state key="normal" title="Ask to recall"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="telephone" translatesAutoresizingMaskIntoConstraints="NO" id="3rL-EW-lB5">
+                                <rect key="frame" x="88" y="196" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock-circular-outline" translatesAutoresizingMaskIntoConstraints="NO" id="FVL-g5-xUw">
+                                <rect key="frame" x="88" y="226" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mon. - Sun. 8:30-18:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdB-Oa-Owv">
+                                <rect key="frame" x="118" y="226" width="169" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIJ-ZL-U07">
+                                <rect key="frame" x="124" y="189" width="162" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                <state key="normal" title="+38 (067) 123-45-67"/>
+                                <connections>
+                                    <action selector="callManagerPhone:" destination="A9B-Tf-fnN" eventType="touchUpInside" id="agC-Xx-xbe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -303,11 +525,32 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="stringId" value="manager"/>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" id="zX1-bu-EyE"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="phoneLabel" destination="iIJ-ZL-U07" id="AcW-YY-8ae"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6i-F4-1rD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-135.19999999999999" y="-1710.4947526236883"/>
+            <point key="canvasLocation" x="-135.19999999999999" y="-1048.4257871064469"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="kyv-yG-eAV">
+            <objects>
+                <navigationController id="o8g-cG-SzF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="W7j-do-Kwv"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="slg-6d-NyV">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="A9B-Tf-fnN" kind="relationship" relationship="rootViewController" id="7Wm-b8-blJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AzU-Zq-rp0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135" y="-1710"/>
         </scene>
         <!--Payment-->
         <scene sceneID="jjn-FK-dqb">
@@ -323,7 +566,11 @@
                             <outletCollection property="gestureRecognizers" destination="mM0-xA-qcM" appends="YES" id="RaQ-GR-P19"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Purchases" image="menu_purchases" id="DSf-Mk-VYP"/>
+                    <tabBarItem key="tabBarItem" title="Purchases" image="menu_purchases" id="DSf-Mk-VYP">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="stringId" value="purchases"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8k-BM-cOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -340,22 +587,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GreenGradient" translatesAutoresizingMaskIntoConstraints="NO" id="dTU-92-bnx">
-                                <rect key="frame" x="0.0" y="20" width="375" height="126"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Y0N-za-WHz">
-                                <rect key="frame" x="137" y="96" width="100" height="100"/>
+                                <rect key="frame" x="137" y="80" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xii-Eh-ugZ">
-                                <rect key="frame" x="0.0" y="268" width="375" height="350"/>
+                                <rect key="frame" x="0.0" y="256" width="375" height="363"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="pUo-x0-dun" kind="embed" id="sHV-9l-9zX"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOa-pe-lak">
-                                <rect key="frame" x="48" y="204" width="294" height="43.5"/>
+                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" text="Victoria Stevenson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOa-pe-lak">
+                                <rect key="frame" x="48" y="188" width="294" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -372,6 +619,9 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="menu_profile" id="BhO-jA-gvQ">
                         <inset key="landscapeImageInsets" minX="1" minY="1" maxX="1" maxY="1"/>
                         <inset key="largeContentSizeImageInsets" minX="1" minY="1" maxX="1" maxY="1"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="stringId" value="profile"/>
+                        </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <nil key="simulatedTopBarMetrics"/>
                 </viewController>
@@ -385,7 +635,7 @@
             <objects>
                 <tableViewController id="pUo-x0-dun" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FmJ-e6-Zvp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="363"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Asz-uq-7KZ">
@@ -409,6 +659,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="stringId" value="discount"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profile_discount" id="CqI-h2-Jey">
                                                     <rect key="frame" x="16" y="0.0" width="44" height="43.5"/>
@@ -430,6 +683,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="stringId" value="friends"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profile_friends" id="0jq-fo-VxD">
                                                     <rect key="frame" x="16" y="0.0" width="44" height="43.5"/>
@@ -451,6 +707,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="stringId" value="feedback"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profile_feedback" id="TyF-yc-P4g">
                                                     <rect key="frame" x="16" y="0.0" width="44" height="43.5"/>
@@ -472,6 +731,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="stringId" value="blog"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profile_blog" id="AXu-3r-Ule">
                                                     <rect key="frame" x="16" y="0.0" width="44" height="43.5"/>
@@ -493,6 +755,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="stringId" value="settings"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profile_icon" id="JSg-yC-kAO">
                                                     <rect key="frame" x="16" y="0.0" width="44" height="43.5"/>
@@ -514,6 +779,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="stringId" value="exit"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profile_exit" id="3Pz-gR-qhW">
                                                     <rect key="frame" x="16" y="0.0" width="44" height="43.5"/>
@@ -535,16 +803,16 @@
             </objects>
             <point key="canvasLocation" x="1799" y="-1613"/>
         </scene>
-        <!--DailyPlanVC-->
+        <!--HistoryVC-->
         <scene sceneID="0YY-f9-kiX">
             <objects>
-                <viewController storyboardIdentifier="DailyPlanVC" title="DailyPlanVC" id="irx-qp-Cxo" customClass="DailyPlanVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoryVC" title="HistoryVC" id="irx-qp-Cxo" customClass="HistoryVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UES-AM-aC6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daily" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRF-pa-v6j">
-                                <rect key="frame" x="140" y="280" width="38" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRF-pa-v6j">
+                                <rect key="frame" x="140" y="280" width="55" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -561,48 +829,44 @@
             </objects>
             <point key="canvasLocation" x="-1458" y="-378"/>
         </scene>
-        <!--PausePlanVC-->
+        <!--WeightVC-->
         <scene sceneID="dmc-Xm-vzQ">
             <objects>
-                <viewController storyboardIdentifier="PausePlanVC" title="PausePlanVC" id="2E6-6O-2dN" customClass="PausePlanVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PausePlanVC" title="WeightVC" id="2E6-6O-2dN" customClass="WeightVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2PM-Ie-fut">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Puse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJX-Yy-BkV">
-                                <rect key="frame" x="168" y="162" width="38" height="21"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EnH-Yu-dxr" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="56" width="375" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3AB-fr-DmC"/>
                     </view>
-                    <tabBarItem key="tabBarItem" selectedImage="HomeIcon" systemItem="search" id="ADz-FR-szN"/>
+                    <tabBarItem key="tabBarItem" title="Weight" image="menu_weight" id="ADz-FR-szN">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="stringId" value="weight"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="chart" destination="EnH-Yu-dxr" id="PNp-Mu-07F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ap-Pc-IUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1458" y="287"/>
+            <point key="canvasLocation" x="-791.20000000000005" y="-1710.4947526236883"/>
         </scene>
-        <!--HomeVC-->
+        <!--Dashboard-->
         <scene sceneID="8Xj-7q-geT">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" title="HomeVC" id="WOp-dU-FWe" customClass="HomeVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardVC" title="Dashboard" id="WOp-dU-FWe" customClass="DashboardVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uLF-9a-gRM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfV-qV-Xmk">
-                                <rect key="frame" x="194" y="283" width="120" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bgp-zV-Nhk"/>
                     </view>
@@ -618,6 +882,7 @@
         <image name="Avatar" width="800" height="800"/>
         <image name="GreenGradient" width="192" height="186"/>
         <image name="HomeIcon" width="16" height="16"/>
+        <image name="clock-circular-outline" width="256" height="256"/>
         <image name="menu_home" width="19" height="18.5"/>
         <image name="menu_manager" width="19" height="15.5"/>
         <image name="menu_profile" width="14.5" height="19"/>
@@ -629,5 +894,6 @@
         <image name="profile_feedback" width="384" height="384"/>
         <image name="profile_friends" width="384" height="384"/>
         <image name="profile_icon" width="49" height="49"/>
+        <image name="telephone" width="256" height="256"/>
     </resources>
 </document>

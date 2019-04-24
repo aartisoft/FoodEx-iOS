@@ -14,29 +14,37 @@ extension String {
         return self.index(startIndex, offsetBy: from)
     }
     
+    
     func substring(from: Int) -> String {
         let fromIndex = index(from: from)
         return substring(from: fromIndex)
     }
+    
     
     func substring(to: Int) -> String {
         let toIndex = index(from: to)
         return substring(to: toIndex)
     }
     
+    
     func substring(with r: Range<Int>) -> String {
         let startIndex = index(from: r.lowerBound)
         let endIndex = index(from: r.upperBound)
         return substring(with: startIndex..<endIndex)
     }
-}
-
-extension String {
+    
     
     var localized: String {
         //let a = Bundle.localizedBundle.localizedString(forKey: self, value: nil, table: nil)
         let a = NSLocalizedString(self, tableName: nil, bundle: Bundle.main, comment: "")
         return a
+    }
+    
+    
+    var firstCapitalized: String {
+        var string = self
+        string.replaceSubrange(string.startIndex...string.startIndex, with: String(string[string.startIndex]).capitalized)
+        return string
     }
 }
 

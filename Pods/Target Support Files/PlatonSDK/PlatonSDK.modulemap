@@ -1,0 +1,6 @@
+framework module PlatonSDK {
+  umbrella header "PlatonSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

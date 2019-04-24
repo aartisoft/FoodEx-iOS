@@ -12,6 +12,13 @@
 "manager" = "Manager";
 "purchases" = "Purchases";
 "profile" = "Profile";
+"discount" = "Скидки";
+"friends" = "Friends";
+"feedback" = "Feedback";
+"blog" = "Blog";
+"settings" = "Settings";
+"exit" = "Exit";
+"chat" = "Chat";
 
 "signing.phone.description" = "Please, Sign In or Sign Up";
 "signing.phone.error.short" = "Phone number is too short";

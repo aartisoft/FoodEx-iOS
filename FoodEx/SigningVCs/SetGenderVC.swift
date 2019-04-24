@@ -51,6 +51,6 @@ class SetGenderVC : UIViewController {
     @IBAction func onContinueClicked(_ sender: Any) {
         UserData.setMyNewGender(newGender: currentGender)
         
-        UI.ShowPage(source: self, page: UI.Page.SetWeight)
+        UI.showPage(source: self, page: UI.Page.SetWeight)
     }
 }

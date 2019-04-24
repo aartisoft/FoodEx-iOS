@@ -1,150 +1,58 @@
 //
-//  Weight.swift
+//  PausePlanVC.swift
 //  FoodEx
 //
-//  Created by Ivan Taranov on 3/26/19.
+//  Created by Ivan Taranov on 3/27/19.
 //  Copyright © 2019 KorLab. All rights reserved.
 //
 
 import Foundation
 import UIKit
-import JTAppleCalendar
+import XLPagerTabStrip
+import Charts
 
-class WeightVC : UIViewController {
-    let formatter = DateFormatter()
-    @IBOutlet weak var calendarView: JTAppleCalendarView!
-    @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var monthLabel: UILabel!
+class WeightVC: UIViewController {
+
+    @IBOutlet weak var chart: LineChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        calendarView.scrollToDate(Date(), animateScroll: false)
-        calendarView.selectDates([ Date() ])
-        
-        setupCalendarView()
-    }
-    
-    func setupCalendarView() {
-        // setup calendar spacing
-        calendarView.minimumLineSpacing = 0
-        calendarView.minimumInteritemSpacing = 0
-        
-        //Setup labels
-        calendarView.visibleDates { (visibleDate) in
-            self.setuoViewsOfCalendar(from: visibleDate)
-        }
-    }
-    
-    func handleCellTextColor(cellView: JTAppleCell?, cellState: CellState) {
-        guard let validCell = cellView as? CalendarDietCell else {return}
-        
-        let todaysDate = Date()
-        formatter.dateFormat = "yyyy MM dd"
-        let todaysDateString = formatter.string(from: todaysDate)
-        let monthDateString = formatter.string(from: cellState.date)
-        
-        if cellState.isSelected {
-            validCell.dateLabel.textColor = UIColor.white
-        } else {
-            if cellState.dateBelongsTo == .thisMonth {
-                if todaysDateString == monthDateString {
-                    validCell.dateLabel.textColor = UIColor.primaryDark
-                } else {
-                    validCell.dateLabel.textColor = UIColor.darkGrayKor
-                }
-            } else {
-                validCell.dateLabel.textColor = UIColor.lightGrayKor
-            }
-        }
-        
+        updateChartWithData()
+        setupChart()
         
     }
     
-    func handleCellSelected(cellView: JTAppleCell?, cellState: CellState) {
-        guard let validCell = cellView as? CalendarDietCell else { return }
-        
-        if cellState.isSelected {
-            validCell.selectedCircle.isHidden = false
-        } else {
-            validCell.selectedCircle.isHidden = true
-        }
-    }
-    
-    func setuoViewsOfCalendar(from visibleDates: DateSegmentInfo) {
-        let date = visibleDates.monthDates.first!.date
-        
-        self.formatter.dateFormat = "yyyy"
-        self.yearLabel.text = self.formatter.string(from: date)
-        
-        self.formatter.dateFormat = "MMMM"
-        self.monthLabel.text = self.formatter.string(from: date)
-    }
-}
+    func setupChart() {
+        chart.pinchZoomEnabled = false
+        chart.doubleTapToZoomEnabled = false
+        chart.dragEnabled = true
+        chart.setScaleEnabled(false)
+        chart.setVisibleXRangeMaximum(7)
+        chart.setVisibleXRangeMinimum(7)
 
-extension WeightVC: JTAppleCalendarViewDataSource {
-    func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
-        let a = 3
+        chart.xAxis.drawGridLinesEnabled = false
+        chart.xAxis.labelPosition = .bottom
+        chart.leftAxis.drawLabelsEnabled = false
+        chart.legend.enabled = false
+        chart.highlightPerTapEnabled = false
     }
     
-    func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
-        formatter.dateFormat = "yyyy MM dd"
-        formatter.timeZone = Calendar.current.timeZone
-        formatter.locale = Calendar.current.locale
+    func updateChartWithData() {
+        var lineChartEntry = [ChartDataEntry]()
         
-        let startDate = formatter.date(from: "2019 01 01")!
-        let endDate = formatter.date(from: "2019 12 31")!
+        for i in 0 ..< 30 {
+            let value = ChartDataEntry(x: Double(i), y: 70 + Double(i))
+            lineChartEntry.append(value)
+        }
         
-        let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate, firstDayOfWeek: .monday)
-        
-        return parameters
-    }
-}
-
-extension WeightVC: JTAppleCalendarViewDelegate {
-    // Display the cell
-    func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
-        let cell = calendar.dequeueReusableCell(withReuseIdentifier: "CalendarDietCell", for: indexPath) as! CalendarDietCell
-        
-        cell.dateLabel.text = cellState.text
-        
-        handleCellSelected(cellView: cell, cellState: cellState)
-        handleCellTextColor(cellView: cell, cellState: cellState)
-        
-        return cell
-    }
-    
-    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        guard let validCell = cell as? CalendarDietCell else { return }
-        
-        handleCellSelected(cellView: cell, cellState: cellState)
-        handleCellTextColor(cellView: cell, cellState: cellState)
-    }
-    
-    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        guard let validCell = cell as? CalendarDietCell else { return }
-        
-        handleCellSelected(cellView: cell, cellState: cellState)
-        handleCellTextColor(cellView: cell, cellState: cellState)
-    }
-    
-    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
-        let date = visibleDates.monthDates.first!.date
-        
-        formatter.dateFormat = "yyyy"
-        yearLabel.text = formatter.string(from: date)
-        
-        formatter.dateFormat = "MMMM"
-        monthLabel.text = formatter.string(from: date)
-    }
-    
-    func calendar(_ calendar: JTAppleCalendarView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTAppleCollectionReusableView {
-        let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: "header", for: indexPath) as! CalendarDayHeader
-        
-        return header
-    }
-    
-    func calendarSizeForMonths(_ calendar: JTAppleCalendarView?) -> MonthSize? {
-        return MonthSize(defaultSize: 27)
+        let line1 = LineChartDataSet(values: lineChartEntry, label: "Number")
+        line1.colors = [UIColor.primary]
+        line1.circleColors = [UIColor.primaryDark]
+        line1.circleRadius = 2.5
+        line1.circleHoleRadius = 0
+        let data = LineChartData()
+        data.addDataSet(line1)
+        chart.data = data
     }
 }

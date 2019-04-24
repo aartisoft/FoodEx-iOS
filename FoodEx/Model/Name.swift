@@ -13,6 +13,12 @@ struct Name : Encodable {
     var middle: String
     var last: String
     
+    init() {
+        self.first = ""
+        self.middle = ""
+        self.last = ""
+    }
+    
     init(first: String, middle: String, last: String) {
         self.first = first
         self.middle = middle

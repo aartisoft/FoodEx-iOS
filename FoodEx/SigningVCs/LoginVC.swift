@@ -11,7 +11,7 @@ import UIKit
 import Firebase
 import InputMask
 
-class LoginVC: UIViewControllerKeyboard {
+class LoginVC: KeyboardVC {
     
     @IBOutlet weak var phonePrefixLabel: UILabel!
     @IBOutlet weak var listener: MaskedTextFieldDelegate!
@@ -19,6 +19,7 @@ class LoginVC: UIViewControllerKeyboard {
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var phoneNote: UILabel!
     
+    var handler: AuthStateDidChangeListenerHandle? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +33,19 @@ class LoginVC: UIViewControllerKeyboard {
         viewsToDismissKeyboard.append(phoneText)
         
         phoneNote.isHidden = true
-                
+
 //        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_: )), name: UITextField.textDidChangeNotification, object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.handler = Auth.auth().addStateDidChangeListener { (auth, user) in
+            // user is authenticated already
+            Auth.auth().removeStateDidChangeListener(self.handler!)
+            UI.showPage(source: self, page: UI.Page.RootMain)
+        }
+    }
     
 //    open func textField(_ textField: UITextField, didFillMandatoryCharacters complete: Bool, didExtractValue value: String) {
 //        
@@ -92,7 +102,8 @@ class LoginVC: UIViewControllerKeyboard {
             }
 
             UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
-            UI.ShowPage(source: self, page: UI.Page.Verification)
+            Auth.auth().removeStateDidChangeListener(self.handler!)
+            UI.showPage(source: self, page: UI.Page.Verification)
         }
     }
     
