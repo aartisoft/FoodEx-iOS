@@ -8,8 +8,8 @@
 
 import Foundation
 
-class Dish {
-    enum DishType : Int {
+class Dish: Codable {
+    enum DishType : Int, Codable {
         case Salad
         case Soup
         case Hotter

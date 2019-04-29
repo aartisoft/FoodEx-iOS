@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="rns_regular.otf">
+            <string>RNSMiles-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProgramView" customModule="FoodEx" customModuleProvider="target">
+            <connections>
+                <outlet property="actionButton" destination="Qfd-E0-AbI" id="kOO-fS-Uzl"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="DFP-C4-y8H"/>
+                <outlet property="cost" destination="hFu-qv-vjB" id="BQI-SM-fVY"/>
+                <outlet property="heightConstraint" destination="5UF-AJ-09d" id="cY2-Ni-gEV"/>
+                <outlet property="image" destination="woi-Ok-WHk" id="NT7-lP-b4c"/>
+                <outlet property="shortDescription" destination="7aq-Ji-luL" id="nZq-Pi-hKt"/>
+                <outlet property="title" destination="nnc-Gy-26X" id="oGu-oP-Orv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="381" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9l-Q4-NaP">
+                    <rect key="frame" x="0.0" y="0.0" width="381" height="120"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="woi-Ok-WHk">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="Rte-gz-rvD"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnc-Gy-26X">
+                            <rect key="frame" x="130" y="10" width="241" height="20"/>
+                            <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short descriptionShort descriptionShort descriptionShort descriptionShort descriptionShort description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aq-Ji-luL">
+                            <rect key="frame" x="130" y="40" width="241" height="50.5"/>
+                            <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$6.32" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFu-qv-vjB">
+                            <rect key="frame" x="130" y="89" width="41.5" height="21"/>
+                            <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                            <color key="textColor" red="0.88235294117647056" green="0.062745098039215685" blue="0.10588235294117647" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfd-E0-AbI">
+                            <rect key="frame" x="321" y="84" width="50" height="26"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="Ksx-0H-7G0"/>
+                                <constraint firstAttribute="height" constant="26" id="cCp-RJ-efe"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="15"/>
+                            <state key="normal" title="Buy">
+                                <color key="titleColor" red="0.88235294119999996" green="0.062745098040000002" blue="0.1058823529" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="5UF-AJ-09d"/>
+                        <constraint firstItem="hFu-qv-vjB" firstAttribute="leading" secondItem="woi-Ok-WHk" secondAttribute="trailing" constant="10" id="6Hj-09-5TJ"/>
+                        <constraint firstAttribute="trailing" secondItem="nnc-Gy-26X" secondAttribute="trailing" constant="10" id="C78-fl-t5E"/>
+                        <constraint firstAttribute="trailing" secondItem="7aq-Ji-luL" secondAttribute="trailing" constant="10" id="Chl-tB-C5Y"/>
+                        <constraint firstAttribute="bottom" secondItem="woi-Ok-WHk" secondAttribute="bottom" id="Fze-Jd-r4w"/>
+                        <constraint firstItem="nnc-Gy-26X" firstAttribute="leading" secondItem="woi-Ok-WHk" secondAttribute="trailing" constant="10" id="J5i-7b-gcP"/>
+                        <constraint firstItem="7aq-Ji-luL" firstAttribute="leading" secondItem="woi-Ok-WHk" secondAttribute="trailing" constant="10" id="Srs-RU-nVF"/>
+                        <constraint firstItem="7aq-Ji-luL" firstAttribute="top" secondItem="nnc-Gy-26X" secondAttribute="bottom" constant="10" id="TYu-Vd-sft"/>
+                        <constraint firstItem="nnc-Gy-26X" firstAttribute="top" secondItem="h9l-Q4-NaP" secondAttribute="top" constant="10" id="Toy-pm-PUG"/>
+                        <constraint firstItem="woi-Ok-WHk" firstAttribute="leading" secondItem="h9l-Q4-NaP" secondAttribute="leading" id="UkX-U3-0GC"/>
+                        <constraint firstAttribute="bottom" secondItem="Qfd-E0-AbI" secondAttribute="bottom" constant="10" id="VuR-xO-6s1"/>
+                        <constraint firstItem="hFu-qv-vjB" firstAttribute="leading" secondItem="woi-Ok-WHk" secondAttribute="trailing" constant="10" id="ayQ-xS-4kA"/>
+                        <constraint firstAttribute="bottom" secondItem="hFu-qv-vjB" secondAttribute="bottom" constant="10" id="dTS-uz-jsL"/>
+                        <constraint firstAttribute="trailing" secondItem="Qfd-E0-AbI" secondAttribute="trailing" constant="10" id="mO0-vM-SOn"/>
+                        <constraint firstAttribute="bottom" secondItem="hFu-qv-vjB" secondAttribute="bottom" constant="10" id="sje-XS-XKi"/>
+                        <constraint firstItem="woi-Ok-WHk" firstAttribute="top" secondItem="h9l-Q4-NaP" secondAttribute="top" id="u8y-6G-y3S"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="h9l-Q4-NaP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MQF-Qf-WCQ"/>
+                <constraint firstAttribute="bottom" secondItem="h9l-Q4-NaP" secondAttribute="bottom" id="Pua-12-SjO"/>
+                <constraint firstItem="h9l-Q4-NaP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dqD-Xk-5RQ"/>
+                <constraint firstAttribute="trailing" secondItem="h9l-Q4-NaP" secondAttribute="trailing" id="pRx-Hi-5qX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="155.79710144927537" y="180.13392857142856"/>
+        </view>
+    </objects>
+</document>

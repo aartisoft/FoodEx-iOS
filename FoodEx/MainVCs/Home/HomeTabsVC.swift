@@ -33,7 +33,7 @@ class HomeTabsVC: SegmentedPagerTabStripViewController {
         let stb = UIStoryboard(name: "Main", bundle: Bundle.main)
         
         presentedViewControllers.append(stb.instantiateViewController(withIdentifier : "DashboardVC"))
-        presentedViewControllers.append(stb.instantiateViewController(withIdentifier : "HistoryVC"))
+//        presentedViewControllers.append(stb.instantiateViewController(withIdentifier : "HistoryVC"))
         presentedViewControllers.append(stb.instantiateViewController(withIdentifier : "CalendarVC"))
         
         return presentedViewControllers

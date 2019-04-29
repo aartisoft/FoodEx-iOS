@@ -10,6 +10,7 @@ PODS:
     - Charts/Core (= 3.2.2)
   - Charts/Core (3.2.2)
   - Cosmos (18.0.1)
+  - CountdownLabel (4.0.1)
   - Firebase (5.20.2):
     - Firebase/Core (= 5.20.2)
   - Firebase/Auth (5.20.2):
@@ -133,15 +134,18 @@ PODS:
     - Alamofire (~> 4.5.1)
     - SwiftHash (~> 2.0.1)
   - Protobuf (3.7.0)
+  - SkeletonView (1.5)
   - SwiftHash (2.0.2)
   - SwiftMessages (6.0.2):
     - SwiftMessages/App (= 6.0.2)
   - SwiftMessages/App (6.0.2)
+  - UPCarouselFlowLayout (1.1.2)
   - XLPagerTabStrip (8.1.1)
 
 DEPENDENCIES:
   - Charts (~> 3.2.2)
   - Cosmos (~> 18.0)
+  - CountdownLabel
   - Firebase
   - Firebase/Auth
   - Firebase/Core
@@ -153,7 +157,9 @@ DEPENDENCIES:
   - MessageKit
   - NVActivityIndicatorView
   - PlatonSDK
+  - SkeletonView
   - SwiftMessages
+  - UPCarouselFlowLayout
   - XLPagerTabStrip (~> 8.1)
 
 SPEC REPOS:
@@ -162,6 +168,7 @@ SPEC REPOS:
     - BoringSSL-GRPC
     - Charts
     - Cosmos
+    - CountdownLabel
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -185,8 +192,10 @@ SPEC REPOS:
     - NVActivityIndicatorView
     - PlatonSDK
     - Protobuf
+    - SkeletonView
     - SwiftHash
     - SwiftMessages
+    - UPCarouselFlowLayout
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
@@ -194,6 +203,7 @@ SPEC CHECKSUMS:
   BoringSSL-GRPC: 2a230d9cd93e7ce39916044f645cebb31f37dde6
   Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
   Cosmos: 7dfaa3f52584ca5f94ab74b5c2e264019cc9f7f5
+  CountdownLabel: c9975e3f329140b5e7d1f45cd63b1300badd1712
   Firebase: 0c8cf33f266410c61ab3e2265cfa412200351d9c
   FirebaseAnalytics: ece1aa57a4f43c64d53a648b5a5e05151aae947b
   FirebaseAuth: dd7bbf03a5aee0eafb3a1aee4d2812bd74bac890
@@ -217,10 +227,12 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   PlatonSDK: 50721299a89bfe3c98bce5ac67b7663fe7a6e66d
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
+  SkeletonView: 6cbb80f82f8bdee3f9093e2fa03b84819b4bd826
   SwiftHash: 6d312abe61c8359bdef8d0093642f3a70b1c17ba
   SwiftMessages: 8b3cc68dba2f1c91aac1a74c90b10287aac35371
+  UPCarouselFlowLayout: 4c7d2c43a10ebb1597bde502a53699d378341dad
   XLPagerTabStrip: 63166e21c9844fa30f2d95d30f335e73be5caf22
 
-PODFILE CHECKSUM: 5411f6479360610b83770a3621fed38bc57f94c0
+PODFILE CHECKSUM: 2b088568acce962c7147ed49aba315b6dc8807e9
 
 COCOAPODS: 1.6.1

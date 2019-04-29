@@ -8,8 +8,15 @@
 
 import Foundation
 import UIKit
+import SkeletonView
 
 class MealView : UIView {
+    
+    enum State {
+        case Default
+        case Collapsed
+    }
+    
     let kCONTENT_XIB_NAME = "MealView"
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var card: Card!
@@ -18,9 +25,14 @@ class MealView : UIView {
     @IBOutlet weak var rowsParent: UIStackView!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var detailsParent: UIStackView!
+    
+    var onHeightChanged = Event<Any>()
     
     var dishCardRows: [DishView] = []
     var meal: Meal = Meal()
+    var currentState = State.Default
+    var currentDishesState = DishView.State.Collapsed
     
     var height: CGFloat {
         get {
@@ -30,9 +42,12 @@ class MealView : UIView {
                 dishViewsHeight += dishView.height
             }
             
-            return heightConstraint.constant + dishViewsHeight
+//            return heightConstraint.constant + dishViewsHeight
+            return defaultHeight + dishViewsHeight
         }
     }
+    
+    var defaultHeight: CGFloat = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,13 +59,30 @@ class MealView : UIView {
         commonInit()
     }
     
-    init(meal: Meal) {
+    init(meal: Meal, state: State = State.Default, dishesState: DishView.State = .Collapsed) {
         super.init(frame: CGRect())
         commonInit()
         
+        showSkeleton()
+        
+        
+        Technical.callInSeconds(delay: 2.0, action: {() in
+            self.setMeal(meal: meal)
+            self.stopSkeleton()
+            
+            
+            self.onHeightChanged.raise(data: self.height)
+        })
+
+        
+        currentDishesState = dishesState
+        setNewState(state: state)
+    }
+    
+    func setMeal(meal: Meal) {
         self.meal = meal
         
-        for var dish in meal.dishes {
+        for dish in meal.dishes {
             addDishCardRow(dish: dish)
         }
         
@@ -62,16 +94,96 @@ class MealView : UIView {
     }
     
     func commonInit() {
+        self.translatesAutoresizingMaskIntoConstraints = false
         Bundle.main.loadNibNamed(kCONTENT_XIB_NAME, owner: self, options: nil)
         contentView.fixInView(self)
+        
+//        defaultHeight = self.frame.height
+        defaultHeight = heightConstraint.constant
+        
+        
+        layer.cornerRadius = 10.0
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        layer.shadowRadius = 5.0
+        layer.shadowOpacity = 0.4
+        
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.onClick (_:)))
+        self.addGestureRecognizer(gesture)
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+//        }
+    }
+    
+    @objc func onClick(_ sender:UITapGestureRecognizer){
+        switchCollapseState()
     }
     
     func addDishCardRow(dish: Dish) {
-        let dishCardRow = DishView(dish: dish)
+        let dishCardRow = DishView(dish: dish, state: currentDishesState)
         //imageView.caption = "CodePath starts new class for designers"
         rowsParent.addArrangedSubview(dishCardRow)
         dishCardRows.append(dishCardRow)
         
-        self.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height + dishCardRow.frame.height)
+        heightConstraint.constant = height
+        //self.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height + dishCardRow.frame.height)
+    }
+    
+    func showSkeleton() {
+        title.text = ""
+        time.text = ""
+        
+        card.showAnimatedGradientSkeleton()
+    }
+    
+    func stopSkeleton() {
+        
+        card.hideSkeleton()
+    }
+    
+    func switchCollapseState() {
+        if currentState == .Collapsed {
+            currentState = .Default
+        } else {
+            currentState = .Collapsed
+        }
+        
+        setNewState(state: currentState)
+    }
+        
+        
+    func setNewState(state: State) {
+        if state == .Collapsed {
+            UIView.animate(withDuration: 1,
+                           delay: 0.0,
+                           usingSpringWithDamping: 0.7,
+                           initialSpringVelocity: 1,
+                           options: [UIView.AnimationOptions.allowAnimatedContent], animations: {
+                            self.heightConstraint.constant = self.height - 15
+                            
+                            //                self.rowsParent.isHidden = true
+                            self.detailsParent.isHidden = true
+                            self.setNeedsLayout()
+                            self.layoutIfNeeded()
+                            
+                            DashboardVC.shared!.mealsParent.setNeedsLayout()
+                            DashboardVC.shared!.mealsParent.layoutIfNeeded()
+            })
+        } else {
+            UIView.animate(withDuration: 1,
+                           delay: 0.0,
+                           usingSpringWithDamping: 0.7,
+                           initialSpringVelocity: 1,
+                           options: [], animations: {
+                            self.heightConstraint.constant = self.height
+                            //                self.rowsParent.isHidden = false
+                            self.detailsParent.isHidden = false
+                            
+                            self.setNeedsLayout()
+                            self.layoutIfNeeded()
+                            DashboardVC.shared!.mealsParent.setNeedsLayout()
+                            DashboardVC.shared!.mealsParent.layoutIfNeeded()
+            })
+        }
     }
 }

@@ -19,6 +19,9 @@ target 'FoodEx' do
   pod 'JTAppleCalendar'
   pod 'Cosmos', '~> 18.0'
   pod 'Charts', '~> 3.2.2'
+  pod 'SkeletonView'
+  pod 'UPCarouselFlowLayout'
+  pod 'CountdownLabel'
   # Pods for FoodEx
 
 end

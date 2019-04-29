@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class Meal {
+class Meal: Codable {
     
-    enum DayTime: Int {
+    enum DayTime: Int, Codable {
         case Breakfast
         case Brunch
         case Lunch
