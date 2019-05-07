@@ -1,17 +1,18 @@
 //
-//  ManagerVC.swift
+//  ProfileVC.swift
 //  FoodEx
 //
-//  Created by korsour on 4/17/19.
+//  Created by Ivan Taranov on 3/26/19.
 //  Copyright © 2019 KorLab. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class ManagerVC : UIViewController {
+class ProfileVC : UIViewController {
     
-    @IBOutlet weak var phoneLabel: UIButton!
+    @IBOutlet var nameLabel: UILabel!
+    static var shared: ProfileVC? = nil
     
     @IBAction func showRatingWindow(_ sender: Any) {
         UI.showPopUp(source: self, popUp: .Rating)
@@ -20,11 +21,12 @@ class ManagerVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ProfileVC.shared = self
         
         self.navigationController?.isNavigationBarHidden = true
         
         Manager.shared.phone = PhoneNumber(phoneValid: "380677284513")
-        phoneLabel.setTitle(Manager.shared.phone.phoneFormatted, for: .normal)
+        nameLabel.text = UserData.my.getName()
     }
     
     
@@ -37,11 +39,5 @@ class ManagerVC : UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-    
-    
-    @IBAction func callManagerPhone(_ sender: Any) {
-        guard let number = URL(string: "tel://" + Manager.shared.phone.phoneValid) else { return }
-        UIApplication.shared.open(number, options: [:], completionHandler: nil)
     }
 }

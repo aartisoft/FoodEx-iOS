@@ -16,14 +16,19 @@ class DishView : UIView {
     }
     
     let kCONTENT_XIB_NAME = "DishView"
+    private var currentState: State = State.Collapsed
     @IBOutlet weak var dishTypeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet var contentView: UIView!
-    private var currentState: State = State.Collapsed
     @IBOutlet weak var detailsParent: UIStackView!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var caloriesLabel: UILabel!
+    @IBOutlet weak var proteinsLabel: UILabel!
+    @IBOutlet weak var fatsLabel: UILabel!
+    @IBOutlet weak var carboLabel: UILabel!
     
-    let defaultHeight: CGFloat = 54
+    let defaultHeight: CGFloat = 60
     let collapsedHeight: CGFloat = 22
     
     var _dish: Dish = Dish()
@@ -36,6 +41,11 @@ class DishView : UIView {
             
             dishTypeLabel.text = newValue.dishType.str + ":"
             nameLabel.text = newValue.name
+            carboLabel.text = String(newValue.carbo)
+            caloriesLabel.text = String(newValue.calories)
+            fatsLabel.text = String(newValue.fats)
+            proteinsLabel.text = String(newValue.proteins)
+            weightLabel.text = String(newValue.weight)
         }
     }
     
@@ -48,11 +58,13 @@ class DishView : UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
+        contentView.fixInView(self)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
+        contentView.fixInView(self)
     }
     
     init(dish: Dish, state: State = State.Collapsed) {
@@ -62,11 +74,11 @@ class DishView : UIView {
         self.dish = dish
         
         setCollapsedState(newState: state)
+        contentView.fixInView(self)
     }
     
     func commonInit() {
         Bundle.main.loadNibNamed(kCONTENT_XIB_NAME, owner: self, options: nil)
-        contentView.fixInView(self)
     }
     
     func switchCollapsedState() {

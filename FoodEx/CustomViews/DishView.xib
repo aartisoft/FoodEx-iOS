@@ -17,11 +17,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DishView" customModule="FoodEx" customModuleProvider="target">
             <connections>
+                <outlet property="caloriesLabel" destination="evP-jC-jBk" id="r2Z-eD-d2s"/>
+                <outlet property="carboLabel" destination="szI-eb-8Se" id="Gzu-Va-vIa"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="BtR-vf-XB6"/>
                 <outlet property="detailsParent" destination="qc5-yV-qHR" id="TrU-d9-cq0"/>
                 <outlet property="dishTypeLabel" destination="u1I-SK-BKN" id="4rr-Xd-iep"/>
+                <outlet property="fatsLabel" destination="fxz-MU-ZWs" id="HWD-sc-yN2"/>
                 <outlet property="heightConstraint" destination="OQ7-nw-Psj" id="QSm-t9-xjK"/>
                 <outlet property="nameLabel" destination="mPL-7k-2uR" id="DiB-2q-3Mz"/>
+                <outlet property="proteinsLabel" destination="bGC-uS-nmx" id="eUV-zh-10s"/>
+                <outlet property="weightLabel" destination="Tsg-0x-HEO" id="Fqx-Wt-Neq"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -33,7 +38,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="342" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotter:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1I-SK-BKN" userLabel="Title">
-                            <rect key="frame" x="0.0" y="0.0" width="60" height="21"/>
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="60" id="UNq-La-eKv"/>
                             </constraints>
@@ -42,19 +47,19 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pumpkin puree soup with  ginger" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPL-7k-2uR" userLabel="Description">
-                            <rect key="frame" x="65" y="0.0" width="277" height="21"/>
+                            <rect key="frame" x="65" y="0.0" width="277" height="20"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="qc5-yV-qHR" userLabel="Details">
-                            <rect key="frame" x="0.0" y="24" width="342" height="36"/>
+                            <rect key="frame" x="0.0" y="23" width="342" height="36"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="E9G-QC-heX" userLabel="Weight">
-                                    <rect key="frame" x="0.0" y="3.5" width="53" height="29.5"/>
+                                    <rect key="frame" x="0.0" y="4" width="53" height="28.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm8-t6-yYc">
-                                            <rect key="frame" x="0.0" y="0.0" width="53" height="13.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="53" height="13"/>
                                             <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -63,7 +68,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="120" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsg-0x-HEO" userLabel="WeightValue">
-                                            <rect key="frame" x="0.0" y="13.5" width="53" height="16"/>
+                                            <rect key="frame" x="0.0" y="13" width="53" height="15.5"/>
                                             <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -77,10 +82,10 @@
                                     </userDefinedRuntimeAttributes>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oQT-yi-gZ4" userLabel="Calories">
-                                    <rect key="frame" x="72" y="3.5" width="53.5" height="29.5"/>
+                                    <rect key="frame" x="72" y="4" width="53.5" height="28.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIj-q0-hUu">
-                                            <rect key="frame" x="0.0" y="0.0" width="53.5" height="13.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="53.5" height="13"/>
                                             <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -89,7 +94,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="480" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evP-jC-jBk" userLabel="CaloriesValue">
-                                            <rect key="frame" x="0.0" y="13.5" width="53.5" height="16"/>
+                                            <rect key="frame" x="0.0" y="13" width="53.5" height="15.5"/>
                                             <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -103,10 +108,10 @@
                                     </userDefinedRuntimeAttributes>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="adh-n4-Civ" userLabel="Protein">
-                                    <rect key="frame" x="144.5" y="3.5" width="53" height="29.5"/>
+                                    <rect key="frame" x="144.5" y="4" width="53" height="28.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdZ-ZZ-Pbe">
-                                            <rect key="frame" x="0.0" y="0.0" width="53" height="13.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proteins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdZ-ZZ-Pbe">
+                                            <rect key="frame" x="0.0" y="0.0" width="53" height="13"/>
                                             <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -115,7 +120,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="13" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGC-uS-nmx" userLabel="ProteinValue">
-                                            <rect key="frame" x="0.0" y="13.5" width="53" height="16"/>
+                                            <rect key="frame" x="0.0" y="13" width="53" height="15.5"/>
                                             <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -129,10 +134,10 @@
                                     </userDefinedRuntimeAttributes>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ss2-gi-qyT" userLabel="Fat">
-                                    <rect key="frame" x="216.5" y="3.5" width="53.5" height="29.5"/>
+                                    <rect key="frame" x="216.5" y="4" width="53.5" height="28.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbF-Wl-3jQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="53.5" height="13.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbF-Wl-3jQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="53.5" height="13"/>
                                             <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -141,7 +146,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="31" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxz-MU-ZWs" userLabel="FatValue">
-                                            <rect key="frame" x="0.0" y="13.5" width="53.5" height="16"/>
+                                            <rect key="frame" x="0.0" y="13" width="53.5" height="15.5"/>
                                             <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -155,10 +160,10 @@
                                     </userDefinedRuntimeAttributes>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oYB-aE-yG2" userLabel="Carbo">
-                                    <rect key="frame" x="289" y="3.5" width="53" height="29.5"/>
+                                    <rect key="frame" x="289" y="4" width="53" height="28.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urR-hi-1Si">
-                                            <rect key="frame" x="0.0" y="0.0" width="53" height="13.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="53" height="13"/>
                                             <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -167,7 +172,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="47" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szI-eb-8Se" userLabel="CarboValue">
-                                            <rect key="frame" x="0.0" y="13.5" width="53" height="16"/>
+                                            <rect key="frame" x="0.0" y="13" width="53" height="15.5"/>
                                             <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -189,7 +194,7 @@
                             </userDefinedRuntimeAttributes>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="mPL-7k-2uR" firstAttribute="centerY" secondItem="u1I-SK-BKN" secondAttribute="centerY" id="Bm9-03-Mai"/>
                         <constraint firstItem="u1I-SK-BKN" firstAttribute="leading" secondItem="VKA-wI-Oi4" secondAttribute="leading" id="KjB-sa-F9C"/>
@@ -201,11 +206,10 @@
                         <constraint firstItem="u1I-SK-BKN" firstAttribute="top" secondItem="VKA-wI-Oi4" secondAttribute="top" id="grN-UN-tYq"/>
                         <constraint firstItem="mPL-7k-2uR" firstAttribute="trailing" secondItem="qc5-yV-qHR" secondAttribute="trailing" id="pOd-MU-vAm"/>
                         <constraint firstItem="qc5-yV-qHR" firstAttribute="top" secondItem="mPL-7k-2uR" secondAttribute="bottom" constant="3" id="q3s-5e-BHo"/>
-                        <constraint firstAttribute="bottom" secondItem="qc5-yV-qHR" secondAttribute="bottom" id="qyq-wh-LAN"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="VKA-wI-Oi4" secondAttribute="trailing" id="3qx-lr-n9z"/>
                 <constraint firstItem="VKA-wI-Oi4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Hiw-6V-QSH"/>

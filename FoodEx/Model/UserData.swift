@@ -83,4 +83,9 @@ class UserData {
     func getPhoneNumber() -> String {
         return phoneNumber
     }
+    
+    func getName() -> String? {
+        return "Ivan Taranov"
+        //return name?.first
+    }
 }

@@ -13,7 +13,7 @@ import SkeletonView
 class MealView : UIView {
     
     enum State {
-        case Default
+        case Expanded
         case Collapsed
     }
     
@@ -26,12 +26,17 @@ class MealView : UIView {
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var detailsParent: UIStackView!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var caloriesLabel: UILabel!
+    @IBOutlet weak var proteinsLabel: UILabel!
+    @IBOutlet weak var fatsLabel: UILabel!
+    @IBOutlet weak var carboLabel: UILabel!
     
     var onHeightChanged = Event<Any>()
     
     var dishCardRows: [DishView] = []
     var meal: Meal = Meal()
-    var currentState = State.Default
+    var currentState = State.Expanded
     var currentDishesState = DishView.State.Collapsed
     
     var height: CGFloat {
@@ -59,7 +64,7 @@ class MealView : UIView {
         commonInit()
     }
     
-    init(meal: Meal, state: State = State.Default, dishesState: DishView.State = .Collapsed) {
+    init(meal: Meal, state: State = State.Expanded, dishesState: DishView.State = .Collapsed) {
         super.init(frame: CGRect())
         commonInit()
         
@@ -89,6 +94,12 @@ class MealView : UIView {
         title.text = meal.title
         time.text = meal.time
         icon.image = meal.icon
+        
+        carboLabel.text = String(meal.carbo)
+        caloriesLabel.text = String(meal.calories)
+        fatsLabel.text = String(meal.fats)
+        proteinsLabel.text = String(meal.proteins)
+        weightLabel.text = String(meal.weight)
         
         self.card.stripe.backgroundColor = meal.color
     }
@@ -143,7 +154,7 @@ class MealView : UIView {
     
     func switchCollapseState() {
         if currentState == .Collapsed {
-            currentState = .Default
+            currentState = .Expanded
         } else {
             currentState = .Collapsed
         }
@@ -169,7 +180,7 @@ class MealView : UIView {
                             DashboardVC.shared!.mealsParent.setNeedsLayout()
                             DashboardVC.shared!.mealsParent.layoutIfNeeded()
             })
-        } else {
+        } else if state == .Expanded {
             UIView.animate(withDuration: 1,
                            delay: 0.0,
                            usingSpringWithDamping: 0.7,

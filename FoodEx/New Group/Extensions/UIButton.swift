@@ -12,8 +12,8 @@ import UIKit
 extension UIButton {
     
     @IBInspectable var stringId: String {
-        set(value) {
-            self.titleLabel?.text = value.localized
+        set {
+            self.titleLabel?.text = newValue.localized
         }
         get {
             return ""

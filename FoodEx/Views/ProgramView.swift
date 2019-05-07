@@ -40,6 +40,10 @@ class ProgramView: UIView {
         }
     }
     
+    @IBAction func openLink(_ sender: Any) {
+        UIApplication.shared.openURL(NSURL(string: _program!.link)! as URL)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()

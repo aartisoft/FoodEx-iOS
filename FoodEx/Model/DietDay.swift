@@ -32,6 +32,7 @@ class DietDay {
                 dish.fats = dishDict["fats"] as! Int
                 dish.name = dishDict["name"] as! String
                 dish.proteins = dishDict["proteins"] as! Int
+            dish.weight = dishDict["weight"] as! Int
                 dish.dishType = Dish.DishType(rawValue: dishDict["dishType"] as! Int)!
                 
                 dishes.append(dish)

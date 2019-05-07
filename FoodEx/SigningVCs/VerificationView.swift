@@ -26,11 +26,13 @@ class VerificationVC: UIViewController {
                 currentPosition -= 1
                 symbolsInputs[currentPosition].text = ""
             }
+            break
         case "C":
             for i in 0...5 {
                 symbolsInputs[i].text = ""
             }
             currentPosition = 0
+            break
         default:
             if currentPosition < 6 {
                 symbolsInputs[currentPosition].text = button.titleLabel?.text

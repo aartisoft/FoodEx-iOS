@@ -31,6 +31,52 @@ class Meal: Codable {
     var dayTime: DayTime = DayTime.Custom
     var dishes: [Dish] = []
     
+    var calories: Int {
+        get {
+            var value = 0
+            for dish in dishes {
+                value += dish.calories
+            }
+            return value
+        }
+    }
+    var carbo: Int {
+        get {
+            var value = 0
+            for dish in dishes {
+                value += dish.carbo
+            }
+            return value
+        }
+    }
+    var fats: Int {
+        get {
+            var value = 0
+            for dish in dishes {
+                value += dish.fats
+            }
+            return value
+        }
+    }
+    var proteins: Int {
+        get {
+            var value = 0
+            for dish in dishes {
+                value += dish.proteins
+            }
+            return value
+        }
+    }
+    var weight: Int {
+        get {
+            var value = 0
+            for dish in dishes {
+                value += dish.weight
+            }
+            return value
+        }
+    }
+    
     var title: String {
         get {
             return Meal.titles[dayTime.rawValue]

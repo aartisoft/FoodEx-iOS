@@ -28,6 +28,7 @@ class Dish: Codable {
     var carbo: Int = 0
     var fats: Int = 0
     var proteins: Int = 0
+    var weight: Int = 0
     
     
     

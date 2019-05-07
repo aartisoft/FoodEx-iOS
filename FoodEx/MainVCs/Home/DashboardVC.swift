@@ -58,7 +58,7 @@ class DashboardVC: UIViewController, IndicatorInfoProvider {
             let dietDay = DietDay(dict: dictResponse)
             
             for meal in dietDay.meals {
-                let mealView = MealView(meal: meal, state: .Default, dishesState: .Expanded)
+                let mealView = MealView(meal: meal, state: .Expanded, dishesState: .Expanded)
                 self.mealsParent.addArrangedSubview(mealView)
                 //mealView.switchCollapseState()
                 

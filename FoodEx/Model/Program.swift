@@ -12,12 +12,14 @@ class Program {
     var name: String = ""
     var shortDescription: String = ""
     var image: UIImage
+    var link: String
     
     var price: Int = 0
     
-    init(name: String, shortDescription: String, image: UIImage) {
+    init(name: String, shortDescription: String, image: UIImage, link: String) {
         self.name = name
         self.shortDescription = shortDescription
         self.image = image
+        self.link = link
     }
 }

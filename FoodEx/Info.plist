@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>0.1</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -25,6 +25,16 @@
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
 			<string>Firebase</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.294579491651-1uvkga4pd8sog33sedpheroipnnvst56</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Client</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.294579491651-1uvkga4pd8sog33sedpheroipnnvst56</string>

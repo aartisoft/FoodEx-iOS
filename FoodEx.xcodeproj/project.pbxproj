@@ -41,7 +41,6 @@
 		0A2490122250D1F900287773 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2490112250D1F900287773 /* UserDefaults.swift */; };
 		0A2490142250D5E400287773 /* ChatBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2490132250D5E300287773 /* ChatBaseVC.swift */; };
 		0A25742C2242205100D45B7E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25742B2242205100D45B7E /* LoginVC.swift */; };
-		0A2BCDA52242C51900EB97C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A2BCDA42242C51900EB97C4 /* GoogleService-Info.plist */; };
 		0A4A84F0224577C600C960C0 /* KeyboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A84EF224577C600C960C0 /* KeyboardVC.swift */; };
 		0A64E1D72240CA0B008301AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64E1D62240CA0B008301AD /* AppDelegate.swift */; };
 		0A64E1DE2240CA0B008301AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A64E1DD2240CA0B008301AD /* Assets.xcassets */; };
@@ -66,6 +65,7 @@
 		CE12162C2276E3DD00A3F1F8 /* PromoCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE12162B2276E3DD00A3F1F8 /* PromoCard.xib */; };
 		CE1302FF226CB71600C5CD81 /* MealView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1302FE226CB71600C5CD81 /* MealView.xib */; };
 		CE130301226CC38E00C5CD81 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE130300226CC38E00C5CD81 /* CardView.swift */; };
+		CE140DC4227C4FCC003A7050 /* ProfileTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE140DC3227C4FCC003A7050 /* ProfileTableVC.swift */; };
 		CE145FF22266F2E2007E7747 /* RatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE145FF12266F2E2007E7747 /* RatingVC.swift */; };
 		CE145FF42266F429007E7747 /* ManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE145FF32266F429007E7747 /* ManagerVC.swift */; };
 		CE15317822759B1D002DFC3B /* PromoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15317722759B1D002DFC3B /* PromoCard.swift */; };
@@ -88,10 +88,12 @@
 		CE29A0652275FCCD000E9282 /* ProgramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE29A0642275FCCD000E9282 /* ProgramView.swift */; };
 		CE32FE6C226E3ADA00A57091 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32FE6B226E3ADA00A57091 /* UIView.swift */; };
 		CE32FE6E226E436500A57091 /* CalendarVC-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32FE6D226E436500A57091 /* CalendarVC-ext.swift */; };
+		CE3D61092281ED1C003D75A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE3D61082281ED1C003D75A8 /* GoogleService-Info.plist */; };
 		CE6DD1482268FF93005E1872 /* RootMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DD1472268FF93005E1872 /* RootMainVC.swift */; };
 		CEA3EB30226BB86F00DECB79 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3EB2F226BB86F00DECB79 /* MealView.swift */; };
 		CEBFF32D225E7AC400C2E5DD /* Signing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBFF32B225E7AC300C2E5DD /* Signing.storyboard */; };
 		CEBFF33E225E7CB200C2E5DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEBFF340225E7CB200C2E5DD /* Localizable.strings */; };
+		CEC193A9227C776A009BEF41 /* SetingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC193A8227C776A009BEF41 /* SetingsVC.swift */; };
 		CEDC69C3225E5AC80034FA63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDC69C1225E5AC80034FA63 /* Main.storyboard */; };
 		CEDD4D7422748A2300EE696D /* DietDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD4D7322748A2300EE696D /* DietDay.swift */; };
 /* End PBXBuildFile section */
@@ -131,7 +133,6 @@
 		0A2490112250D1F900287773 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		0A2490132250D5E300287773 /* ChatBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBaseVC.swift; sourceTree = "<group>"; };
 		0A25742B2242205100D45B7E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		0A2BCDA42242C51900EB97C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0A4A84EF224577C600C960C0 /* KeyboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardVC.swift; sourceTree = "<group>"; };
 		0A64E1D32240CA0B008301AD /* FoodEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A64E1D62240CA0B008301AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +160,7 @@
 		CE12162B2276E3DD00A3F1F8 /* PromoCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoCard.xib; sourceTree = "<group>"; };
 		CE1302FE226CB71600C5CD81 /* MealView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealView.xib; sourceTree = "<group>"; };
 		CE130300226CC38E00C5CD81 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		CE140DC3227C4FCC003A7050 /* ProfileTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableVC.swift; sourceTree = "<group>"; };
 		CE145FF12266F2E2007E7747 /* RatingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingVC.swift; sourceTree = "<group>"; };
 		CE145FF32266F429007E7747 /* ManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerVC.swift; sourceTree = "<group>"; };
 		CE15317722759B1D002DFC3B /* PromoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCard.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		CE29A0642275FCCD000E9282 /* ProgramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramView.swift; sourceTree = "<group>"; };
 		CE32FE6B226E3ADA00A57091 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CE32FE6D226E436500A57091 /* CalendarVC-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarVC-ext.swift"; sourceTree = "<group>"; };
+		CE3D61082281ED1C003D75A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE6DD1472268FF93005E1872 /* RootMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootMainVC.swift; sourceTree = "<group>"; };
 		CEA3EB2F226BB86F00DECB79 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 		CEBFF333225E7B4D00C2E5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -195,6 +198,7 @@
 		CEBFF33D225E7C8A00C2E5DD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Signing.strings; sourceTree = "<group>"; };
 		CEBFF33F225E7CB200C2E5DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CEBFF341225E7CB500C2E5DD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CEC193A8227C776A009BEF41 /* SetingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetingsVC.swift; sourceTree = "<group>"; };
 		CEDD4D7322748A2300EE696D /* DietDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDay.swift; sourceTree = "<group>"; };
 		D37759EE197B725A51A81510 /* Pods-FoodEx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodEx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodEx/Pods-FoodEx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,7 +218,6 @@
 		0A20EF012242BCD400CCDCDF /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				CE1113A5225897BD007027A6 /* Overrides */,
 				0A24900B2250D16200287773 /* Extensions */,
 				0A20EEF52242BC5000CCDCDF /* Converter.swift */,
 				0A20EEF92242BC5000CCDCDF /* Event.swift */,
@@ -347,9 +350,9 @@
 				CE1205F92268F4B800F0736A /* FoodEx.entitlements */,
 				0A2490062250D10B00287773 /* Temp */,
 				0A64E1DD2240CA0B008301AD /* Assets.xcassets */,
+				CE3D61082281ED1C003D75A8 /* GoogleService-Info.plist */,
 				0A64E1D62240CA0B008301AD /* AppDelegate.swift */,
 				0A64E1E22240CA0B008301AD /* Info.plist */,
-				0A2BCDA42242C51900EB97C4 /* GoogleService-Info.plist */,
 				0A8DA47C224FFF1D00A49029 /* FireServer */,
 				0AEAD3A922496593000F3F81 /* MainVCs */,
 				0A25742A2242202300D45B7E /* SigningVCs */,
@@ -389,11 +392,11 @@
 		0AEAD3A922496593000F3F81 /* MainVCs */ = {
 			isa = PBXGroup;
 			children = (
+				CE140DC0227C3553003A7050 /* Profile */,
 				CE15317622759795002DFC3B /* Purchases */,
 				CE2652FC2263327D00E407D4 /* Weight */,
 				0A248FFF2250CE5700287773 /* Manager */,
 				0A829511224BFD3200A44ECE /* Home */,
-				0AD251F9224AB8D5001E83BC /* ProfileVC.swift */,
 			);
 			path = MainVCs;
 			sourceTree = "<group>";
@@ -415,14 +418,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CE1113A5225897BD007027A6 /* Overrides */ = {
-			isa = PBXGroup;
-			children = (
-				CE1113A6225897D3007027A6 /* UITableViewCellKor.swift */,
-			);
-			path = Overrides;
-			sourceTree = "<group>";
-		};
 		CE1302FD226CB6DC00C5CD81 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +427,17 @@
 				CE12162B2276E3DD00A3F1F8 /* PromoCard.xib */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		CE140DC0227C3553003A7050 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0AD251F9224AB8D5001E83BC /* ProfileVC.swift */,
+				CE140DC3227C4FCC003A7050 /* ProfileTableVC.swift */,
+				CEC193A8227C776A009BEF41 /* SetingsVC.swift */,
+				CE1113A6225897D3007027A6 /* UITableViewCellKor.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		CE15317622759795002DFC3B /* Purchases */ = {
@@ -547,12 +553,12 @@
 				CEBFF32D225E7AC400C2E5DD /* Signing.storyboard in Resources */,
 				CE12162C2276E3DD00A3F1F8 /* PromoCard.xib in Resources */,
 				0A22CBE522469D7500F4CCB8 /* gotham_pro_medium.ttf in Resources */,
-				0A2BCDA52242C51900EB97C4 /* GoogleService-Info.plist in Resources */,
 				0A22CBE022469D7500F4CCB8 /* rns_xbold.otf in Resources */,
 				CEDC69C3225E5AC80034FA63 /* Main.storyboard in Resources */,
 				0A64E1DE2240CA0B008301AD /* Assets.xcassets in Resources */,
 				0A22CBDE22469D7500F4CCB8 /* rns_thin.otf in Resources */,
 				0A22CBDF22469D7500F4CCB8 /* gotham_pro_light.ttf in Resources */,
+				CE3D61092281ED1C003D75A8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +667,7 @@
 				CEDD4D7422748A2300EE696D /* DietDay.swift in Sources */,
 				0A20EEFF2242BC5000CCDCDF /* Event.swift in Sources */,
 				0A25742C2242205100D45B7E /* LoginVC.swift in Sources */,
+				CEC193A9227C776A009BEF41 /* SetingsVC.swift in Sources */,
 				CE24AE3022770E770073A65F /* Technical.swift in Sources */,
 				CE1C4C02225FB0A600F7BF9E /* UITextField.swift in Sources */,
 				CE32FE6E226E436500A57091 /* CalendarVC-ext.swift in Sources */,
@@ -703,6 +710,7 @@
 				0A18E31D22435DA500BDE385 /* VerificationView.swift in Sources */,
 				0A829515224BFD6800A44ECE /* DashboardVC.swift in Sources */,
 				CE130301226CC38E00C5CD81 /* CardView.swift in Sources */,
+				CE140DC4227C4FCC003A7050 /* ProfileTableVC.swift in Sources */,
 				0A2490012250CE6300287773 /* ChatVC.swift in Sources */,
 				CE6DD1482268FF93005E1872 /* RootMainVC.swift in Sources */,
 				CE2652FE2263652B00E407D4 /* CalendarDayHeader.swift in Sources */,

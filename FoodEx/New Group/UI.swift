@@ -27,6 +27,7 @@ class UI {
         case Manager
         case Payment
         case Profile
+        case Settings
         
         var str: String {
             return "\(self)"
@@ -73,7 +74,8 @@ class UI {
         
         let viewControllerMainMenu = storyboard.instantiateViewController(withIdentifier : page.storyboardId)
         
-        source.present(viewControllerMainMenu, animated: true)
+        //source.present(viewControllerMainMenu, sender: source)
+        source.show(viewControllerMainMenu, sender: source) // use this to make navigation bar work (e.g. profile -> settings -> profile)
     }
     
     

@@ -42,8 +42,8 @@ class LoginVC: KeyboardVC {
         
         self.handler = Auth.auth().addStateDidChangeListener { (auth, user) in
             // user is authenticated already
-            Auth.auth().removeStateDidChangeListener(self.handler!)
-            UI.showPage(source: self, page: UI.Page.RootMain)
+//            Auth.auth().removeStateDidChangeListener(self.handler!)
+//            UI.showPage(source: self, page: UI.Page.RootMain)
         }
     }
     
@@ -90,14 +90,17 @@ class LoginVC: KeyboardVC {
             return
         }
         
-        let phone = Converter.convertPhoneToStandard(phone: self.phonePrefixLabel.text! + self.phoneText.text!)
+        let phoneInput = (self.phonePrefixLabel.text! + self.phoneText.text!).replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range: nil)
+        let phone = Converter.convertPhoneToStandard(phone: phoneInput)
         
         UserData.setMyNewPhoneNumber(newPhoneNumber: phone)
         
-        PhoneAuthProvider.provider().verifyPhoneNumber(UserData.my.getPhoneNumber(), uiDelegate: nil) { (verificationID, error) in
+        print("phone: " + phone)
+        
+        PhoneAuthProvider.provider().verifyPhoneNumber(phone, uiDelegate: nil) { (verificationID, error) in
             if error != nil {
                 let a = error
-//                self.showMessagePrompt(error.localizedDescription)
+                print(error!.localizedDescription)
                 return
             }
 

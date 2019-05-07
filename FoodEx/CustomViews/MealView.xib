@@ -17,14 +17,19 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MealView" customModule="FoodEx" customModuleProvider="target">
             <connections>
+                <outlet property="caloriesLabel" destination="OYF-GG-QBG" id="Gsm-Tf-Pai"/>
+                <outlet property="carboLabel" destination="V92-gb-gGo" id="jtl-av-mo5"/>
                 <outlet property="card" destination="Ifu-fQ-BMd" id="kIL-r7-dU6"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Q3u-kS-MOT"/>
                 <outlet property="detailsParent" destination="6Rp-Jj-KtP" id="h5O-aH-9eS"/>
+                <outlet property="fatsLabel" destination="Wlf-nW-Fxf" id="9BO-sc-iWV"/>
                 <outlet property="heightConstraint" destination="dF9-2P-ard" id="1Nc-l7-Ils"/>
                 <outlet property="icon" destination="Fja-DX-DyF" id="RZO-ZP-xlc"/>
+                <outlet property="proteinsLabel" destination="tUX-ML-PcQ" id="2E3-MH-Zp7"/>
                 <outlet property="rowsParent" destination="Bg6-Su-OVY" id="x8w-OG-AuA"/>
                 <outlet property="time" destination="QIZ-lw-vB6" id="cQt-3p-ZQF"/>
                 <outlet property="title" destination="how-RN-P5N" id="ufN-id-lik"/>
+                <outlet property="weightLabel" destination="GgG-uT-oXl" id="Y5N-4O-0jt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -45,6 +50,9 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Bg6-Su-OVY" userLabel="RowsParent">
+                            <rect key="frame" x="17" y="65" width="348" height="10"/>
+                        </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="6Rp-Jj-KtP" userLabel="Details">
                             <rect key="frame" x="15" y="82.5" width="350" height="37.5"/>
                             <subviews>
@@ -103,7 +111,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ga3-IE-zQB" userLabel="Protein">
                                     <rect key="frame" x="147.5" y="0.0" width="55" height="37.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Uk-JM-MbO">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proteins" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Uk-JM-MbO">
                                             <rect key="frame" x="0.0" y="0.0" width="55" height="17"/>
                                             <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="14"/>
                                             <nil key="textColor"/>
@@ -129,7 +137,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j7b-j4-cz8" userLabel="Fat">
                                     <rect key="frame" x="221.5" y="0.0" width="54.5" height="37.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slH-Dt-5Pa">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fats" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slH-Dt-5Pa">
                                             <rect key="frame" x="0.0" y="0.0" width="54.5" height="17"/>
                                             <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="14"/>
                                             <nil key="textColor"/>
@@ -201,9 +209,6 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Bg6-Su-OVY" userLabel="RowsParent">
-                            <rect key="frame" x="17" y="65" width="348" height="10"/>
-                        </stackView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>

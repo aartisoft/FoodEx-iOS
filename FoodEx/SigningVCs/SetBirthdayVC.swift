@@ -21,7 +21,6 @@ class SetBirthdayVC : UIViewController {
 //            let json = String(data: jsonData, encoding: String.Encoding.utf8)
         FireFunctions.callFunction(.createNewCustomer, UserData.my.dict)
 
-        
-        UI.showPage(source: self, page: .Dashboard)
+        UI.showPage(source: self, page: UI.Page.RootMain)
     }
 }

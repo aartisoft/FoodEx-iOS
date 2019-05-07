@@ -18,6 +18,20 @@ class PromoCard: UICollectionViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var panel: UIView!
     @IBOutlet weak var contentViewKor: UIView!
+    
+    var _promo: Promo? = nil
+    var promo: Promo? {
+        get {
+            return _promo
+        }
+        set {
+            _promo = newValue
+            
+            image.image = promo!.image
+            titleLabel.text = promo!.title
+            dateLabel.text = promo!.date
+        }
+    }
     //
 //    override init(frame: CGRect) {
 //        super.init(frame: frame)
@@ -29,11 +43,13 @@ class PromoCard: UICollectionViewCell {
 //        commonInit()
 //    }
 //
+    
+    
+    
     func initPromo(promo: Promo) {
         commonInit()
-        image.image = promo.image
-        titleLabel.text = promo.title
-        dateLabel.text = promo.date
+        
+        self.promo = promo
         
         commonInit()
     }
@@ -56,8 +72,8 @@ class PromoCard: UICollectionViewCell {
         contentViewKor.layer.shadowOpacity = 0.8
         contentViewKor.layer.masksToBounds = false
         contentViewKor.layer.shadowPath = UIBezierPath(roundedRect: contentViewKor.bounds, cornerRadius: contentViewKor.layer.cornerRadius).cgPath
-//
-        
+    }
+    
         
         
 //        contentView.layer.cornerRadius = 8
@@ -67,5 +83,4 @@ class PromoCard: UICollectionViewCell {
 //        contentView.layer.shadowRadius = 7.0
 //        contentView.layer.shadowOpacity = 0.4
 //        contentView.layer.masksToBounds = false
-    }
 }

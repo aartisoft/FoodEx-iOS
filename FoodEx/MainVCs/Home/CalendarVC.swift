@@ -92,7 +92,7 @@ class CalendarVC : UIViewController, IndicatorInfoProvider {
     
     
     func addMealCard(mealCard: Meal) {
-        let mealView = MealView(meal: mealCard)
+        let mealView = MealView(meal: mealCard, state: .Expanded, dishesState: .Collapsed)
         mealsCardsParent.addArrangedSubview(mealView)
         mealsCards.append(mealView)
         
@@ -109,7 +109,8 @@ class CalendarVC : UIViewController, IndicatorInfoProvider {
         for meal in mealsCards {
             stackHeightConstraint.constant += meal.height
             let b = Float(meal.height)
-            print(b)        }
+            print(b)
+        }
     }
 }
 
