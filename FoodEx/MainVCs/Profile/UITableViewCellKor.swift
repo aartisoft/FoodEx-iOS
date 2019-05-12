@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 @IBDesignable class UITableViewCellKor : UITableViewCell {
     
@@ -42,6 +43,8 @@ import UIKit
             UI.showPage(source: ProfileVC.shared!, page: .Settings)
             break
         case "exit":
+            try! Auth.auth().signOut()
+            UI.showPage(source: ProfileVC.shared!, page: .Login)
             break
         default:
             return

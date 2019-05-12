@@ -72,10 +72,13 @@ class UI {
             storyboard = Storyboard.Main.instance
         }
         
-        let viewControllerMainMenu = storyboard.instantiateViewController(withIdentifier : page.storyboardId)
+        let viewControllerToShow = storyboard.instantiateViewController(withIdentifier : page.storyboardId)
         
-        //source.present(viewControllerMainMenu, sender: source)
-        source.show(viewControllerMainMenu, sender: source) // use this to make navigation bar work (e.g. profile -> settings -> profile)
+        if source.storyboard != storyboard {
+            source.present(viewControllerToShow, animated: true)
+        } else {
+            source.show(viewControllerToShow, sender: source)// use this to make navigation bar work (e.g. profile -> settings -> profile)
+        }
     }
     
     

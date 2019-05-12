@@ -20,7 +20,6 @@ class WeightVC: UIViewController {
         
         updateChartWithData()
         setupChart()
-        
     }
     
     func setupChart() {

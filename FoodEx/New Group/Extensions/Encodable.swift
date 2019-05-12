@@ -14,9 +14,9 @@ struct JSON {
 
 extension Encodable {
     subscript(key: String) -> Any? {
-        return dictionary[key]
+        return dict[key]
     }
-    var dictionary: [String: Any] {
+    var dict: [String: Any] {
         return (try? JSONSerialization.jsonObject(with: JSON.encoder.encode(self))) as? [String: Any] ?? [:]
     }
 }

@@ -78,6 +78,7 @@
 		CE1C4C00225FAD6C00F7BF9E /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C4BFF225FAD6C00F7BF9E /* UIButton.swift */; };
 		CE1C4C02225FB0A600F7BF9E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C4C01225FB0A600F7BF9E /* UITextField.swift */; };
 		CE1C4C04225FB5BB00F7BF9E /* UITabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C4C03225FB5BB00F7BF9E /* UITabBarItem.swift */; };
+		CE1C857422889CD500C1AD87 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C857322889CD500C1AD87 /* Address.swift */; };
 		CE24AE3022770E770073A65F /* Technical.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24AE2F22770E770073A65F /* Technical.swift */; };
 		CE24D4902257DA14002F423C /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24D48F2257DA14002F423C /* Encodable.swift */; };
 		CE2652FE2263652B00E407D4 /* CalendarDayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2652FD2263652B00E407D4 /* CalendarDayHeader.swift */; };
@@ -89,6 +90,8 @@
 		CE32FE6C226E3ADA00A57091 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32FE6B226E3ADA00A57091 /* UIView.swift */; };
 		CE32FE6E226E436500A57091 /* CalendarVC-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32FE6D226E436500A57091 /* CalendarVC-ext.swift */; };
 		CE3D61092281ED1C003D75A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE3D61082281ED1C003D75A8 /* GoogleService-Info.plist */; };
+		CE4F6A7D22885A9F00F5BAEC /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4F6A7C22885A9F00F5BAEC /* LoadingView.xib */; };
+		CE4F6A7F22885BA800F5BAEC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F6A7E22885BA800F5BAEC /* LoadingView.swift */; };
 		CE6DD1482268FF93005E1872 /* RootMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DD1472268FF93005E1872 /* RootMainVC.swift */; };
 		CEA3EB30226BB86F00DECB79 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3EB2F226BB86F00DECB79 /* MealView.swift */; };
 		CEBFF32D225E7AC400C2E5DD /* Signing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBFF32B225E7AC300C2E5DD /* Signing.storyboard */; };
@@ -177,6 +180,7 @@
 		CE1C4BFF225FAD6C00F7BF9E /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		CE1C4C01225FB0A600F7BF9E /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		CE1C4C03225FB5BB00F7BF9E /* UITabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarItem.swift; sourceTree = "<group>"; };
+		CE1C857322889CD500C1AD87 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		CE24AE2F22770E770073A65F /* Technical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Technical.swift; sourceTree = "<group>"; };
 		CE24D48F2257DA14002F423C /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		CE2652FD2263652B00E407D4 /* CalendarDayHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayHeader.swift; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 		CE32FE6B226E3ADA00A57091 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CE32FE6D226E436500A57091 /* CalendarVC-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarVC-ext.swift"; sourceTree = "<group>"; };
 		CE3D61082281ED1C003D75A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE4F6A7C22885A9F00F5BAEC /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		CE4F6A7E22885BA800F5BAEC /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CE6DD1472268FF93005E1872 /* RootMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootMainVC.swift; sourceTree = "<group>"; };
 		CEA3EB2F226BB86F00DECB79 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 		CEBFF333225E7B4D00C2E5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -250,6 +256,7 @@
 				CEDD4D7322748A2300EE696D /* DietDay.swift */,
 				CE15317B22759EAB002DFC3B /* Promo.swift */,
 				CE29A05E2275E1F0000E9282 /* Program.swift */,
+				CE1C857322889CD500C1AD87 /* Address.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -345,14 +352,14 @@
 		0A64E1D52240CA0B008301AD /* FoodEx */ = {
 			isa = PBXGroup;
 			children = (
-				CE1302FD226CB6DC00C5CD81 /* CustomViews */,
-				CEA3EB2E226BB85C00DECB79 /* Views */,
-				CE1205F92268F4B800F0736A /* FoodEx.entitlements */,
-				0A2490062250D10B00287773 /* Temp */,
 				0A64E1DD2240CA0B008301AD /* Assets.xcassets */,
 				CE3D61082281ED1C003D75A8 /* GoogleService-Info.plist */,
-				0A64E1D62240CA0B008301AD /* AppDelegate.swift */,
 				0A64E1E22240CA0B008301AD /* Info.plist */,
+				0A64E1D62240CA0B008301AD /* AppDelegate.swift */,
+				CE1205F92268F4B800F0736A /* FoodEx.entitlements */,
+				CE1302FD226CB6DC00C5CD81 /* CustomViews */,
+				CEA3EB2E226BB85C00DECB79 /* Views */,
+				0A2490062250D10B00287773 /* Temp */,
 				0A8DA47C224FFF1D00A49029 /* FireServer */,
 				0AEAD3A922496593000F3F81 /* MainVCs */,
 				0A25742A2242202300D45B7E /* SigningVCs */,
@@ -425,6 +432,7 @@
 				CE26C42F226D00A9002D6D89 /* DishView.xib */,
 				CE29A0602275E6BD000E9282 /* ProgramView.xib */,
 				CE12162B2276E3DD00A3F1F8 /* PromoCard.xib */,
+				CE4F6A7C22885A9F00F5BAEC /* LoadingView.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -464,6 +472,7 @@
 				CE26C431226D00FE002D6D89 /* DishView.swift */,
 				CE29A0642275FCCD000E9282 /* ProgramView.swift */,
 				CE15317722759B1D002DFC3B /* PromoCard.swift */,
+				CE4F6A7E22885BA800F5BAEC /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -547,6 +556,7 @@
 				0A22CBE122469D7500F4CCB8 /* gotham_pro_bold.ttf in Resources */,
 				0A22CBE622469D7500F4CCB8 /* rns_black.otf in Resources */,
 				0A22CBE422469D7500F4CCB8 /* gotham_pro_regular.ttf in Resources */,
+				CE4F6A7D22885A9F00F5BAEC /* LoadingView.xib in Resources */,
 				0A22CBE222469D7500F4CCB8 /* rns_regular.otf in Resources */,
 				CE26C430226D00A9002D6D89 /* DishView.xib in Resources */,
 				CE29A0612275E6BD000E9282 /* ProgramView.xib in Resources */,
@@ -681,6 +691,7 @@
 				0A20EEFD2242BC5000CCDCDF /* StringExtension.swift in Sources */,
 				0A6B5F0C2247A78300B5AB9F /* SetGenderVC.swift in Sources */,
 				CE19A56C22690E6A00A9013F /* Manager.swift in Sources */,
+				CE4F6A7F22885BA800F5BAEC /* LoadingView.swift in Sources */,
 				0A2490102250D18A00287773 /* UIViewController.swift in Sources */,
 				CE24D4902257DA14002F423C /* Encodable.swift in Sources */,
 				0AEAD3AB224965AA000F3F81 /* HomeTabsVC.swift in Sources */,
@@ -698,6 +709,7 @@
 				CE29A05F2275E1F0000E9282 /* Program.swift in Sources */,
 				CE1113A7225897D3007027A6 /* UITableViewCellKor.swift in Sources */,
 				CEA3EB30226BB86F00DECB79 /* MealView.swift in Sources */,
+				CE1C857422889CD500C1AD87 /* Address.swift in Sources */,
 				0A22CBB32246560700F4CCB8 /* Name.swift in Sources */,
 				CE1A468C226F826600FE1D42 /* Dish.swift in Sources */,
 				0A2490032250D0A500287773 /* MockMessage.swift in Sources */,

@@ -9,12 +9,18 @@
 import Foundation
 
 class UserData {
-    private var phoneNumber: String = ""
+    private var phoneNumber: String? = nil
     private var name: Name? = nil
     private var weight: Weight? = nil
     private var growth: Growth? = nil
-    private var gender: Int = -1
+    private var gender: Int? = nil
     private var birthday: NSDate? = nil
+    private var weekDaysAddress: Address? = nil
+    private var weekEndsAddress: Address? = nil
+    private var deliveryType: Address.DeliveryType? = nil
+    private var deliveryNote: String? = nil
+    private var contactPhone: String? = nil
+    private var contactEmail: String? = nil
     
     static var onMyPhoneNumberChanged = Event<String>()
     static var onMyNameChanged = Event<Name>()
@@ -25,12 +31,18 @@ class UserData {
     
     var dict: [String: Any] {
         return
-            ["name": name.dictionary,
+            ["name": name.dict,
              "phoneNumber": phoneNumber,
-             "weight": weight.dictionary,
-             "growth": growth.dictionary,
+             "weight": weight.dict,
+             "growth": growth.dict,
              "gender": gender,
-             //"birthday": birthday
+             "birthday": birthday?.timeIntervalSince1970,
+             "weekDaysAddress": weekDaysAddress?.dict,
+             "weekEndsAddress": weekEndsAddress?.dict,
+             "deliveryType": deliveryType?.rawValue,
+             "deliveryNote": deliveryNote,
+             "contactPhone": contactPhone,
+             "contactEmail": contactEmail
         ]
     }
 
@@ -77,11 +89,11 @@ class UserData {
     }
     
     func getGenderId() -> Int {
-        return gender
+        return gender!
     }
     
     func getPhoneNumber() -> String {
-        return phoneNumber
+        return phoneNumber!
     }
     
     func getName() -> String? {

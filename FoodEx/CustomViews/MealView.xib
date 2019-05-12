@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MealView" customModule="FoodEx" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="MealVIew" customClass="MealView" customModule="FoodEx" customModuleProvider="target">
             <connections>
                 <outlet property="caloriesLabel" destination="OYF-GG-QBG" id="Gsm-Tf-Pai"/>
                 <outlet property="carboLabel" destination="V92-gb-gGo" id="jtl-av-mo5"/>
