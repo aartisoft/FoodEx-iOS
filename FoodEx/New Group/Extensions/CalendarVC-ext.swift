@@ -41,7 +41,7 @@ extension CalendarVC: JTAppleCalendarViewDelegate {
         //        handleCellSelected(cellView: cell, cellState: cellState)
         //        handleCellTextColor(cellView: cell, cellState: cellState)
         //
-        sharedFunctionToConfigureCell(validCell: cell, cellState: cellState)
+        sharedFunctionToConfigureCell(validCell: cell, cellState: cellState, date: date)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
@@ -52,9 +52,9 @@ extension CalendarVC: JTAppleCalendarViewDelegate {
         
         cell.dateLabel.text = cellState.text
         
-        sharedFunctionToConfigureCell(validCell: cell, cellState: cellState)
+        sharedFunctionToConfigureCell(validCell: cell, cellState: cellState, date: date)
         
-        sharedFunctionToConfigureCell(validCell: cell, cellState: cellState)
+        sharedFunctionToConfigureCell(validCell: cell, cellState: cellState, date: date)
         
         return cell
     }
@@ -63,13 +63,13 @@ extension CalendarVC: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         guard (cell as? CalendarDietCell) != nil else { return }
         
-        sharedFunctionToConfigureCell(validCell: cell as! CalendarDietCell, cellState: cellState)
+        sharedFunctionToConfigureCell(validCell: cell as! CalendarDietCell, cellState: cellState, date: date)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         guard (cell as? CalendarDietCell) != nil else { return }
         
-        sharedFunctionToConfigureCell(validCell: cell as! CalendarDietCell, cellState: cellState)
+        sharedFunctionToConfigureCell(validCell: cell as! CalendarDietCell, cellState: cellState, date: date)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {

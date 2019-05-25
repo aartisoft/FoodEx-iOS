@@ -205,18 +205,17 @@ final internal class SampleData {
         let firstName = sender.displayName.components(separatedBy: " ").first
         let lastName = sender.displayName.components(separatedBy: " ").first
         let initials = "\(firstName?.first ?? "A")\(lastName?.first ?? "A")"
-        switch sender {
-        case nathan:
-            return Avatar(image: #imageLiteral(resourceName: "birthday"), initials: initials)
-        case steven:
-            return Avatar(image: #imageLiteral(resourceName: "ukrainian-flag"), initials: initials)
-        case wu:
-            return Avatar(image: #imageLiteral(resourceName: "user-icon"), initials: initials)
-        case system:
-            return Avatar(image: nil, initials: "SS")
-        default:
+//        switch sender {
+//        case nathan:
+//            return Avatar(image: #imageLiteral(resourceName: "birthday"), initials: initials)
+//        case steven:
+//            return Avatar(image: #imageLiteral(resourceName: "ukrainian-flag"), initials: initials)
+//        case wu:
+//            return Avatar(image: #imageLiteral(resourceName: "user-icon"), initials: initials)
+//        case system:
+//            return Avatar(image: nil, initials: "SS")
+//        default:
             return Avatar(image: nil, initials: initials)
-        }
     }
     
 }

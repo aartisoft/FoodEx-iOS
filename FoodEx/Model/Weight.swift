@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct Weight : Encodable {
-    var value: Int
+class Weight : Codable {
+    var value: Double
     var type: Int
     
-    init(value: Int, type: Int) {
+    init(value: Double, type: Int) {
         self.value = value
         self.type = type
     }

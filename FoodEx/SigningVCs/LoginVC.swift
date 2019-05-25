@@ -42,9 +42,12 @@ class LoginVC: KeyboardVC {
         
         self.handler = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
-                // user is authenticated already
+//                 user is authenticated already
+//                UI.showPage(source: self, page: .RootMain)
+//                return
                 Auth.auth().removeStateDidChangeListener(self.handler!)
                 UI.showPage(source: self, page: UI.Page.RootMain)
+                FireController.getUserData()
             } else {
                 // user is not authenticated yet
             }

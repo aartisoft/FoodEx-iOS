@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import XLPagerTabStrip
 import Charts
+import NumberPicker
 
 class WeightVC: UIViewController {
 
@@ -53,5 +54,23 @@ class WeightVC: UIViewController {
         let data = LineChartData()
         data.addDataSet(line1)
         chart.data = data
+    }
+    
+    
+    @IBAction func onWeightRecordingClicked(_ sender: Any) {
+        let numberPicker = NumberPicker(delegate: self, maxNumber: 150) // set max number
+        numberPicker.bgGradients = [UIColor.primaryDark, UIColor.primaryLighter]
+        numberPicker.tintColor = .white
+        numberPicker.heading = "Weight"
+        numberPicker.defaultSelectedNumber = 70 // set default selected number
+        
+        self.present(numberPicker, animated: true, completion: nil)
+    }
+}
+
+extension WeightVC: NumberPickerDelegate {
+    
+    func selectedNumber(_ number: Int) {
+        print(number)
     }
 }

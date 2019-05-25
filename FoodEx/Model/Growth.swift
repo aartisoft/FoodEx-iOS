@@ -8,12 +8,16 @@
 
 import Foundation
 
-struct Growth : Encodable {
+class Growth : Codable {
     var value: Int
     var type: Int
     
     init(value: Int, type: Int) {
         self.value = value
         self.type = type
+    }
+    
+    func getString() -> String {
+        return String(value) + " " + (type == 0 ? "cm." : "in.")
     }
 }

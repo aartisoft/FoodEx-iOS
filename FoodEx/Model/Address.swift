@@ -8,14 +8,7 @@
 
 import Foundation
 
-class Address : Encodable {
-    
-    enum DeliveryType : Int{
-        case Bag
-        case Cart
-        case Package
-    }
-    
+class Address : Codable {
     
     var street: String
     var house: String

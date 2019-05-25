@@ -127,7 +127,7 @@ class MealView : UIView {
     }
     
     @objc func onClick(_ sender:UITapGestureRecognizer){
-        switchCollapseState()
+        //switchCollapseState()
     }
     
     func addDishCardRow(dish: Dish) {

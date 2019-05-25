@@ -11,27 +11,29 @@ import UIKit
 
 class SetWeightVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    static var shared: SetWeightVC?
     
     @IBOutlet var weightImage: UIImageView!
     @IBOutlet weak var weightPicker: UIPickerView!
-    var weightValues0: [Int] = []
-    var weightValues1: [Int] = []
+    var weightValues0: [Double] = []
+    var weightValues1: [Double] = []
     var weightTypes: [String] = ["kg", "lb"]
     
-    var currentWeight: Int = 40
+    var currentWeight: Double = 0
     var currentWeightType: Int = 0
     
     let kgLb_factor = 2.20462
-    let minKg = 40
-    let maxKg = 130
-    var minLb: Int
-    var maxLb: Int
-    var defaultKg: Int
+    let minKg = 40.0
+    let maxKg = 130.0
+    var minLb: Double
+    var maxLb: Double
+    var defaultKg: Double
     
     required init?(coder aDecoder: NSCoder) {
-        self.minLb = Int(Double(minKg) * kgLb_factor)
-        self.maxLb = Int(Double(maxKg) * kgLb_factor)
-        defaultKg = 75 - UserData.my.getGenderId() * 10
+        self.minLb = round(minKg * kgLb_factor * 10) / 10
+        self.maxLb = round(maxKg * kgLb_factor * 10) / 10
+        defaultKg = round(Double(75 - UserData.my.gender! * 10))
+        currentWeight = defaultKg
         super.init(coder: aDecoder)
     }
     
@@ -39,11 +41,13 @@ class SetWeightVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for i in minKg...maxKg {
-            weightValues0.append(i)
+        SetWeightVC.shared = self
+        
+        for i in stride(from: minKg, to: maxKg, by: 0.1) {
+            weightValues0.append(round(i * 10) / 10)
         }
         
-        for i in minLb...maxLb {
+        for i in stride(from: minLb, to: maxLb, by: 0.1) {
             weightValues1.append(i)
         }
         
@@ -54,7 +58,7 @@ class SetWeightVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         
 //        pickerView(weightPicker, didSelectRow: 19, inComponent: 0)
 //        pickerView(weightPicker, didSelectRow: 0, inComponent: 1)
-        weightPicker.selectRow(defaultKg - minKg, inComponent: 0, animated: false)
+        weightPicker.selectRow(Int((defaultKg - minKg) * 10), inComponent: 0, animated: false)
         
         weightImage.image = UIImage(named: UserData.my.getGenderName() + "_weight")
     }
@@ -77,9 +81,7 @@ class SetWeightVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             } else {
                 return weightValues1.count
             }
-            
         } else {
-            
             return weightTypes.count
         }
     }
@@ -93,7 +95,6 @@ class SetWeightVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
                 return String(weightValues1[row])
             }
         } else {
-            
             return String(weightTypes[row])
         }
     }
@@ -112,25 +113,25 @@ class SetWeightVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             }
             currentWeightType = row
             
-            var newWeight: Int
+            var newWeight: Double
             var newRow: Int
             
             if currentWeightType == 0 {
-                newWeight = Int(Double(currentWeight) / kgLb_factor)
+                newWeight = round((currentWeight / kgLb_factor) * 10) / 10
                 if newWeight < weightValues0[0] {
                     newWeight = weightValues0[0]
                 } else if newWeight > weightValues0[weightValues0.count - 1] {
                     newWeight = weightValues0[weightValues0.count - 1]
                 }
-                newRow = newWeight - weightValues0[0]
+                newRow = Int(round((newWeight - weightValues0[0]) * 10))
             } else {
-                newWeight = Int(Double(currentWeight) * kgLb_factor)
+                newWeight = round((currentWeight * kgLb_factor) * 10) / 10
                 if newWeight < weightValues1[0] {
                     newWeight = weightValues1[0]
                 } else if newWeight > weightValues1[weightValues1.count - 1] {
                     newWeight = weightValues1[weightValues1.count - 1]
                 }
-                newRow = newWeight - weightValues1[0]
+                newRow = Int(round((newWeight - weightValues1[0]) * 10))
             }
             weightPicker.reloadAllComponents()
             currentWeight = newWeight

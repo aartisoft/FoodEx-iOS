@@ -16,6 +16,10 @@ class FireFunctions {
         case createNewCustomer
         case sendNewMessage
         case getDayMeal
+        case getMyData
+        case updateCustomerInfo
+        case getMonthDays
+        case submitServiceFeedback
     }
     
     static var functions = Functions.functions()
@@ -41,6 +45,7 @@ class FireFunctions {
     }
     
     class func callFunction(_ function: Function, _ data: Any) {
+       
         functions.httpsCallable(function.rawValue).call(data) { (result, error) in
             if let error = error as NSError? {
                 if error.domain == FunctionsErrorDomain {

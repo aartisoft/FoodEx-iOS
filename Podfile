@@ -22,6 +22,8 @@ target 'FoodEx' do
   pod 'SkeletonView'
   pod 'UPCarouselFlowLayout'
   pod 'CountdownLabel'
+  pod 'MessageInputBar'
+  pod 'NumberPicker'
   # Pods for FoodEx
 
 end

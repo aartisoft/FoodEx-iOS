@@ -17,7 +17,7 @@ class SetGrowthVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     var growthValues1: [Int] = []
     var growthTypes: [String] = ["cm", "inch"]
     
-    var currentGrowth: Int = 40
+    var currentGrowth: Int = 0
     var currentGrowthType: Int = 0
     
     let cmInch_factor = 0.393701
@@ -30,7 +30,8 @@ class SetGrowthVC : UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     required init?(coder aDecoder: NSCoder) {
         self.minInch = Int(Double(minCm) * cmInch_factor)
         self.maxInch = Int(Double(maxCm) * cmInch_factor)
-        defaultCm = 180 - UserData.my.getGenderId() * 10
+        defaultCm = 180 - UserData.my.gender! * 10
+        currentGrowth = defaultCm
         super.init(coder: aDecoder)
     }
     

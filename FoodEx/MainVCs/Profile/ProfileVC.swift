@@ -26,7 +26,10 @@ class ProfileVC : UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         
         Manager.shared.phone = PhoneNumber(phoneValid: "380677284513")
-        nameLabel.text = UserData.my.getName()
+        
+        if let name = UserData.my.name {
+            nameLabel.text = name.first + " " + name.last
+        }
     }
     
     

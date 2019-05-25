@@ -25,7 +25,7 @@ class HomeTabsVC: SegmentedPagerTabStripViewController {
         super.viewDidLoad()
         settings.style.segmentedControlColor = UIColor.red
         
-    navigationController?.pushViewController(ChatVC(), animated: true)
+        navigationController?.pushViewController(ChatVC(), animated: true)
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {

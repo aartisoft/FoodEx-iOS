@@ -40,6 +40,7 @@ class UI {
     
     enum PopUp : Int {
         case Rating
+        case AppRating
         
         var str: String {
             return "\(self)"
@@ -57,9 +58,21 @@ class UI {
         case Main
         
         var instance : UIStoryboard {
-            return UIStoryboard(name: self.rawValue, bundle: nil)
+            switch self.rawValue {
+            case Storyboard.Signing.rawValue:
+                return storyboards[0]
+            case Storyboard.Main.rawValue:
+                return storyboards[1]
+            default:
+                fatalError("No such storyboard")
+            }
         }
     }
+    
+    private static var storyboards = [
+        UIStoryboard(name: Storyboard.Signing.rawValue, bundle: nil),
+        UIStoryboard(name: Storyboard.Main.rawValue, bundle: nil)
+    ]
     
     private static var currentPopUp: UIViewController? = nil
     
