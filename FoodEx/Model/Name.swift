@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Name : Encodable {
+class Name : Codable {
     var first: String
     var middle: String
     var last: String

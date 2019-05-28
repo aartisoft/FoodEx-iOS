@@ -72,4 +72,11 @@ class DashboardVC: UIViewController, IndicatorInfoProvider {
             }
         })
     }
+    
+    
+    @IBAction func openFeedback(_ sender: Any) {
+        UI.showPopUp(source: HomeTabsVC.shared!, popUp: .DietDayRating)
+        // take in consideration that it must be called only for today's delivery
+        DietDayRatingVC.shared?.setFeedbackDate(newDate: Date())
+    }
 }

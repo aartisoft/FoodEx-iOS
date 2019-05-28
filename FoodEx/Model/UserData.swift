@@ -7,14 +7,19 @@
 //
 
 import Foundation
+import Firebase
 
 class UserData {
-    private var phoneNumber: String = ""
-    private var name: Name? = nil
-    private var weight: Weight? = nil
-    private var growth: Growth? = nil
-    private var gender: Int = -1
-    private var birthday: NSDate? = nil
+    var name: Name? = nil
+    var phoneNumber: String? = nil
+    var weight: Weight? = nil
+    var growth: Growth? = nil
+    var gender: Int? = nil
+    var birthday: Date? = nil
+    var weekdaysDelivery: Delivery? = nil
+    var weekendsDelivery: Delivery? = nil
+    var contact: Contact? = nil
+    var registration: Date? = nil
     
     static var onMyPhoneNumberChanged = Event<String>()
     static var onMyNameChanged = Event<Name>()
@@ -25,14 +30,65 @@ class UserData {
     
     var dict: [String: Any] {
         return
-            ["name": name.dictionary,
+            ["name": name.dict,
              "phoneNumber": phoneNumber,
-             "weight": weight.dictionary,
-             "growth": growth.dictionary,
+             "weight": weight.dict,
+             "growth": growth.dict,
              "gender": gender,
-             //"birthday": birthday
+             "birthday": birthday?.timeIntervalSince1970,
+             "weekdaysDelivery": weekdaysDelivery.dict,
+             "weekendsDelivery": weekendsDelivery.dict,
+             "contacts": contact.dict
         ]
     }
+    
+    init(dict: [String: Any]) {
+        if let nameDict = dict["name"] as? [String: String] {
+            name = Name(first: nameDict["first"]!, middle: nameDict["middle"]!, last: nameDict["last"]!)
+        }
+        
+        if let newPhoneNumber = dict["phoneNumber"] as? String {
+            phoneNumber = newPhoneNumber
+        }
+        
+        if let growthDict = dict["growth"] as? [String: Int] {
+            growth = Growth(value: growthDict["value"]!, type: growthDict["type"]!)
+        }
+        
+        if let weightDict = dict["weight"] as? [String: Any] {
+            weight = Weight(value: weightDict["value"] as! Double, type: weightDict["type"] as! Int)
+        }
+        
+        if let val = dict["registration"] as? Int{
+            registration =  Date(timeIntervalSince1970: Double(val))
+        }
+        
+        if let val = dict["birthday"] as? Int{
+            birthday =  Date(timeIntervalSince1970: Double(val))
+        }
+        
+        if let val = dict["gender"] as? Int{
+            gender = val
+        }
+        
+        if let deliveryDict = dict["weekdaysDelivery"] as? [String: Any] {
+            let addressDict = deliveryDict["address"] as? [String: String]
+            let address = Address(street: addressDict["street"] as? String ?? "", house: addressDict["house"] as? String ?? "", flat: addressDict["flat"] as? String ?? "")
+            weekdaysDelivery = Delivery(time: deliveryDict["time"] as? String ?? "", address: address, type: Delivery.PackageType(rawValue: deliveryDict["type"] as! Int)!, note: deliveryDict["note"] as? String ?? "")
+        }
+        
+        if let deliveryDict = dict["weekendsDelivery"] as? [String: Any] {
+            let addressDict = deliveryDict["address"] as? [String: String]
+            let address = Address(street: addressDict["street"] as? String ?? "", house: addressDict["house"] as? String ?? "", flat: addressDict["flat"] as? String ?? "")
+            weekendsDelivery = Delivery(time: deliveryDict["time"] as? String ?? "", address: address, type: Delivery.PackageType(rawValue: deliveryDict["type"] as! Int)!, note: deliveryDict["note"] as? String ?? "")
+        }
+        
+        if let contactsDict = dict["contacts"] as? [String: Any]{
+            contact = Contact(email: contactsDict["email"] as! String, phones: contactsDict["phones"] as! [String])
+        }
+    }
+    
+    init() { }
 
     static var my = UserData()
     
@@ -62,30 +118,27 @@ class UserData {
     }
     
     static func seMyNewBirthday(newBirthday: Date) {
-        my.birthday = newBirthday as NSDate
+        my.birthday = newBirthday
         onMyBirthdayChanged.raise(data: newBirthday)
     }
     
     func getGenderName() -> String {
         if gender == 0 {
-            return "man"
+            return "male"
         } else if gender == 1 {
-            return "woman"
+            return "female"
         } else {
-            return "Error"
+            fatalError("Unexpected gender id")
         }
     }
     
-    func getGenderId() -> Int {
-        return gender
-    }
-    
-    func getPhoneNumber() -> String {
-        return phoneNumber
-    }
-    
-    func getName() -> String? {
-        return "Ivan Taranov"
-        //return name?.first
+    static func getGenderName(id: Int) -> String {
+        if id == 0 {
+            return "male"
+        } else if id == 1 {
+            return "female"
+        } else {
+            fatalError("Unexpected gender id")
+        }
     }
 }

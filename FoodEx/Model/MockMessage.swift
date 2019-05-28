@@ -40,7 +40,7 @@ private struct ImageMediaItem: MediaItem {
 internal struct MockMessage: MessageType {
     
     var messageId: String
-    var sender: Sender
+    var sender: SenderType
     var sentDate: Date
     var kind: MessageKind
     

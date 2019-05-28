@@ -9,15 +9,15 @@
 import Foundation
 import Firebase
 
-
 class FireDatabase {
-    
     var db: Firestore
     
     private init() {
         FirebaseApp.configure()
-        
+        let settings = FirestoreSettings()
+        settings.isPersistenceEnabled = true
         db = Firestore.firestore()
+        db.settings = settings
     }
     
 //    class func writeValue()

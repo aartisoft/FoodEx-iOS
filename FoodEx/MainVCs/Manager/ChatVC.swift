@@ -25,6 +25,13 @@ final class ChatVC: ChatViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
+        
+//        if let layout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
+//            layout.textMessageSizeCalculator.outgoingAvatarSize = .zero
+//            layout.textMessageSizeCalculator.incomingAvatarSize = .zero
+//        } to remove avatar pading
+        
+        initKeyboardManager()
     }
     
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
@@ -35,6 +42,10 @@ final class ChatVC: ChatViewController {
 // MARK: - MessagesDisplayDelegate
 
 extension ChatVC: MessagesDisplayDelegate {
+//    func currentSender() -> SenderType {
+//        let a = NSObject()
+//        return a as! SenderType // korsour костыль
+//    }
     
     // MARK: - Text Messages
     
@@ -58,31 +69,49 @@ extension ChatVC: MessagesDisplayDelegate {
     
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
         
-        let tail: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
-        return .bubbleTail(tail, .curved)
+//        let tail: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft // korsour
+        return .bubble
     }
     
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-        let avatar = SampleData.shared.getAvatarFor(sender: message.sender)
-        avatarView.set(avatar: avatar)
+        let avatar = Avatar(image: nil, initials: "ME")
+        avatarView.set(avatar: avatar) // korsour
+        
+//         avatarView.isHidden = true
     }
-    
 }
 
 // MARK: - MessagesLayoutDelegate
 
 extension ChatVC: MessagesLayoutDelegate {
     
-    func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        return 18
+//    func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+//        return 18
+//    }
+//
+    func cellBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 0
     }
     
-    func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        return 20
-    }
+//    func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+//        return 20
+//    }
     
     func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        return 16
+        return 14
     }
     
+}
+
+extension ChatVC {
+    
+    func initKeyboardManager() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    
+//    @objc func dismissKeyboardKor (_ sender: UITapGestureRecognizer) {
+//         resignFirstResponder()
+//    }
 }

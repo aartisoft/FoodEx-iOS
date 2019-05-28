@@ -19,16 +19,18 @@ class CalendarVC : UIViewController, IndicatorInfoProvider {
     
     static var shared : CalendarVC? = nil
     
-    
+    var calendarDataSource: [String:String] = [:]
     let formatter = DateFormatter()
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var parentStack: UIStackView!
     @IBOutlet weak var mealsCardsParent: UIStackView!
     @IBOutlet weak var stackHeightConstraint: NSLayoutConstraint!
     
     var mealsCards: [MealView] = []
     var stackHeightDefault: CGFloat = 0
+    var emptyMealView: EmptyMealView? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +43,7 @@ class CalendarVC : UIViewController, IndicatorInfoProvider {
         
         setupCalendarView()
         
-        fillData()
+        getDietDays()
     }
     
     func setupCalendarView() {
@@ -56,7 +58,7 @@ class CalendarVC : UIViewController, IndicatorInfoProvider {
     }
 
     
-    func sharedFunctionToConfigureCell(validCell: CalendarDietCell, cellState: CellState) {
+    func sharedFunctionToConfigureCell(validCell: CalendarDietCell, cellState: CellState, date: Date) {
         let todaysDate = Date()
         formatter.dateFormat = "yyyy MM dd"
         let todaysDateString = formatter.string(from: todaysDate)
@@ -65,6 +67,12 @@ class CalendarVC : UIViewController, IndicatorInfoProvider {
         validCell.selectedCircle.isHidden = !cellState.isSelected
         
         if cellState.isSelected {
+            let dateString = formatter.string(from: cellState.date)
+            if calendarDataSource[dateString] != nil {
+                showDayMeals(date: date)
+            } else {
+                showNoDataCard()
+            }
             validCell.dateLabel.textColor = UIColor.white
         } else {
             if cellState.dateBelongsTo == .thisMonth {
@@ -73,11 +81,22 @@ class CalendarVC : UIViewController, IndicatorInfoProvider {
                 } else {
                     validCell.dateLabel.textColor = UIColor.darkGrayKor
                 }
+                
+                handleCellEvents(validCell: validCell, cellState: cellState)
             } else {
                 validCell.dateLabel.textColor = UIColor.lightGrayKor
             }
         }
     }
+    
+    
+    func handleCellEvents(validCell: CalendarDietCell, cellState: CellState) {
+        let dateString = formatter.string(from: cellState.date)
+        if calendarDataSource[dateString] != nil {
+            validCell.dateLabel.textColor = UIColor.primary
+        }
+    }
+    
     
     
     func setupViewsOfCalendar(from visibleDates: DateSegmentInfo) {
@@ -96,7 +115,7 @@ class CalendarVC : UIViewController, IndicatorInfoProvider {
         mealsCardsParent.addArrangedSubview(mealView)
         mealsCards.append(mealView)
         
-        stackHeightConstraint.constant += mealView.height
+        stackHeightConstraint.constant += mealView.height + mealsCardsParent.spacing
         mealView.onHeightChanged.addHandler(uniqueName: "recalculateMealsHeight", handler:
             {(newHeight) in
                 self.recalculateMealsHeight()
@@ -107,16 +126,26 @@ class CalendarVC : UIViewController, IndicatorInfoProvider {
         stackHeightConstraint.constant = stackHeightDefault
         let a = Float(stackHeightDefault)
         for meal in mealsCards {
-            stackHeightConstraint.constant += meal.height
-            let b = Float(meal.height)
-            print(b)
+            stackHeightConstraint.constant += meal.height + mealsCardsParent.spacing
         }
+    }
+    
+    
+    func showMonthCalendar(dietDays: [Int]) {
+        self.formatter.dateFormat = "yyyy MM dd"
+        for day in dietDays {
+            let day = Date(timeIntervalSince1970: Double(day / 1000))
+            calendarDataSource[formatter.string(from: day)] = "lalala"
+        }
+        
+        calendarView.reloadData()
+        calendarView.scrollToDate(Date(), animateScroll: false)
+        setupCalendarView()
     }
 }
 
-
 extension CalendarVC {
-    func fillData() {
+    func getDietDays() {
         
 //        var dishes: [Dish] = []
 //        let dish0 = Dish(dishType: Dish.DishType.Hotter, name: "Some Hotter")
@@ -141,15 +170,49 @@ extension CalendarVC {
 //        addMealCard(mealCard: meal4)
 //        addMealCard(mealCard: meal5)
         
-        FireFunctions.callFunction(.getDayMeal, "", callback: { (dictResponse) in
-        
+        // TODO: change month on needed (0 - January)
+        FireFunctions.callFunction(.getMonthDays, ["month" : 0], callback: { (dictResponse) in
+            
+            self.showMonthCalendar(dietDays: dictResponse["dietDays"] as! [Int])
+        })
+    }
+    
+    func showDayMeals(date: Date) {
+        cleanMeals() 
+        FireFunctions.callFunction(.getDayMeal, ["timestamp" : date.timeIntervalSince1970], callback: { (dictResponse) in
+            
+            self.cleanMeals() 
             let dietDay = DietDay(dict: dictResponse)
             
             for meal in dietDay.meals {
                 self.addMealCard(mealCard: meal)
             }
         })
+    }
+    
+    func cleanMeals() {
+        if (emptyMealView != nil) {
+            emptyMealView?.removeFromSuperview()
+            emptyMealView = nil
+        }
         
+        for mealCard in mealsCards {
+            mealCard.removeFromSuperview()
+            mealsCards.removeFirst()
+        }
+        
+        stackHeightConstraint.constant = stackHeightDefault
+    }
+    
+    func showNoDataCard() {
+        if (emptyMealView != nil) {
+            return
+        }
+        cleanMeals()
+        emptyMealView = EmptyMealView(frame: CGRect())
+        mealsCardsParent.addArrangedSubview(emptyMealView!)
+   
+        stackHeightConstraint.constant += emptyMealView!.height
     }
 }
 

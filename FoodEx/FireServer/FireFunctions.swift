@@ -16,6 +16,14 @@ class FireFunctions {
         case createNewCustomer
         case sendNewMessage
         case getDayMeal
+        case getMyData
+        case updateCustomerInfo
+        case getMonthDays
+        case submitServiceFeedback
+        case submitDietDayFeedback
+        case getMyWeightHistory
+        case isMyCustomerAccountExists
+        case saveNewWeightRecording
     }
     
     static var functions = Functions.functions()
@@ -34,13 +42,14 @@ class FireFunctions {
                 }
                 // ...
             }
-            print("Data received")
+            print("Data received: " + function.rawValue)
             let dictResponse = result?.data as? [String: Any]
             callback(dictResponse!)
         }
     }
     
     class func callFunction(_ function: Function, _ data: Any) {
+       
         functions.httpsCallable(function.rawValue).call(data) { (result, error) in
             if let error = error as NSError? {
                 if error.domain == FunctionsErrorDomain {

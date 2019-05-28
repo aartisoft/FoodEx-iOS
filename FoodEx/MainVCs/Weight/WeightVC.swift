@@ -10,43 +10,67 @@ import Foundation
 import UIKit
 import XLPagerTabStrip
 import Charts
+import NumberPicker
 
 class WeightVC: UIViewController {
 
     @IBOutlet weak var chart: LineChartView!
     
+    private var firstWeightRecord: WeightRecord? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateChartWithData()
         setupChart()
-        
     }
     
     func setupChart() {
         chart.pinchZoomEnabled = false
         chart.doubleTapToZoomEnabled = false
-        chart.dragEnabled = true
         chart.setScaleEnabled(false)
-        chart.setVisibleXRangeMaximum(7)
-        chart.setVisibleXRangeMinimum(7)
 
         chart.xAxis.drawGridLinesEnabled = false
+        chart.rightAxis.drawGridLinesEnabled = true
+        chart.leftAxis.drawGridLinesEnabled = false
         chart.xAxis.labelPosition = .bottom
         chart.leftAxis.drawLabelsEnabled = false
         chart.legend.enabled = false
-        chart.highlightPerTapEnabled = false
+        chart.highlightPerTapEnabled = true
+        
+        chart.xAxis.valueFormatter = self
+//        chart.xAxis.axisMinLabels = 1
+        
+//        chart.xAxis.setLabelsToSkip(1)
     }
     
-    func updateChartWithData() {
+    func updateChartWithData(_ weightRecords: [WeightRecord]) {
         var lineChartEntry = [ChartDataEntry]()
         
-        for i in 0 ..< 30 {
-            let value = ChartDataEntry(x: Double(i), y: 70 + Double(i))
+        let calendar = Calendar.current
+        
+        var maximumWeight = 0.0
+        var totalPeriod = 0
+        // must be sure, that it's really first WeightRecord
+        firstWeightRecord = weightRecords[0]
+        let firstDate = calendar.startOfDay(for: firstWeightRecord!.date)
+        
+        for weightRecord in weightRecords {
+            // TODO: add support for LB     let kg =
+            
+            let newDate = calendar.startOfDay(for: weightRecord.date)
+            
+            let day = calendar.dateComponents([.day], from: firstDate, to: newDate)
+            totalPeriod = day.day!
+            
+            if weightRecord.weight.value > maximumWeight {
+                maximumWeight = weightRecord.weight.value
+            }
+            
+            let value = ChartDataEntry(x: Double(day.day!), y: weightRecord.weight.value)
             lineChartEntry.append(value)
         }
         
-        let line1 = LineChartDataSet(values: lineChartEntry, label: "Number")
+        let line1 = LineChartDataSet(entries: lineChartEntry, label: "Number")
         line1.colors = [UIColor.primary]
         line1.circleColors = [UIColor.primaryDark]
         line1.circleRadius = 2.5
@@ -54,5 +78,59 @@ class WeightVC: UIViewController {
         let data = LineChartData()
         data.addDataSet(line1)
         chart.data = data
+        
+        
+        chart.dragEnabled = true
+        chart.xAxis.axisMinimum = -2
+        chart.xAxis.axisMaximum = Double(totalPeriod) + 2.0
+        chart.rightAxis.axisMaximum = maximumWeight + 10
+        chart.setVisibleXRangeMaximum(7)
+        chart.setVisibleXRangeMinimum(1)
+    }
+
+    
+    
+    @IBAction func onWeightRecordingClicked(_ sender: Any) {
+        let numberPicker = NumberPicker(delegate: self, maxNumber: 150.0, step: 0.1) // set max number
+        numberPicker.bgGradients = [UIColor.primaryDark, UIColor.primaryLighter]
+        numberPicker.tintColor = .white
+        numberPicker.heading = "Weight, kg."
+        numberPicker.defaultSelectedNumber = 70 // set default selected number
+        
+        self.present(numberPicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func onHelpClicked(_ sender: Any) {
+        FireFunctions.callFunction(.getMyWeightHistory, "", callback: {
+            response in
+            
+            let weightRecords = (response["weightRecords"] as! [[String : Any]]).map {WeightRecord(weight: Weight(value: ($0["weight"] as! [String : Any])["value"] as! Double, type: ($0["weight"] as! [String : Any])["type"] as! Int), date: Date(timeIntervalSince1970: $0["date"] as! Double)) }
+
+            self.updateChartWithData(weightRecords)
+        })
+    }
+    
+}
+
+extension WeightVC: NumberPickerDelegate {
+    
+    func selectedNumber(_ number: Double) {
+        // TODO: add new weight recording
+        // TODO: add LB type support
+        FireFunctions.callFunction(.saveNewWeightRecording, ["weight": Weight(value: number, type: 0).dict], callback: { response in
+            print(response)
+        })
+    }
+}
+
+
+extension WeightVC : IAxisValueFormatter {
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        print(value)
+        let format = DateFormatter()
+        format.dateFormat = "dd"
+        var valueDate = Calendar.current.date(byAdding: .day, value: Int(value), to: firstWeightRecord!.date)
+        let formattedDate = format.string(from: valueDate!)
+        return formattedDate
     }
 }

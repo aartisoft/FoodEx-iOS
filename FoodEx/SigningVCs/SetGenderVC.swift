@@ -11,14 +11,20 @@ import UIKit
 
 class SetGenderVC : UIViewController {
     
+    static var shared: SetGenderVC? = nil
+    
     @IBOutlet weak var maleImage: UIImageView!
     @IBOutlet weak var femaleImage: UIImageView!
     @IBOutlet weak var continueButton: UIButton!
     var currentGender = 0
     
+    var isEditingExistingValue = false
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        SetGenderVC.shared = self
         
         let tapGestureRecognizer0 = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
@@ -37,20 +43,35 @@ class SetGenderVC : UIViewController {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         
         if tappedImage == maleImage {
-            maleImage.image = UIImage(named: "man_enable")
-            femaleImage.image = UIImage(named: "woman_disable")
+            maleImage.image = UIImage(named: "male_enable")
+            femaleImage.image = UIImage(named: "female_disable")
             currentGender = 0
         } else {
-            maleImage.image = UIImage(named: "man_disable")
-            femaleImage.image = UIImage(named: "woman_enable")
+            maleImage.image = UIImage(named: "male_disable")
+            femaleImage.image = UIImage(named: "female_enable")
             currentGender = 1
         }
     }
     
     
     @IBAction func onContinueClicked(_ sender: Any) {
-        UserData.setMyNewGender(newGender: currentGender)
-        
-        UI.showPage(source: self, page: UI.Page.SetWeight)
+        if !isEditingExistingValue {
+            UserData.setMyNewGender(newGender: currentGender)
+            UI.showPage(source: self, page: UI.Page.SetWeight)
+        } else {
+            navigationController?.popViewController(animated: true)
+            dismiss(animated: true, completion: nil)
+            SettingsVC.shared!.setDraftGender(id: currentGender)
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let a = segue
+        let b = sender 
+    }
+    
+    func enableEditingMode() {
+        isEditingExistingValue = true
     }
 }

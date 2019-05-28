@@ -39,7 +39,9 @@ class UI {
     }
     
     enum PopUp : Int {
-        case Rating
+        case ManagerRating
+        case AppRating
+        case DietDayRating
         
         var str: String {
             return "\(self)"
@@ -57,9 +59,21 @@ class UI {
         case Main
         
         var instance : UIStoryboard {
-            return UIStoryboard(name: self.rawValue, bundle: nil)
+            switch self.rawValue {
+            case Storyboard.Signing.rawValue:
+                return storyboards[0]
+            case Storyboard.Main.rawValue:
+                return storyboards[1]
+            default:
+                fatalError("No such storyboard")
+            }
         }
     }
+    
+    private static var storyboards = [
+        UIStoryboard(name: Storyboard.Signing.rawValue, bundle: nil),
+        UIStoryboard(name: Storyboard.Main.rawValue, bundle: nil)
+    ]
     
     private static var currentPopUp: UIViewController? = nil
     
@@ -72,10 +86,13 @@ class UI {
             storyboard = Storyboard.Main.instance
         }
         
-        let viewControllerMainMenu = storyboard.instantiateViewController(withIdentifier : page.storyboardId)
+        let viewControllerToShow = storyboard.instantiateViewController(withIdentifier : page.storyboardId)
         
-        //source.present(viewControllerMainMenu, sender: source)
-        source.show(viewControllerMainMenu, sender: source) // use this to make navigation bar work (e.g. profile -> settings -> profile)
+        if source.storyboard != storyboard {
+            source.present(viewControllerToShow, animated: true)
+        } else {
+            source.show(viewControllerToShow, sender: source)// use this to make navigation bar work (e.g. profile -> settings -> profile)
+        }
     }
     
     
@@ -111,12 +128,12 @@ class UI {
         if currentPopUp == nil {
             return
         }
+        
         UIView.animate(withDuration: 0.24, animations: {
         currentPopUp!.view.transform = CGAffineTransform(scaleX: 1.35, y: 1.35)
         currentPopUp!.view.alpha = 0.0
         }) { _ in
             currentPopUp!.view.removeFromSuperview()
-            
             currentPopUp = nil
         }
         

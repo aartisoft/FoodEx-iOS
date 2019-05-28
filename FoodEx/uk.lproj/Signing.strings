@@ -1,6 +1,6 @@
 
-/* Class = "UILabel"; text = "+380677284513"; ObjectID = "2Ke-Lz-rfT"; */
-"2Ke-Lz-rfT.text" = "+380677284513";
+/* Class = "UILabel"; text = "+000000000000"; ObjectID = "2Ke-Lz-rfT"; */
+"2Ke-Lz-rfT.text" = "+000000000000";
 
 /* Class = "UIButton"; normalTitle = "4"; ObjectID = "5Fq-90-Oun"; */
 "5Fq-90-Oun.normalTitle" = "4";
@@ -14,8 +14,8 @@
 /* Class = "UILabel"; text = "Your Birthday"; ObjectID = "ACk-uE-zgF"; */
 "ACk-uE-zgF.text" = "Your Birthday";
 
-/* Class = "UILabel"; text = "Code could be detected automatically"; ObjectID = "C78-Gv-xYJ"; */
-"C78-Gv-xYJ.text" = "Code could be detected automatically";
+/* Class = "UILabel"; text = "The code could be detected automatically"; ObjectID = "C78-Gv-xYJ"; */
+"C78-Gv-xYJ.text" = "The code could be detected automatically";
 
 /* Class = "UILabel"; text = "Your Growth"; ObjectID = "CvE-lW-7IS"; */
 "CvE-lW-7IS.text" = "Your Growth";
@@ -23,8 +23,8 @@
 /* Class = "UITextField"; placeholder = "Middle Name"; ObjectID = "ELV-2O-PXt"; */
 "ELV-2O-PXt.placeholder" = "Middle Name";
 
-/* Class = "UITextField"; text = "Иван"; ObjectID = "ELV-2O-PXt"; */
-"ELV-2O-PXt.text" = "Иван";
+/* Class = "UITextField"; text = "Romanovich"; ObjectID = "ELV-2O-PXt"; */
+"ELV-2O-PXt.text" = "Romanovich";
 
 /* Class = "UILabel"; text = "Your Weight"; ObjectID = "GFT-Rh-lrJ"; */
 "GFT-Rh-lrJ.text" = "Your Weight";
@@ -89,26 +89,26 @@
 /* Class = "UITextField"; text = "067-728-45-13"; ObjectID = "pB5-JC-uf7"; */
 "pB5-JC-uf7.text" = "067-728-45-13";
 
-/* Class = "UILabel"; text = "Advice"; ObjectID = "uyQ-cA-l5L"; */
-"uyQ-cA-l5L.text" = "Advice";
+/* Class = "UILabel"; text = "signing.name.error."; ObjectID = "uyQ-cA-l5L"; */
+"uyQ-cA-l5L.text" = "signing.name.error.";
 
 /* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "vVu-Wo-eI1"; */
 "vVu-Wo-eI1.placeholder" = "Last Name";
 
-/* Class = "UITextField"; text = "Романович"; ObjectID = "vVu-Wo-eI1"; */
-"vVu-Wo-eI1.text" = "Романович";
+/* Class = "UITextField"; text = "Taranov"; ObjectID = "vVu-Wo-eI1"; */
+"vVu-Wo-eI1.text" = "Taranov";
 
 /* Class = "UITextField"; placeholder = "First Name"; ObjectID = "vYG-s6-b5A"; */
 "vYG-s6-b5A.placeholder" = "First Name";
 
-/* Class = "UITextField"; text = "Таранов"; ObjectID = "vYG-s6-b5A"; */
-"vYG-s6-b5A.text" = "Таранов";
+/* Class = "UITextField"; text = "Ivan"; ObjectID = "vYG-s6-b5A"; */
+"vYG-s6-b5A.text" = "Ivan";
 
 /* Class = "UIButton"; normalTitle = "C"; ObjectID = "vg8-YX-hQU"; */
 "vg8-YX-hQU.normalTitle" = "C";
 
-/* Class = "UILabel"; text = "Advice"; ObjectID = "w6Y-WN-Az3"; */
-"w6Y-WN-Az3.text" = "Advice";
+/* Class = "UILabel"; text = "signing.phone.error."; ObjectID = "w6Y-WN-Az3"; */
+"w6Y-WN-Az3.text" = "signing.phone.error.";
 
 /* Class = "UILabel"; text = "We're sending an SMS to phone number"; ObjectID = "wYl-TS-BYy"; */
 "wYl-TS-BYy.text" = "We're sending an SMS to phone number";

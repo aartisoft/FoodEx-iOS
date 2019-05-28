@@ -41,9 +41,16 @@ class LoginVC: KeyboardVC {
         super.viewWillAppear(animated)
         
         self.handler = Auth.auth().addStateDidChangeListener { (auth, user) in
-            // user is authenticated already
-//            Auth.auth().removeStateDidChangeListener(self.handler!)
-//            UI.showPage(source: self, page: UI.Page.RootMain)
+            if user != nil {
+//                 user is authenticated already
+//                UI.showPage(source: self, page: .RootMain)
+//                return
+                Auth.auth().removeStateDidChangeListener(self.handler!)
+                UI.showPage(source: self, page: UI.Page.RootMain)
+                FireController.getUserData()
+            } else {
+                // user is not authenticated yet
+            }
         }
     }
     
@@ -97,7 +104,12 @@ class LoginVC: KeyboardVC {
         
         print("phone: " + phone)
         
+        LoadingView.show(view: self.view)
+        
         PhoneAuthProvider.provider().verifyPhoneNumber(phone, uiDelegate: nil) { (verificationID, error) in
+            
+            LoadingView.hide()
+            
             if error != nil {
                 let a = error
                 print(error!.localizedDescription)
