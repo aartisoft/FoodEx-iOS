@@ -12,6 +12,8 @@ import XLPagerTabStrip
 
 class HomeTabsVC: SegmentedPagerTabStripViewController {
     
+    static var shared: HomeTabsVC? = nil
+    
     var presentedViewControllers: [UIViewController] = []
     //@IBOutlet var segmentedControl: UISegmentedControl!
     
@@ -23,6 +25,9 @@ class HomeTabsVC: SegmentedPagerTabStripViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        HomeTabsVC.shared = self
+        
         settings.style.segmentedControlColor = UIColor.red
         
         navigationController?.pushViewController(ChatVC(), animated: true)

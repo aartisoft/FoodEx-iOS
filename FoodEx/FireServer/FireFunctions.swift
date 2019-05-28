@@ -20,6 +20,10 @@ class FireFunctions {
         case updateCustomerInfo
         case getMonthDays
         case submitServiceFeedback
+        case submitDietDayFeedback
+        case getMyWeightHistory
+        case isMyCustomerAccountExists
+        case saveNewWeightRecording
     }
     
     static var functions = Functions.functions()
@@ -38,7 +42,7 @@ class FireFunctions {
                 }
                 // ...
             }
-            print("Data received")
+            print("Data received: " + function.rawValue)
             let dictResponse = result?.data as? [String: Any]
             callback(dictResponse!)
         }

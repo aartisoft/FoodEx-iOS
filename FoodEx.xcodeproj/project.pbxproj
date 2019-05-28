@@ -81,6 +81,7 @@
 		CE1C4C02225FB0A600F7BF9E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C4C01225FB0A600F7BF9E /* UITextField.swift */; };
 		CE1C4C04225FB5BB00F7BF9E /* UITabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C4C03225FB5BB00F7BF9E /* UITabBarItem.swift */; };
 		CE1C857422889CD500C1AD87 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C857322889CD500C1AD87 /* Address.swift */; };
+		CE1EF8BD229D90E7003CA99B /* WightRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EF8BC229D90E7003CA99B /* WightRecord.swift */; };
 		CE24AE3022770E770073A65F /* Technical.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24AE2F22770E770073A65F /* Technical.swift */; };
 		CE24D4902257DA14002F423C /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24D48F2257DA14002F423C /* Encodable.swift */; };
 		CE2652FE2263652B00E407D4 /* CalendarDayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2652FD2263652B00E407D4 /* CalendarDayHeader.swift */; };
@@ -91,6 +92,7 @@
 		CE29A05F2275E1F0000E9282 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE29A05E2275E1F0000E9282 /* Program.swift */; };
 		CE29A0612275E6BD000E9282 /* ProgramView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE29A0602275E6BD000E9282 /* ProgramView.xib */; };
 		CE29A0652275FCCD000E9282 /* ProgramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE29A0642275FCCD000E9282 /* ProgramView.swift */; };
+		CE30262C229ADE3200607F1D /* DietDayRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE30262B229ADE3200607F1D /* DietDayRating.swift */; };
 		CE3240842293427700E24F6F /* EmptyMealView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3240832293427700E24F6F /* EmptyMealView.xib */; };
 		CE3240862293440400E24F6F /* EmptyMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3240852293440400E24F6F /* EmptyMealView.swift */; };
 		CE32FE6C226E3ADA00A57091 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32FE6B226E3ADA00A57091 /* UIView.swift */; };
@@ -189,6 +191,7 @@
 		CE1C4C01225FB0A600F7BF9E /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		CE1C4C03225FB5BB00F7BF9E /* UITabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarItem.swift; sourceTree = "<group>"; };
 		CE1C857322889CD500C1AD87 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		CE1EF8BC229D90E7003CA99B /* WightRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WightRecord.swift; sourceTree = "<group>"; };
 		CE24AE2F22770E770073A65F /* Technical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Technical.swift; sourceTree = "<group>"; };
 		CE24D48F2257DA14002F423C /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		CE2652FD2263652B00E407D4 /* CalendarDayHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayHeader.swift; sourceTree = "<group>"; };
@@ -199,6 +202,7 @@
 		CE29A05E2275E1F0000E9282 /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		CE29A0602275E6BD000E9282 /* ProgramView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgramView.xib; sourceTree = "<group>"; };
 		CE29A0642275FCCD000E9282 /* ProgramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramView.swift; sourceTree = "<group>"; };
+		CE30262B229ADE3200607F1D /* DietDayRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDayRating.swift; sourceTree = "<group>"; };
 		CE3240832293427700E24F6F /* EmptyMealView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyMealView.xib; sourceTree = "<group>"; };
 		CE3240852293440400E24F6F /* EmptyMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMealView.swift; sourceTree = "<group>"; };
 		CE32FE6B226E3ADA00A57091 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				0A24900B2250D16200287773 /* Extensions */,
+				0A6B5F0D2247C20100B5AB9F /* UI.swift */,
 				0A20EEF52242BC5000CCDCDF /* Converter.swift */,
 				0A20EEF92242BC5000CCDCDF /* Event.swift */,
 				0A20EEFA2242BC5000CCDCDF /* FilesManager.swift */,
@@ -245,7 +250,6 @@
 				0A1503AC2244C3B900149D9F /* DesignableUITextField.swift */,
 				0A4A84EF224577C600C960C0 /* KeyboardVC.swift */,
 				0A22CBAF22464D7800F4CCB8 /* UIVIewExtension.swift */,
-				0A6B5F0D2247C20100B5AB9F /* UI.swift */,
 				CE24AE2F22770E770073A65F /* Technical.swift */,
 			);
 			name = Support;
@@ -271,6 +275,7 @@
 				CE1C857322889CD500C1AD87 /* Address.swift */,
 				CE27E6C6228B4FA4009FA4A6 /* Contact.swift */,
 				CE27E6C8228B4FD1009FA4A6 /* Delivery.swift */,
+				CE1EF8BC229D90E7003CA99B /* WightRecord.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 				0AC61D6A224B5899001A9CA7 /* HistoryVC.swift */,
 				0A829514224BFD6800A44ECE /* DashboardVC.swift */,
 				CE6DD1472268FF93005E1872 /* RootMainVC.swift */,
+				CE30262B229ADE3200607F1D /* DietDayRating.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -731,6 +737,7 @@
 				CE32FE6C226E3ADA00A57091 /* UIView.swift in Sources */,
 				CE1C4C04225FB5BB00F7BF9E /* UITabBarItem.swift in Sources */,
 				0A20EEFB2242BC5000CCDCDF /* Converter.swift in Sources */,
+				CE1EF8BD229D90E7003CA99B /* WightRecord.swift in Sources */,
 				CE29A0652275FCCD000E9282 /* ProgramView.swift in Sources */,
 				CE1BFBD52293C6B0002EB6BB /* FireStorage.swift in Sources */,
 				0A1503AB2244B64600149D9F /* SetNameVC.swift in Sources */,
@@ -761,6 +768,7 @@
 				0AD251FA224AB8D5001E83BC /* ProfileVC.swift in Sources */,
 				0A20EEFC2242BC5000CCDCDF /* LanguageManager.swift in Sources */,
 				0AC61D6B224B5899001A9CA7 /* HistoryVC.swift in Sources */,
+				CE30262C229ADE3200607F1D /* DietDayRating.swift in Sources */,
 				CE27E6C7228B4FA4009FA4A6 /* Contact.swift in Sources */,
 				0A8DA486225004C500A49029 /* FireFunctions.swift in Sources */,
 				0A192F5422440B5100A9849A /* UserData.swift in Sources */,

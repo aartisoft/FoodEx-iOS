@@ -313,10 +313,10 @@
             </objects>
             <point key="canvasLocation" x="-135" y="-348"/>
         </scene>
-        <!--RatingVC-->
+        <!--Manager RatingVC-->
         <scene sceneID="PS4-Ed-2vb">
             <objects>
-                <viewController storyboardIdentifier="RatingVC" id="PJ6-gu-dOd" customClass="RatingVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ManagerRatingVC" id="PJ6-gu-dOd" customClass="ManagerRatingVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T3v-j0-waQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -384,7 +384,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNC-hV-uqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-136.23188405797103" y="337.5"/>
+            <point key="canvasLocation" x="-136" y="335"/>
         </scene>
         <!--HomeTabsVC-->
         <scene sceneID="9og-H3-6Sr">
@@ -1139,7 +1139,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nk8-O1-d7g" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="10" y="104" width="394" height="180"/>
+                                <rect key="frame" x="10" y="89" width="394" height="180"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="h5C-RQ-yBz"/>
@@ -1162,14 +1162,149 @@
                                     <constraint firstAttribute="height" constant="30" id="01j-bl-2it"/>
                                     <constraint firstAttribute="width" constant="70" id="8hJ-Mx-R4G"/>
                                 </constraints>
-                                <state key="normal" title="Help"/>
+                                <state key="normal" title="Get Data"/>
+                                <connections>
+                                    <action selector="onHelpClicked:" destination="XSz-Sw-5MX" eventType="touchUpInside" id="zyE-mP-wLU"/>
+                                </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="rKW-9f-p23">
+                                <rect key="frame" x="10" y="294" width="394" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="J2W-fS-L8Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="55"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fTg-NI-djM">
+                                                <rect key="frame" x="0.0" y="0.0" width="131.5" height="52"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGG-PT-OfN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="131.5" height="22"/>
+                                                        <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="89 kg." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ozs-ir-k37">
+                                                        <rect key="frame" x="0.0" y="30" width="131.5" height="22"/>
+                                                        <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vXe-SM-MDn">
+                                                <rect key="frame" x="131.5" y="0.0" width="131" height="52"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWo-31-SGo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="131" height="22"/>
+                                                        <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="86.8 kg." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArY-Ea-Es2">
+                                                        <rect key="frame" x="0.0" y="30" width="131" height="22"/>
+                                                        <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wdx-rZ-5Wj">
+                                                <rect key="frame" x="262.5" y="0.0" width="131.5" height="52"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total loss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgv-JH-xhH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="131.5" height="22"/>
+                                                        <fontDescription key="fontDescription" name="RNSMiles-Medium" family="RNS Miles" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.2 kg." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="al3-Wj-USh">
+                                                        <rect key="frame" x="0.0" y="30" width="131.5" height="22"/>
+                                                        <fontDescription key="fontDescription" name="RNSMiles-Medium" family="RNS Miles" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="F1C-rB-ou6"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Pd9-8z-gWF">
+                                        <rect key="frame" x="0.0" y="95" width="394" height="55"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="u1T-BG-Exg">
+                                                <rect key="frame" x="0.0" y="0.0" width="131.5" height="52"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days since start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ke-qa-evI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="131.5" height="22"/>
+                                                        <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="87" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVy-yl-fLb">
+                                                        <rect key="frame" x="0.0" y="30" width="131.5" height="22"/>
+                                                        <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ktc-Im-DIE">
+                                                <rect key="frame" x="131.5" y="0.0" width="131" height="52"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diet days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXl-eo-OcP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="131" height="22"/>
+                                                        <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="79" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yi-9M-wUU">
+                                                        <rect key="frame" x="0.0" y="30" width="131" height="22"/>
+                                                        <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PGO-wt-g7X">
+                                                <rect key="frame" x="262.5" y="0.0" width="131.5" height="52"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Missed days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B70-Xv-Gjx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="131.5" height="22"/>
+                                                        <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTV-uv-V5c">
+                                                        <rect key="frame" x="0.0" y="30" width="131.5" height="22"/>
+                                                        <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="s3R-Kt-X4k"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="J2W-fS-L8Z" firstAttribute="leading" secondItem="rKW-9f-p23" secondAttribute="leading" id="3bc-Zn-WKn"/>
+                                    <constraint firstItem="Pd9-8z-gWF" firstAttribute="leading" secondItem="rKW-9f-p23" secondAttribute="leading" id="naT-nV-pUg"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pd9-8z-gWF" secondAttribute="trailing" id="oly-Rg-zGa"/>
+                                    <constraint firstAttribute="trailing" secondItem="J2W-fS-L8Z" secondAttribute="trailing" id="tuQ-3u-d7C"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Jj7-bK-vS7" firstAttribute="trailing" secondItem="122-pF-uWb" secondAttribute="trailing" constant="20" id="BaR-v6-lV4"/>
+                            <constraint firstItem="rKW-9f-p23" firstAttribute="leading" secondItem="Jj7-bK-vS7" secondAttribute="leading" constant="10" id="LyD-iF-Wvt"/>
                             <constraint firstItem="Jj7-bK-vS7" firstAttribute="trailing" secondItem="Nk8-O1-d7g" secondAttribute="trailing" constant="10" id="N94-An-Ixe"/>
-                            <constraint firstItem="Nk8-O1-d7g" firstAttribute="top" secondItem="Jj7-bK-vS7" secondAttribute="top" constant="60" id="Wxd-Le-6gu"/>
+                            <constraint firstItem="rKW-9f-p23" firstAttribute="top" secondItem="Nk8-O1-d7g" secondAttribute="bottom" constant="25" id="S8z-h5-acA"/>
+                            <constraint firstItem="Nk8-O1-d7g" firstAttribute="top" secondItem="Jj7-bK-vS7" secondAttribute="top" constant="45" id="Wxd-Le-6gu"/>
+                            <constraint firstItem="Jj7-bK-vS7" firstAttribute="trailing" secondItem="rKW-9f-p23" secondAttribute="trailing" constant="10" id="YMJ-Pm-MNg"/>
                             <constraint firstItem="0J1-Ny-aDi" firstAttribute="centerX" secondItem="iD0-G3-KqM" secondAttribute="centerX" id="YsN-dx-gnL"/>
                             <constraint firstItem="122-pF-uWb" firstAttribute="top" secondItem="Jj7-bK-vS7" secondAttribute="top" id="eBM-2L-O8l"/>
                             <constraint firstItem="Jj7-bK-vS7" firstAttribute="bottom" secondItem="0J1-Ny-aDi" secondAttribute="bottom" constant="30" id="pPh-i8-atb"/>
@@ -1207,7 +1342,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FCH-10-Wdf" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                <rect key="frame" x="153" y="190" width="50" height="50"/>
+                                <rect key="frame" x="152" y="190" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -1220,12 +1355,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="foK-Ky-4bu">
                                 <rect key="frame" x="20" y="451" width="335" height="55"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="32j-qJ-GyP">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="T5d-4G-bsJ">
                                         <rect key="frame" x="0.0" y="0.0" width="91.5" height="55"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Loss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrT-Ow-Mu2">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next meal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1i-2l-dWO">
                                                 <rect key="frame" x="0.0" y="0.0" width="91.5" height="25"/>
-                                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -1235,7 +1370,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="morphingEnabled" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.3 kg." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07K-gx-7FC" customClass="CountdownLabel" customModule="CountdownLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next meal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGc-Ec-gnf" customClass="CountdownLabel" customModule="CountdownLabel">
                                                 <rect key="frame" x="0.0" y="30" width="91.5" height="25"/>
                                                 <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -1249,35 +1384,13 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="T5d-4G-bsJ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHC-JO-8mj">
                                         <rect key="frame" x="121.5" y="0.0" width="92" height="55"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next meal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1i-2l-dWO">
-                                                <rect key="frame" x="0.0" y="0.0" width="92" height="25"/>
-                                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="morphingProgress">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="morphingEnabled" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next meal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGc-Ec-gnf" customClass="CountdownLabel" customModule="CountdownLabel">
-                                                <rect key="frame" x="0.0" y="30" width="92" height="25"/>
-                                                <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="morphingProgress">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="morphingEnabled" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                        <state key="normal" title="Feedback"/>
+                                        <connections>
+                                            <action selector="openFeedback:" destination="rD5-CT-eSD" eventType="touchUpInside" id="QkQ-gN-aMw"/>
+                                        </connections>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Q5o-AA-XZN">
                                         <rect key="frame" x="243.5" y="0.0" width="91.5" height="55"/>
                                         <subviews>
@@ -2438,6 +2551,209 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sK0-s2-ugs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1497.1014492753625" y="-713.16964285714278"/>
+        </scene>
+        <!--Diet Day RatingVC-->
+        <scene sceneID="XqS-vm-S8O">
+            <objects>
+                <viewController storyboardIdentifier="DietDayRatingVC" id="w0w-N4-HW2" customClass="DietDayRatingVC" customModule="FoodEx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D1h-4r-JUj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQg-UQ-rq8">
+                                <rect key="frame" x="87" y="260.5" width="240" height="375"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate our service" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPA-ga-ZeU">
+                                        <rect key="frame" x="10" y="5" width="220" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ilP-OV-U94"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oku-Z7-ZhI">
+                                        <rect key="frame" x="10" y="335" width="70" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="4Ej-8y-9V7"/>
+                                            <constraint firstAttribute="width" constant="70" id="SdU-LX-24t"/>
+                                        </constraints>
+                                        <state key="normal" title="Close"/>
+                                        <connections>
+                                            <action selector="cancelRating:" destination="w0w-N4-HW2" eventType="touchUpInside" id="xTm-O0-7iK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zq-Z4-jBp">
+                                        <rect key="frame" x="160" y="335" width="70" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="ddn-xn-36P"/>
+                                            <constraint firstAttribute="width" constant="70" id="yEh-gL-cSl"/>
+                                        </constraints>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="submitRating:" destination="w0w-N4-HW2" eventType="touchUpInside" id="ROs-Ps-WPZ"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="im9-WQ-gTj">
+                                        <rect key="frame" x="10" y="225" width="220" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="7mp-WE-beH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7zW-bK-IRB">
+                                        <rect key="frame" x="10" y="70" width="220" height="60"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJx-xv-9wB">
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="20"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pey-HQ-7QX">
+                                                        <rect key="frame" x="0.0" y="-10" width="60.5" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="Bun-0X-eL7"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sud-dM-3Pn" customClass="CosmosView" customModule="Cosmos">
+                                                        <rect key="frame" x="100" y="0.0" width="120" height="20"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="uTd-GJ-OK7"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="4NQ-6Q-tMW"/>
+                                                    <constraint firstItem="sud-dM-3Pn" firstAttribute="centerY" secondItem="FJx-xv-9wB" secondAttribute="centerY" id="GEe-Ig-xmV"/>
+                                                    <constraint firstItem="pey-HQ-7QX" firstAttribute="centerY" secondItem="FJx-xv-9wB" secondAttribute="centerY" id="UAJ-jA-fc3"/>
+                                                    <constraint firstItem="pey-HQ-7QX" firstAttribute="leading" secondItem="FJx-xv-9wB" secondAttribute="leading" id="Uba-1j-EyH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sud-dM-3Pn" secondAttribute="trailing" id="egf-xy-keJ"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fzb-iL-HRB">
+                                                <rect key="frame" x="0.0" y="40" width="220" height="20"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcR-bf-gIq">
+                                                        <rect key="frame" x="0.0" y="-10" width="39.5" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="km6-1T-RCU"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GyK-oT-GJ0" customClass="CosmosView" customModule="Cosmos">
+                                                        <rect key="frame" x="100" y="0.0" width="120" height="20"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="W8D-Nq-OZo"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="Kze-ro-cDE"/>
+                                                    <constraint firstItem="hcR-bf-gIq" firstAttribute="leading" secondItem="Fzb-iL-HRB" secondAttribute="leading" id="OSP-Kg-eaM"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GyK-oT-GJ0" secondAttribute="trailing" id="Vhl-4c-WMN"/>
+                                                    <constraint firstItem="GyK-oT-GJ0" firstAttribute="centerY" secondItem="Fzb-iL-HRB" secondAttribute="centerY" id="WYb-4S-wcL"/>
+                                                    <constraint firstItem="hcR-bf-gIq" firstAttribute="centerY" secondItem="Fzb-iL-HRB" secondAttribute="centerY" id="khc-Cy-LoB"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please, leave feedback :)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v51-j9-9xR">
+                                        <rect key="frame" x="10" y="177" width="220" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="IbA-mo-yit"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="dhO-9F-qrU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please, rate all points" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RG-Aw-pdq">
+                                        <rect key="frame" x="10" y="135" width="220" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="N8p-WE-MAx"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Ouo-bg-0RJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="RNSMiles-Regular" family="RNS Miles" pointSize="13"/>
+                                        <color key="textColor" red="0.88235294119999996" green="0.062745098040000002" blue="0.1058823529" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="4RG-Aw-pdq" firstAttribute="leading" secondItem="gQg-UQ-rq8" secondAttribute="leading" constant="10" id="3SQ-mN-awv"/>
+                                    <constraint firstAttribute="trailing" secondItem="im9-WQ-gTj" secondAttribute="trailing" constant="10" id="60g-yZ-0aK"/>
+                                    <constraint firstItem="7zW-bK-IRB" firstAttribute="centerX" secondItem="gQg-UQ-rq8" secondAttribute="centerX" id="8hk-0b-Vt9"/>
+                                    <constraint firstItem="4RG-Aw-pdq" firstAttribute="top" secondItem="7zW-bK-IRB" secondAttribute="bottom" constant="5" id="9iw-Q9-sTo"/>
+                                    <constraint firstItem="Oku-Z7-ZhI" firstAttribute="leading" secondItem="gQg-UQ-rq8" secondAttribute="leading" constant="10" id="EGi-Ug-i1x"/>
+                                    <constraint firstItem="im9-WQ-gTj" firstAttribute="leading" secondItem="gQg-UQ-rq8" secondAttribute="leading" constant="10" id="Ji8-3H-j8Q"/>
+                                    <constraint firstItem="yPA-ga-ZeU" firstAttribute="top" secondItem="gQg-UQ-rq8" secondAttribute="top" constant="5" id="LBj-80-edU"/>
+                                    <constraint firstAttribute="width" constant="240" id="RCP-v8-Omh"/>
+                                    <constraint firstAttribute="bottom" secondItem="Oku-Z7-ZhI" secondAttribute="bottom" constant="5" id="TAD-aK-xOs"/>
+                                    <constraint firstAttribute="trailing" secondItem="4RG-Aw-pdq" secondAttribute="trailing" constant="10" id="XMZ-oT-96r"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Zq-Z4-jBp" secondAttribute="bottom" constant="5" id="amL-Vs-cpf"/>
+                                    <constraint firstItem="yPA-ga-ZeU" firstAttribute="leading" secondItem="gQg-UQ-rq8" secondAttribute="leading" constant="10" id="b0H-qg-fcr"/>
+                                    <constraint firstAttribute="trailing" secondItem="yPA-ga-ZeU" secondAttribute="trailing" constant="10" id="be6-Vh-w3U"/>
+                                    <constraint firstItem="im9-WQ-gTj" firstAttribute="top" secondItem="v51-j9-9xR" secondAttribute="bottom" constant="8" symbolic="YES" id="cHR-zC-fMC"/>
+                                    <constraint firstAttribute="bottom" secondItem="im9-WQ-gTj" secondAttribute="bottom" constant="50" id="egf-rf-iHF"/>
+                                    <constraint firstAttribute="height" constant="375" id="gBG-XS-RBi"/>
+                                    <constraint firstItem="7zW-bK-IRB" firstAttribute="leading" secondItem="4RG-Aw-pdq" secondAttribute="leading" id="nRc-ar-5VC"/>
+                                    <constraint firstAttribute="trailing" secondItem="v51-j9-9xR" secondAttribute="trailing" constant="10" id="py6-3Y-8wL"/>
+                                    <constraint firstItem="7zW-bK-IRB" firstAttribute="top" secondItem="yPA-ga-ZeU" secondAttribute="bottom" constant="25" id="v8y-Ai-2PT"/>
+                                    <constraint firstItem="v51-j9-9xR" firstAttribute="leading" secondItem="gQg-UQ-rq8" secondAttribute="leading" constant="10" id="xAV-j3-Gq2"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Zq-Z4-jBp" secondAttribute="trailing" constant="10" id="yZq-9K-AJ8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gQg-UQ-rq8" firstAttribute="centerY" secondItem="D1h-4r-JUj" secondAttribute="centerY" id="nWc-xO-FC1"/>
+                            <constraint firstItem="gQg-UQ-rq8" firstAttribute="centerX" secondItem="D1h-4r-JUj" secondAttribute="centerX" id="uFR-e9-yi6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lpd-V7-y9y"/>
+                    </view>
+                    <connections>
+                        <outlet property="deliveryRating" destination="sud-dM-3Pn" id="hiO-AI-QjI"/>
+                        <outlet property="feedbackText" destination="im9-WQ-gTj" id="0Lm-82-Est"/>
+                        <outlet property="foodRating" destination="GyK-oT-GJ0" id="B2K-F5-Xxe"/>
+                        <outlet property="popUpView" destination="gQg-UQ-rq8" id="1jf-hi-X5F"/>
+                        <outlet property="ratingNoteLabel" destination="4RG-Aw-pdq" id="C3a-XS-FbT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s0Y-Zf-Mtp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2155.072463768116" y="-964.28571428571422"/>
         </scene>
     </scenes>
     <resources>

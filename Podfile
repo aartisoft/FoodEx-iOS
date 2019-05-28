@@ -18,7 +18,7 @@ target 'FoodEx' do
   pod 'PlatonSDK'
   pod 'JTAppleCalendar'
   pod 'Cosmos', '~> 18.0'
-  pod 'Charts', '~> 3.2.2'
+  pod 'Charts', '~> 3.3.0'
   pod 'SkeletonView'
   pod 'UPCarouselFlowLayout'
   pod 'CountdownLabel'

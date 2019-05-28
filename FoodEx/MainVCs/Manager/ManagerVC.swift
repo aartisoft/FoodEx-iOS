@@ -14,7 +14,7 @@ class ManagerVC : UIViewController {
     @IBOutlet weak var phoneLabel: UIButton!
     
     @IBAction func showRatingWindow(_ sender: Any) {
-        UI.showPopUp(source: self, popUp: .Rating)
+        UI.showPopUp(source: self, popUp: .ManagerRating)
     }
     
     

@@ -15,7 +15,7 @@ class ProfileVC : UIViewController {
     static var shared: ProfileVC? = nil
     
     @IBAction func showRatingWindow(_ sender: Any) {
-        UI.showPopUp(source: self, popUp: .Rating)
+        UI.showPopUp(source: self, popUp: .ManagerRating)
     }
     
     

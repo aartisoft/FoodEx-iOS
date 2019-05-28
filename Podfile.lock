@@ -6,9 +6,9 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.3):
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
-  - Charts (3.2.2):
-    - Charts/Core (= 3.2.2)
-  - Charts/Core (3.2.2)
+  - Charts (3.3.0):
+    - Charts/Core (= 3.3.0)
+  - Charts/Core (3.3.0)
   - Cosmos (18.0.1)
   - CountdownLabel (4.0.1)
   - Firebase (6.0.0):
@@ -148,7 +148,7 @@ PODS:
   - XLPagerTabStrip (8.1.1)
 
 DEPENDENCIES:
-  - Charts (~> 3.2.2)
+  - Charts (~> 3.3.0)
   - Cosmos (~> 18.0)
   - CountdownLabel
   - Firebase
@@ -210,7 +210,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
-  Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
+  Charts: ec1f57f9340054155691e84d4544a1d239d382c5
   Cosmos: 7dfaa3f52584ca5f94ab74b5c2e264019cc9f7f5
   CountdownLabel: c9975e3f329140b5e7d1f45cd63b1300badd1712
   Firebase: fa80b9d987ca014a1ba9357496ef2a0178b28b12
@@ -244,6 +244,6 @@ SPEC CHECKSUMS:
   UPCarouselFlowLayout: 4c7d2c43a10ebb1597bde502a53699d378341dad
   XLPagerTabStrip: 63166e21c9844fa30f2d95d30f335e73be5caf22
 
-PODFILE CHECKSUM: d0756f834396d41f8703e99e628b8443f14c4f96
+PODFILE CHECKSUM: 36677431e132fb48f3ed43a44351c6bf430ca67a
 
 COCOAPODS: 1.6.1

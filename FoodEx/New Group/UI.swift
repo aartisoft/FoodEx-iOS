@@ -39,8 +39,9 @@ class UI {
     }
     
     enum PopUp : Int {
-        case Rating
+        case ManagerRating
         case AppRating
+        case DietDayRating
         
         var str: String {
             return "\(self)"
@@ -127,12 +128,12 @@ class UI {
         if currentPopUp == nil {
             return
         }
+        
         UIView.animate(withDuration: 0.24, animations: {
         currentPopUp!.view.transform = CGAffineTransform(scaleX: 1.35, y: 1.35)
         currentPopUp!.view.alpha = 0.0
         }) { _ in
             currentPopUp!.view.removeFromSuperview()
-            
             currentPopUp = nil
         }
         

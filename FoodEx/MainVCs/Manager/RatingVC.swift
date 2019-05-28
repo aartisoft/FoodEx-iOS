@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RatingVC : KeyboardVC {
+class ManagerRatingVC : KeyboardVC {
     
     @IBOutlet weak var feedbackText: UITextView!
     @IBOutlet weak var popUpView: UIView!
@@ -21,9 +21,13 @@ class RatingVC : KeyboardVC {
         
         viewsToMove[popUpView] = 0.4
         viewsToDismissKeyboard.append(feedbackText)
+        
+        HomeTabsVC.shared!.tabBarController!.tabBar.isHidden = true
     }
     
     @IBAction func cancelRating(_ sender: Any) {
         UI.hideCurrentPopUp()
+        
+        HomeTabsVC.shared!.tabBarController!.tabBar.isHidden = false
     }
 }
