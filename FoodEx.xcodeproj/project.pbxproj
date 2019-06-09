@@ -101,12 +101,17 @@
 		CE4F6A7D22885A9F00F5BAEC /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4F6A7C22885A9F00F5BAEC /* LoadingView.xib */; };
 		CE4F6A7F22885BA800F5BAEC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F6A7E22885BA800F5BAEC /* LoadingView.swift */; };
 		CE50B53E229179E700418F49 /* AppRatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50B53D229179E700418F49 /* AppRatingVC.swift */; };
+		CE5B01D122AD72550042A6D4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B01D022AD72550042A6D4 /* Message.swift */; };
 		CE6DD1482268FF93005E1872 /* RootMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DD1472268FF93005E1872 /* RootMainVC.swift */; };
 		CE891936228CA06200AE1573 /* FireController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE891935228CA06200AE1573 /* FireController.swift */; };
 		CEA3EB30226BB86F00DECB79 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3EB2F226BB86F00DECB79 /* MealView.swift */; };
 		CEBFF32D225E7AC400C2E5DD /* Signing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBFF32B225E7AC300C2E5DD /* Signing.storyboard */; };
 		CEBFF33E225E7CB200C2E5DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEBFF340225E7CB200C2E5DD /* Localizable.strings */; };
 		CEC193A9227C776A009BEF41 /* SetingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC193A8227C776A009BEF41 /* SetingsVC.swift */; };
+		CECEC55422AD1B9600D72968 /* ChatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECEC55322AD1B9500D72968 /* ChatsVC.swift */; };
+		CECEC55622AD1D8800D72968 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECEC55522AD1D8800D72968 /* Chat.swift */; };
+		CECEC55822AD268200D72968 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECEC55722AD268200D72968 /* ChatCell.swift */; };
+		CECEC55A22AD3D1900D72968 /* CreatingChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECEC55922AD3D1900D72968 /* CreatingChatVC.swift */; };
 		CEDD4D7422748A2300EE696D /* DietDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD4D7322748A2300EE696D /* DietDay.swift */; };
 /* End PBXBuildFile section */
 
@@ -211,6 +216,7 @@
 		CE4F6A7C22885A9F00F5BAEC /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		CE4F6A7E22885BA800F5BAEC /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CE50B53D229179E700418F49 /* AppRatingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRatingVC.swift; sourceTree = "<group>"; };
+		CE5B01D022AD72550042A6D4 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		CE6DD1472268FF93005E1872 /* RootMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootMainVC.swift; sourceTree = "<group>"; };
 		CE891935228CA06200AE1573 /* FireController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireController.swift; sourceTree = "<group>"; };
 		CEA3EB2F226BB86F00DECB79 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
@@ -221,6 +227,10 @@
 		CEBFF33F225E7CB200C2E5DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CEBFF341225E7CB500C2E5DD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CEC193A8227C776A009BEF41 /* SetingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetingsVC.swift; sourceTree = "<group>"; };
+		CECEC55322AD1B9500D72968 /* ChatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsVC.swift; sourceTree = "<group>"; };
+		CECEC55522AD1D8800D72968 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		CECEC55722AD268200D72968 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		CECEC55922AD3D1900D72968 /* CreatingChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingChatVC.swift; sourceTree = "<group>"; };
 		CEDD4D7322748A2300EE696D /* DietDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDay.swift; sourceTree = "<group>"; };
 		D37759EE197B725A51A81510 /* Pods-FoodEx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodEx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodEx/Pods-FoodEx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -276,6 +286,8 @@
 				CE27E6C6228B4FA4009FA4A6 /* Contact.swift */,
 				CE27E6C8228B4FD1009FA4A6 /* Delivery.swift */,
 				CE1EF8BC229D90E7003CA99B /* WightRecord.swift */,
+				CECEC55522AD1D8800D72968 /* Chat.swift */,
+				CE5B01D022AD72550042A6D4 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,6 +317,8 @@
 				0A2490132250D5E300287773 /* ChatBaseVC.swift */,
 				CE145FF12266F2E2007E7747 /* RatingVC.swift */,
 				CE145FF32266F429007E7747 /* ManagerVC.swift */,
+				CECEC55322AD1B9500D72968 /* ChatsVC.swift */,
+				CECEC55922AD3D1900D72968 /* CreatingChatVC.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -498,6 +512,7 @@
 				CE15317722759B1D002DFC3B /* PromoCard.swift */,
 				CE4F6A7E22885BA800F5BAEC /* LoadingView.swift */,
 				CE3240852293440400E24F6F /* EmptyMealView.swift */,
+				CECEC55722AD268200D72968 /* ChatCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -700,7 +715,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CECEC55422AD1B9600D72968 /* ChatsVC.swift in Sources */,
 				0A22CBB022464D7800F4CCB8 /* UIVIewExtension.swift in Sources */,
+				CECEC55622AD1D8800D72968 /* Chat.swift in Sources */,
 				0A6B5F162247CE5000B5AB9F /* Weight.swift in Sources */,
 				0A6B5F102247C51A00B5AB9F /* SetGrowthVC.swift in Sources */,
 				0A22CBB8224692F200F4CCB8 /* SetWeightVC.swift in Sources */,
@@ -717,6 +734,7 @@
 				0AD251F8224AB8AB001E83BC /* PurchasesVC.swift in Sources */,
 				CE145FF22266F2E2007E7747 /* RatingVC.swift in Sources */,
 				0A1503AD2244C3B900149D9F /* DesignableUITextField.swift in Sources */,
+				CE5B01D122AD72550042A6D4 /* Message.swift in Sources */,
 				0A22CBB5224690AD00F4CCB8 /* UILabel.swift in Sources */,
 				0A20EEFD2242BC5000CCDCDF /* StringExtension.swift in Sources */,
 				0A6B5F0C2247A78300B5AB9F /* SetGenderVC.swift in Sources */,
@@ -728,6 +746,7 @@
 				CE891936228CA06200AE1573 /* FireController.swift in Sources */,
 				0A2490122250D1F900287773 /* UserDefaults.swift in Sources */,
 				CE1C4C00225FAD6C00F7BF9E /* UIButton.swift in Sources */,
+				CECEC55A22AD3D1900D72968 /* CreatingChatVC.swift in Sources */,
 				0A6B5F182247D02A00B5AB9F /* SetBirthdayVC.swift in Sources */,
 				CE19A56E2269103200A9013F /* PhoneNumber.swift in Sources */,
 				CE1A468A226F7B6A00FE1D42 /* Meal.swift in Sources */,
@@ -771,6 +790,7 @@
 				CE30262C229ADE3200607F1D /* DietDayRating.swift in Sources */,
 				CE27E6C7228B4FA4009FA4A6 /* Contact.swift in Sources */,
 				0A8DA486225004C500A49029 /* FireFunctions.swift in Sources */,
+				CECEC55822AD268200D72968 /* ChatCell.swift in Sources */,
 				0A192F5422440B5100A9849A /* UserData.swift in Sources */,
 				0A6B5F0E2247C20100B5AB9F /* UI.swift in Sources */,
 				0A2490142250D5E400287773 /* ChatBaseVC.swift in Sources */,

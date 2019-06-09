@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Name : Codable {
+public class Name : Codable {
     var first: String
     var middle: String
     var last: String

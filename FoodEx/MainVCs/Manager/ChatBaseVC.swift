@@ -37,17 +37,12 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
         
         configureMessageCollectionView()
         configureMessageInputBar()
-        loadFirstMessages()
+//        loadFirstMessages()
         title = "Chat with Manager"
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        MockSocket.shared.connect(with: [SampleData.shared.steven, SampleData.shared.wu])
-            .onNewMessage { [weak self] message in
-                self?.insertMessage(message)
-        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -67,7 +62,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
             }
         }
     }
-    
+
     @objc
     func loadMoreMessages() {
         DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 1) {
@@ -90,7 +85,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
         maintainPositionOnKeyboardFrameChanged = true // default false
         
         messagesCollectionView.addSubview(refreshControl)
-        refreshControl.addTarget(self, action: #selector(loadMoreMessages), for: .valueChanged)
+//        refreshControl.addTarget(self, action: #selector(loadMoreMessages), for: .valueChanged)
     }
     
     func configureMessageInputBar() {
@@ -247,22 +242,22 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
             DispatchQueue.main.async { [weak self] in
                 self?.messageInputBar.sendButton.stopAnimating()
                 self?.messageInputBar.inputTextView.placeholder = "Aa"
-                self?.insertMessages(components)
+//                self?.insertMessages(components)
                 self?.messagesCollectionView.scrollToBottom(animated: true)
             }
         }
     }
     
-    private func insertMessages(_ data: [Any]) {
-        for component in data {
-            let user = SampleData.shared.currentSender
-            if let str = component as? String {
-                let message = MockMessage(text: str, sender: user, messageId: UUID().uuidString, date: Date())
-                insertMessage(message)
-            } else if let img = component as? UIImage {
-                let message = MockMessage(image: img, sender: user, messageId: UUID().uuidString, date: Date())
-                insertMessage(message)
-            }
-        }
-    }
+//    private func insertMessages(_ data: [Any]) {
+//        for component in data {
+//            let user = SampleData.shared.currentSender
+//            if let str = component as? String {
+//                let message = MockMessage(text: str, sender: user, messageId: UUID().uuidString, date: Date())
+//                insertMessage(message)
+//            } else if let img = component as? UIImage {
+//                let message = MockMessage(image: img, sender: user, messageId: UUID().uuidString, date: Date())
+//                insertMessage(message)
+//            }
+//        }
+//    }
 }

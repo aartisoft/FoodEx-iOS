@@ -28,6 +28,7 @@ class UI {
         case Payment
         case Profile
         case Settings
+        case Chat
         
         var str: String {
             return "\(self)"
@@ -42,6 +43,7 @@ class UI {
         case ManagerRating
         case AppRating
         case DietDayRating
+        case CreatingChat
         
         var str: String {
             return "\(self)"

@@ -13,6 +13,8 @@ import MessageInputBar
 /// A base class for the example controllers
 final class ChatVC: ChatViewController {
     
+    static var shared = ChatVC()
+    
     override func configureMessageCollectionView() {
         super.configureMessageCollectionView()
         
@@ -23,6 +25,8 @@ final class ChatVC: ChatViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ChatVC.shared = self
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
         
@@ -32,10 +36,37 @@ final class ChatVC: ChatViewController {
 //        } to remove avatar pading
         
         initKeyboardManager()
+        
+        
+        // TODO: refactor these mock messages
+        let messages: [MessageText] = [
+            MessageText(text: "newTextdasd", sentDate: Date(), messageId: UUID().uuidString, senderId: "asdasdasdasdasdasda", userType: 0, name: Name(first: "", middle: "", last: ""))]
+
+        
+        showMessages(messages: messages)
+
     }
     
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
         messageInputBar.resignFirstResponder()
+    }
+    
+    
+    func showMessages(messages: [MessageText]) {
+        var newMessages: [MockMessage] = []
+        
+        for var message in messages {
+            newMessages.append(message.mockMessage)
+        }
+        
+        
+        self.messagesCollectionView.reloadData()
+        self.messagesCollectionView.scrollToBottom()
+        
+        for var message in messages {
+            insertMessage(message.mockMessage)
+        }
+        //            insertMessage(message.mockMessage)
     }
 }
 
