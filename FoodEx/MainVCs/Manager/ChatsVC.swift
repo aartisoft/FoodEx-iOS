@@ -30,14 +30,23 @@ class ChatsVC: UITableViewController {
     }
 //
     func getChatsList() {
-
-        for var i in 0...1 {
-            let chat = Chat(title: "title" + String(i), startTime: Date(), customerId: "dsda", supportId: "asdas")
-            self.chatsTable.beginUpdates()
-            self.chatsList.insert(chat, at: 0)
-            self.chatsTable.insertRows(at: [IndexPath.init(row: 0, section: 0)], with: .automatic)
-            self.chatsTable.endUpdates()
-        }
+        
+        FireFunctions.callFunction(.getMyCustomerChatSessions, "", callback: { (dictResponse) in
+            
+            let chatsDicts = dictResponse["chats"] as! [[String: Any]]
+            
+            self.chatsList = []
+            
+            for var chatDict in chatsDicts {
+                
+                // let chat = Chat(title: "title" + String(i), startTime: Date(), customerId: "dsda", supportId: "asdas")
+                let chat = Chat(dict: chatDict)
+                self.chatsTable.beginUpdates()
+                self.chatsList.insert(chat, at: 0)
+                self.chatsTable.insertRows(at: [IndexPath.init(row: 0, section: 0)], with: .automatic)
+                self.chatsTable.endUpdates()
+            }
+        })
     }
     
     @objc func createNewTapped(sender: UIBarButtonItem) {

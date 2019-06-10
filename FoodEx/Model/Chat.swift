@@ -21,4 +21,14 @@ class Chat : Codable {
         self.customerId = customerId
         self.supportId = supportId
     }
+    
+    init(dict: [String: Any]) {
+        self.title = dict["title"] as! String
+        self.startTime = Date(timeIntervalSince1970: Double(dict["startTime"] as! Int))
+        if let val = dict["registration"] as? Int{
+            self.endTime = Date(timeIntervalSince1970: Double(val))
+        }
+        self.customerId = dict["customerId"] as! String
+        self.supportId = dict["supportId"] as? String ?? "supportIdHere"
+    }
 }

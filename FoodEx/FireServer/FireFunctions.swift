@@ -24,6 +24,7 @@ class FireFunctions {
         case getMyWeightHistory
         case isMyCustomerAccountExists
         case saveNewWeightRecording
+        case getMyCustomerChatSessions
     }
     
     static var functions = Functions.functions()
@@ -44,6 +45,7 @@ class FireFunctions {
             }
             print("Data received: " + function.rawValue)
             let dictResponse = result?.data as? [String: Any]
+            let a = result?.data 
             callback(dictResponse!)
         }
     }
