@@ -25,6 +25,7 @@ class FireFunctions {
         case isMyCustomerAccountExists
         case saveNewWeightRecording
         case getMyCustomerChatSessions
+        case getChatMessages
     }
     
     static var functions = Functions.functions()

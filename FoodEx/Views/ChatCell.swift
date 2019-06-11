@@ -13,7 +13,7 @@ import Firebase
 @IBDesignable class ChatCell : UITableViewCell {
     
     // TODO: refactor it
-    @IBInspectable var actionCode: String = "openChat"
+    @IBInspectable var chatId: String = ""
     @IBOutlet weak var chatImage: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var time: UILabel!
@@ -29,19 +29,16 @@ import Firebase
 //        
         let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.someAction (_:)))
         self.addGestureRecognizer(gesture)
-        
+    }
+    
+    
+    func initializeChat(chatId: String) {
+        self.chatId = chatId
     }
     
     
     @objc func someAction(_ sender:UITapGestureRecognizer){
-        switch actionCode {
-        case "openChat":
-            UI.showPage(source: ChatsVC.shared, page: .Chat)
-                        
-            break
-        default:
-            return
-        }
-        
+        UI.showPage(source: ChatsVC.shared, page: .Chat)
+        ChatVC.shared.showChatHistory(chatId: chatId)
     }
 }

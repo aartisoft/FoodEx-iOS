@@ -14,12 +14,14 @@ class Chat : Codable {
     var endTime: Date? = nil
     var customerId: String
     var supportId: String
+    var chatId: String
     
-    init(title: String, startTime: Date, customerId: String, supportId: String) {
+    init(title: String, startTime: Date, customerId: String, supportId: String, chatId: String) {
         self.title = title
         self.startTime = startTime
         self.customerId = customerId
         self.supportId = supportId
+        self.chatId = chatId
     }
     
     init(dict: [String: Any]) {
@@ -30,5 +32,6 @@ class Chat : Codable {
         }
         self.customerId = dict["customerId"] as! String
         self.supportId = dict["supportId"] as? String ?? "supportIdHere"
+        self.chatId = dict["chatId"] as! String
     }
 }

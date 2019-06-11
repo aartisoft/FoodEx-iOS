@@ -67,6 +67,7 @@ class ChatsVC: UITableViewController {
         // Configure the cell’s contents with the row and section number.
         // The Basic cell style guarantees a label view is present in textLabel.
         cell.title.text = chatsList[indexPath.row].title
+        cell.initializeChat(chatId: chatsList[indexPath.row].chatId)
         return cell
     }
 }

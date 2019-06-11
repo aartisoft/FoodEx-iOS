@@ -36,19 +36,39 @@ final class ChatVC: ChatViewController {
 //        } to remove avatar pading
         
         initKeyboardManager()
-        
-        
-        // TODO: refactor these mock messages
-        let messages: [MessageText] = [
-            MessageText(text: "newTextdasd", sentDate: Date(), messageId: UUID().uuidString, senderId: "asdasdasdasdasdasda", userType: 0, name: Name(first: "", middle: "", last: ""))]
-
-        
-        showMessages(messages: messages)
 
     }
     
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
         messageInputBar.resignFirstResponder()
+    }
+    
+    
+    func showChatHistory(chatId: String) {
+        let filter = [
+            "amount": 50,
+            "skip": 0,
+            "chatId": chatId
+            ] as [String : Any]
+        
+        LoadingView.show(view: self.view)
+        
+        FireFunctions.callFunction(.getChatMessages, filter, callback: { (dictResponse) in
+            LoadingView.hide()
+            
+            let messagesDict = dictResponse["messages"] as! [[String: Any]]
+            var messages: [MessageText] = []
+            
+            for var messageDict in messagesDict {
+                let a = MessageText(dict: messageDict)
+                a.messageId = NSUUID().uuidString
+                a.name = Name(first: "ds", middle: "asdadasd", last: "asdasd")
+                
+                messages.append(a)
+            }
+            
+            self.showMessages(messages: messages)
+        })
     }
     
     
@@ -63,8 +83,8 @@ final class ChatVC: ChatViewController {
         self.messagesCollectionView.reloadData()
         self.messagesCollectionView.scrollToBottom()
         
-        for var message in messages {
-            insertMessage(message.mockMessage)
+        for var message in newMessages {
+            insertMessage(message)
         }
         //            insertMessage(message.mockMessage)
     }
