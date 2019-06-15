@@ -12,7 +12,7 @@ import MessageInputBar
 import InputBarAccessoryView
 
 /// A base class for the example controllers
-class ChatViewController: MessagesViewController, MessagesDataSource {
+class ChatBaseVC: MessagesViewController, MessagesDataSource {
     func currentSender() -> SenderType {
         return SampleData.shared.currentSender
     }
@@ -97,6 +97,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
     // MARK: - Helpers
     
     func insertMessage(_ message: MockMessage) {
+        
         messageList.append(message)
         // Reload last section to update header/footer labels and insert a new one
         messagesCollectionView.performBatchUpdates({
@@ -159,7 +160,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
 
 // MARK: - MessageCellDelegate
 
-extension ChatViewController: MessageCellDelegate {
+extension ChatBaseVC: MessageCellDelegate {
     
     func didTapAvatar(in cell: MessageCollectionViewCell) {
         print("Avatar tapped")
@@ -189,7 +190,7 @@ extension ChatViewController: MessageCellDelegate {
 
 // MARK: - MessageLabelDelegate
 
-extension ChatViewController: MessageLabelDelegate {
+extension ChatBaseVC: MessageLabelDelegate {
     
     func didSelectAddress(_ addressComponents: [String: String]) {
         print("Address Selected: \(addressComponents)")
@@ -215,49 +216,47 @@ extension ChatViewController: MessageLabelDelegate {
 
 // MARK: - MessageInputBarDelegate
 
-extension ChatViewController: InputBarAccessoryViewDelegate {
+extension ChatBaseVC: InputBarAccessoryViewDelegate {
     
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        
-        // Here we can parse for which substrings were autocompleted
+//                 Here we can parse for which substrings were autocompleted
         let attributedText = messageInputBar.inputTextView.attributedText!
         let range = NSRange(location: 0, length: attributedText.length)
         attributedText.enumerateAttribute(.autocompleted, in: range, options: []) { (_, range, _) in
-            
+
             let substring = attributedText.attributedSubstring(from: range)
             let context = substring.attribute(.autocompletedContext, at: 0, effectiveRange: nil)
             print("Autocompleted: `", substring, "` with context: ", context ?? [])
         }
-        
+
         let components = inputBar.inputTextView.components
         messageInputBar.inputTextView.text = String()
         messageInputBar.invalidatePlugins()
-        
+
         // Send button activity animation
         messageInputBar.sendButton.startAnimating()
         messageInputBar.inputTextView.placeholder = "Sending..."
-        DispatchQueue.global(qos: .default).async {
-            // fake send request task
-            sleep(1)
-            DispatchQueue.main.async { [weak self] in
-                self?.messageInputBar.sendButton.stopAnimating()
-                self?.messageInputBar.inputTextView.placeholder = "Aa"
-//                self?.insertMessages(components)
-                self?.messagesCollectionView.scrollToBottom(animated: true)
+        
+        let newMyMessage = MessageText(text: components[0] as! String, chatId: ChatVC.chatId)
+        
+        FireFunctions.callFunction(.sendNewMessage, newMyMessage.dict, callback: { (dictResponse) in
+            self.messageInputBar.sendButton.stopAnimating()
+            self.messageInputBar.inputTextView.placeholder = "Your message"
+            self.insertMessages(components)
+            self.messagesCollectionView.scrollToBottom(animated: true)
+        })
+    }
+    
+    func insertMessages(_ data: [Any]) {
+        for component in data {
+            let user = SampleData.shared.currentSender
+            if let str = component as? String {
+                let message = MockMessage(text: str, sender: user, messageId: UUID().uuidString, date: Date())
+                insertMessage(message)
+            } else if let img = component as? UIImage {
+                let message = MockMessage(image: img, sender: user, messageId: UUID().uuidString, date: Date())
+                insertMessage(message)
             }
         }
     }
-    
-//    private func insertMessages(_ data: [Any]) {
-//        for component in data {
-//            let user = SampleData.shared.currentSender
-//            if let str = component as? String {
-//                let message = MockMessage(text: str, sender: user, messageId: UUID().uuidString, date: Date())
-//                insertMessage(message)
-//            } else if let img = component as? UIImage {
-//                let message = MockMessage(image: img, sender: user, messageId: UUID().uuidString, date: Date())
-//                insertMessage(message)
-//            }
-//        }
-//    }
 }

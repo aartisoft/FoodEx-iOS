@@ -39,6 +39,6 @@ import Firebase
     
     @objc func someAction(_ sender:UITapGestureRecognizer){
         UI.showPage(source: ChatsVC.shared, page: .Chat)
-        ChatVC.shared.showChatHistory(chatId: chatId)
+        ChatVC.initChatHistory(chatId: chatId)
     }
 }

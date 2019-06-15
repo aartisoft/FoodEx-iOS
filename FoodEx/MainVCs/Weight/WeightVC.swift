@@ -15,6 +15,12 @@ import NumberPicker
 class WeightVC: UIViewController {
 
     @IBOutlet weak var chart: LineChartView!
+    @IBOutlet weak var startWeightL: UILabel!
+    @IBOutlet weak var currentWeightL: UILabel!
+    @IBOutlet weak var totalLossL: UILabel!
+    @IBOutlet weak var daysSinceStartL: UILabel!
+    @IBOutlet weak var dietDaysL: UILabel!
+    @IBOutlet weak var missedDays: UILabel!
     
     private var firstWeightRecord: WeightRecord? = nil
     
@@ -86,12 +92,38 @@ class WeightVC: UIViewController {
         chart.rightAxis.axisMaximum = maximumWeight + 10
         chart.setVisibleXRangeMaximum(7)
         chart.setVisibleXRangeMinimum(1)
+        
+        showLabelsInfo(weightRecords)
     }
 
     
+    func showLabelsInfo(_ weightRecords: [WeightRecord]) {
+        if weightRecords.count == 0 {
+            return
+        }
+        
+        let latestWeight = weightRecords[weightRecords.count - 1]
+        
+        startWeightL.text = String(format: "%.01f", (firstWeightRecord?.weight.value)!) + " kg."
+        currentWeightL.text =  String(format: "%.01f", (latestWeight.weight.value)) + " kg."
+        totalLossL.text = String(format: "%.01f", (firstWeightRecord!.weight.value - latestWeight.weight.value)) + " kg."
+        
+        let calendar = Calendar.current
+        let date1 = calendar.startOfDay(for: firstWeightRecord!.date)
+        let date2 = calendar.startOfDay(for: latestWeight.date)
+        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        
+        let daysSinceStart = components.day
+        // TODO: load total diet days amount since start
+        let dietDaysTotal = 0
+        daysSinceStartL.text = String(daysSinceStart!)
+        dietDaysL.text = String(dietDaysTotal)
+        missedDays.text = String(daysSinceStart! - dietDaysTotal)
+    }
+    
     
     @IBAction func onWeightRecordingClicked(_ sender: Any) {
-        let numberPicker = NumberPicker(delegate: self, maxNumber: 150.0, step: 0.1) // set max number
+        let numberPicker = NumberPicker(delegate: self, maxNumber: 150.0, step: 0.1) // set max numberне
         numberPicker.bgGradients = [UIColor.primaryDark, UIColor.primaryLighter]
         numberPicker.tintColor = .white
         numberPicker.heading = "Weight, kg."

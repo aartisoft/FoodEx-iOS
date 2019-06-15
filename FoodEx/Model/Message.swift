@@ -15,7 +15,8 @@ protocol MessageProtocol {
     var senderId: String { get }
     var userType: Int { get }
     var sentDate: Date { get }
-    var name: Name? { get } 
+    var name: Name? { get }
+    var chatId: String? { get }
 }
 
 // TODO: sync all data inside here
@@ -28,6 +29,16 @@ class MessageText : MessageProtocol, Codable {
     var userType: Int
     var text: String
     var name: Name? = nil
+    var chatId: String? = nil
+    
+    init(text: String, chatId: String) {
+        self.sentDate = Date()
+        self.messageId = "" // be careful
+        self.senderId = "" // be careful
+        self.userType = 0 // 0 - customer, 1 - support
+        self.text = text
+        self.chatId = chatId
+    }
     
     init(text: String) {
         self.sentDate = Date()
@@ -35,15 +46,16 @@ class MessageText : MessageProtocol, Codable {
         self.senderId = "" // be careful
         self.userType = 0 // 0 - customer, 1 - support
         self.text = text
+        self.chatId = ""
     }
     
-    
-    init(text: String, sentDate: Date, messageId: String, senderId: String, userType: Int) {
+    init(text: String, sentDate: Date, messageId: String, senderId: String, userType: Int, chatId: String) {
         self.text = text
         self.sentDate = sentDate
         self.messageId = messageId
         self.senderId = senderId
         self.userType = userType // 0 - customer, 1 - support
+        self.chatId = chatId
     }
     
     
@@ -56,6 +68,7 @@ class MessageText : MessageProtocol, Codable {
         self.userType = dict["userType"] as! Int
         self.messageId = dict["messageId"] as! String
         self.text = dict["text"] as! String
+        self.chatId = dict["chatId"] as? String
     }
     
     
@@ -65,11 +78,12 @@ class MessageText : MessageProtocol, Codable {
              "senderId": senderId,
              "userType": userType,
              "text": text,
-             "sentDate": sentDate.timeIntervalSince1970
+             "sentDate": sentDate.timeIntervalSince1970,
+             "chatId": chatId
         ]
     }
     
     var mockMessage: MockMessage {
-        return MockMessage(text: text, sender: Sender(senderId: senderId, displayName: "AA"), messageId: String(Int(sentDate.timeIntervalSince1970)), date: sentDate)
+        return MockMessage(text: text, sender:  Sender(id: "000001", displayName: "Nathan Tannar"), messageId: String(Int(sentDate.timeIntervalSince1970)), date: sentDate)
     }
 }

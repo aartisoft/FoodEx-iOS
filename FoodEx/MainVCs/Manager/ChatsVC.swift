@@ -67,6 +67,16 @@ class ChatsVC: UITableViewController {
         // Configure the cell’s contents with the row and section number.
         // The Basic cell style guarantees a label view is present in textLabel.
         cell.title.text = chatsList[indexPath.row].title
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM dd"
+        cell.time.text = formatter.string(from: chatsList[indexPath.row].startTime)
+        
+        cell.chatImage.layer.borderWidth = 1
+        cell.chatImage.layer.masksToBounds = true
+        cell.chatImage.layer.borderColor = UIColor.black.cgColor
+        cell.chatImage.layer.cornerRadius = cell.chatImage.frame.height / 2
+        
         cell.initializeChat(chatId: chatsList[indexPath.row].chatId)
         return cell
     }

@@ -190,12 +190,14 @@ class SettingsVC: KeyboardVC, UINavigationControllerDelegate, UIImagePickerContr
         flatWeekdaysTF.text = UserData.my.weekdaysDelivery?.address.flat
         packageWeekdaysButton.titleLabel!.text = UserData.my.weekdaysDelivery?.type.str
         noteWeekdaysTF.text = UserData.my.weekdaysDelivery?.note
+        timeWeekdaysTF.text = UserData.my.weekdaysDelivery?.time
         
         streetWeekendsTF.text = UserData.my.weekendsDelivery?.address.street
         houseWeekendsTF.text = UserData.my.weekendsDelivery?.address.house
         flatWeekendsTF.text = UserData.my.weekendsDelivery?.address.flat
         packageWeekendsButton.titleLabel!.text = UserData.my.weekendsDelivery?.type.str
         noteWeekendsTF.text = UserData.my.weekendsDelivery?.note
+        timeWeekendsTF.text = UserData.my.weekendsDelivery?.time
         
         firstNameTF.text = UserData.my.name?.first
         middleNameTF.text = UserData.my.name?.middle

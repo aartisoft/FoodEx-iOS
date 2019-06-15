@@ -9,11 +9,13 @@
 import Foundation
 import MessageKit
 import MessageInputBar
+import InputBarAccessoryView
 
 /// A base class for the example controllers
-final class ChatVC: ChatViewController {
+final class ChatVC: ChatBaseVC {
     
-    static var shared = ChatVC()
+    static var shared: ChatVC? = nil
+    static var chatId: String = ""
     
     override func configureMessageCollectionView() {
         super.configureMessageCollectionView()
@@ -30,13 +32,17 @@ final class ChatVC: ChatViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
         
+        
+        configureMessageCollectionView()
+        
 //        if let layout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
 //            layout.textMessageSizeCalculator.outgoingAvatarSize = .zero
 //            layout.textMessageSizeCalculator.incomingAvatarSize = .zero
 //        } to remove avatar pading
         
         initKeyboardManager()
-
+        
+        self.showChatHistory()
     }
     
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
@@ -44,25 +50,26 @@ final class ChatVC: ChatViewController {
     }
     
     
-    func showChatHistory(chatId: String) {
+    class func initChatHistory(chatId: String) {
+        self.chatId = chatId
+        // showChatHistory(chatId: chatId)
+    }
+    
+    
+    func showChatHistory() {
+        print("CHATID: " + ChatVC.chatId)
         let filter = [
             "amount": 50,
             "skip": 0,
-            "chatId": chatId
+            "chatId": ChatVC.chatId
             ] as [String : Any]
         
-        LoadingView.show(view: self.view)
-        
         FireFunctions.callFunction(.getChatMessages, filter, callback: { (dictResponse) in
-            LoadingView.hide()
-            
             let messagesDict = dictResponse["messages"] as! [[String: Any]]
             var messages: [MessageText] = []
             
             for var messageDict in messagesDict {
                 let a = MessageText(dict: messageDict)
-                a.messageId = NSUUID().uuidString
-                a.name = Name(first: "ds", middle: "asdadasd", last: "asdasd")
                 
                 messages.append(a)
             }
@@ -73,20 +80,9 @@ final class ChatVC: ChatViewController {
     
     
     func showMessages(messages: [MessageText]) {
-        var newMessages: [MockMessage] = []
-        
         for var message in messages {
-            newMessages.append(message.mockMessage)
+            insertMessage(message.mockMessage)
         }
-        
-        
-        self.messagesCollectionView.reloadData()
-        self.messagesCollectionView.scrollToBottom()
-        
-        for var message in newMessages {
-            insertMessage(message)
-        }
-        //            insertMessage(message.mockMessage)
     }
 }
 
